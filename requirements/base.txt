@@ -1,0 +1,8 @@
+# Shared CPU dependencies for early notebooks and labs.
+# Python 3.12 is the supported version for the first vertical slice.
+# GPU wheels are deliberately separate; see requirements/README.md.
+numpy>=1.26,<3
+pandas>=2.2,<3
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+joblib>=1.4,<2

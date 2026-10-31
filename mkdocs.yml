@@ -1,0 +1,187 @@
+site_name: AITopics - Applied AI Engineering
+site_description: >-
+  A self-paced, hands-on course on training, fine-tuning, evaluating, and
+  deploying language, vision, speech, video, and agentic AI systems.
+site_author: Engr. Dr. Muhammad Nadeem Majeed
+
+# Provisional URL. Enable it only after GitHub Pages is configured.
+# site_url: https://nadeem-majeedch.github.io/AITopics/
+
+repo_url: https://github.com/nadeem-majeedch/AITopics
+repo_name: nadeem-majeedch/AITopics
+edit_uri: edit/main/docs/
+
+copyright: >-
+  Copyright 2026 Engr. Dr. Muhammad Nadeem Majeed. Course licensing is
+  described in the repository README.
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.path
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nadeem-majeedch/AITopics
+
+nav:
+  - Home: index.md
+  - Start Here:
+      - Course roadmap: course/roadmap.md
+      - Learning paths: course/learning-paths.md
+      - How to study: course/how-to-study.md
+      - Course conventions: course/course-conventions.md
+      - Assessments: course/assessments.md
+      - Capstone projects: course/projects.md
+      - FAQ: course/faq.md
+  - Lessons:
+      - lessons/index.md
+      - Level 0 - Starting point:
+          - F01 - Python essentials:
+              - lessons/f01-python-ai/index.md
+              - Guided notebook: lessons/f01-python-ai/notebook.md
+              - Lab: lessons/f01-python-ai/lab.md
+              - Assessment: lessons/f01-python-ai/assessment.md
+          - F02 - Environments and Jupyter (M01):
+              - lessons/m01-environment/index.md
+              - Guided notebook: lessons/m01-environment/notebook.md
+              - Lab: lessons/m01-environment/lab.md
+              - Assessment: lessons/m01-environment/assessment.md
+      - Level 1 - Foundations:
+          - F03 - NumPy and pandas:
+              - lessons/f03-numpy-pandas/index.md
+              - Guided notebook: lessons/f03-numpy-pandas/notebook.md
+              - Lab: lessons/f03-numpy-pandas/lab.md
+              - Assessment: lessons/f03-numpy-pandas/assessment.md
+          - F04 - Data cleaning:
+              - lessons/f04-data-cleaning/index.md
+              - Guided notebook: lessons/f04-data-cleaning/notebook.md
+              - Lab: lessons/f04-data-cleaning/lab.md
+              - Assessment: lessons/f04-data-cleaning/assessment.md
+          - F05 - Train, validation, and test splits:
+              - lessons/f05-splits/index.md
+              - Guided notebook: lessons/f05-splits/notebook.md
+              - Lab: lessons/f05-splits/lab.md
+              - Assessment: lessons/f05-splits/assessment.md
+          - F06 - Exploratory data analysis:
+              - lessons/f06-eda/index.md
+              - Guided notebook: lessons/f06-eda/notebook.md
+              - Lab: lessons/f06-eda/lab.md
+              - Assessment: lessons/f06-eda/assessment.md
+          - F07 - Supervised and unsupervised learning:
+              - lessons/f07-supervised-unsupervised/index.md
+              - Guided notebook: lessons/f07-supervised-unsupervised/notebook.md
+              - Lab: lessons/f07-supervised-unsupervised/lab.md
+              - Assessment: lessons/f07-supervised-unsupervised/assessment.md
+          - F08 - Regression and classification:
+              - lessons/f08-regression-classification/index.md
+              - Guided notebook: lessons/f08-regression-classification/notebook.md
+              - Lab: lessons/f08-regression-classification/lab.md
+              - Assessment: lessons/f08-regression-classification/assessment.md
+          - F09 - Trees, forests, and boosting:
+              - lessons/f09-tree-ensembles/index.md
+              - Guided notebook: lessons/f09-tree-ensembles/notebook.md
+              - Lab: lessons/f09-tree-ensembles/lab.md
+              - Assessment: lessons/f09-tree-ensembles/assessment.md
+          - F10 - Metrics and validation:
+              - lessons/f10-metrics-validation/index.md
+              - Guided notebook: lessons/f10-metrics-validation/notebook.md
+              - Lab: lessons/f10-metrics-validation/lab.md
+              - Assessment: lessons/f10-metrics-validation/assessment.md
+          - F11 - Neural network fundamentals:
+              - lessons/f11-neural-networks/index.md
+              - Guided notebook: lessons/f11-neural-networks/notebook.md
+              - Lab: lessons/f11-neural-networks/lab.md
+              - Assessment: lessons/f11-neural-networks/assessment.md
+          - F12 - Backpropagation:
+              - lessons/f12-backpropagation/index.md
+              - Guided notebook: lessons/f12-backpropagation/notebook.md
+              - Lab: lessons/f12-backpropagation/lab.md
+              - Assessment: lessons/f12-backpropagation/assessment.md
+          - F13 - Reproducibility:
+              - lessons/f13-reproducibility/index.md
+              - Guided notebook: lessons/f13-reproducibility/notebook.md
+              - Lab: lessons/f13-reproducibility/lab.md
+              - Assessment: lessons/f13-reproducibility/assessment.md
+  - Syllabus:
+      - Overview: syllabus/index.md
+      - Level 0 - Orientation and environment: syllabus/level-0-start.md
+      - Level 1 - Foundations: syllabus/level-1-foundations.md
+      - Level 2 - Language AI: syllabus/level-2-language.md
+      - Level 3 - Vision, speech, and video AI: syllabus/level-3-vision-video.md
+      - Level 4 - AI agents: syllabus/level-4-agents.md
+      - Level 5 - Production and capstone: syllabus/level-5-production.md
+  - Project Docs:
+      - Repository architecture: planning/repository-architecture.md
+      - Implementation phases: planning/implementation-phases.md
+      - Content inventory: planning/content-inventory.md
+      - Quality standards: planning/quality-standards.md
+  - Technical:
+      - Build and deploy: technical/build-and-deploy.md
+      - Maintainer guide: technical/maintainer-guide.md
+      - Contributing: technical/contributing.md
+      - Troubleshooting: technical/troubleshooting.md
+      - Foundation data and dependencies: technical/foundation-assets.md
+      - Templates:
+          - technical/templates/index.md
+          - Chapter template: technical/templates/chapter.md
+          - Notebook guide template: technical/templates/notebook.md
+          - Lab template: technical/templates/lab.md
+          - Assessment template: technical/templates/assessment.md
+          - Project specification template: technical/templates/project.md
+  - About:
+      - Instructor: about/instructor.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+# Keep the build honest: fail on broken internal links and missing navigation
+# targets. External link checking is a separate Phase 8 task.
+strict: true

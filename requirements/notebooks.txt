@@ -1,0 +1,8 @@
+# Local Jupyter environment for the CPU-only guided notebooks.
+# Install from the repository root:
+#   python -m pip install -r requirements/notebooks.txt
+-r base.txt
+
+jupyterlab>=4.2,<5
+ipykernel>=6.29,<7
+nbclient>=0.10,<1

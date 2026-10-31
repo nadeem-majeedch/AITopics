@@ -1,0 +1,97 @@
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# -----------------------------------------------------------------------------
+# Jupyter
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+profile_default/
+
+# -----------------------------------------------------------------------------
+# Documentation build output
+# -----------------------------------------------------------------------------
+site/
+.site-cache/
+
+# -----------------------------------------------------------------------------
+# Data, models, and experiment artifacts
+# Course data is never committed. See docs/planning/repository-architecture.md.
+# -----------------------------------------------------------------------------
+data/
+datasets/*
+!datasets/.gitkeep
+!datasets/README.md
+!datasets/**/
+!datasets/**/README.md
+datasets/foundations/generated/
+models/
+checkpoints/
+runs/
+outputs/
+wandb/
+mlruns/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.gguf
+*.h5
+*.pkl
+*.joblib
+*.parquet
+*.arrow
+*.tfrecord
+
+# Media that is usually large or generated
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.mp3
+*.flac
+*.zip
+*.tar
+*.gz
+
+# -----------------------------------------------------------------------------
+# Secrets and local configuration
+# -----------------------------------------------------------------------------
+.env
+.env.*
+secrets/
+kaggle.json
+.huggingface/
+*.pem
+
+# -----------------------------------------------------------------------------
+# Editors and operating systems
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# Logs and temporary files
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+tmp/

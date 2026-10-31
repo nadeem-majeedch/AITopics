@@ -1,0 +1,8 @@
+# CPU-only stack for the foundation notebooks (F01-F13).
+# Install with:
+#   python -m pip install -r requirements/cpu.txt
+# The extra index serves CPU-only PyTorch wheels and avoids pulling CUDA
+# libraries onto a machine without an NVIDIA GPU.
+-r notebooks.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.4,<2.5

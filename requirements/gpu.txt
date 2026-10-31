@@ -1,0 +1,12 @@
+# GPU-optional stack for the foundation notebooks (F01-F13).
+# Choose the CUDA wheel that matches your NVIDIA driver at
+# https://pytorch.org/get-started/locally/ and install it in the same
+# environment, for example:
+#   python -m pip install -r requirements/gpu.txt
+#   python -m pip install torch --index-url https://download.pytorch.org/whl/cu124
+# The second command is illustrative. The correct CUDA tag depends on the
+# current PyTorch release and your driver. Do not install this file on a
+# CPU-only machine. The foundation notebooks detect CUDA at runtime and fall
+# back to CPU automatically.
+-r notebooks.txt
+torch>=2.4,<3
