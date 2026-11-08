@@ -3,19 +3,41 @@
 This section contains the student-facing lessons. A lesson is the working part of
 a module: read the explanation, run the notebook, complete the lab, and check the
 assessment. The [syllabus](../syllabus/index.md) remains the authoritative plan
-for every module, including modules whose lessons are still being authored.
+for objectives, hours, and module scope.
 
 !!! info "What is available now"
-    The **foundation sequence F01-F13 is published** as a complete vertical
-    slice: lesson, executable notebook, lab brief, and assessment for every unit.
-    F01-F13 deliver the approved M01-M03 material at a more granular pace, plus
-    one pre-M01 Python unit. All foundation notebooks were executed top-to-bottom
-    on Windows 11 with Python 3.12.10 on CPU. Google Colab verification is still
-    pending, and no foundation notebook was executed on a GPU. All other modules
-    (M04-M17) publish their plans only. M00 orientation is delivered through the
+    Every module from M01 to M17 now has published learning material. The
+    foundation sequence **F01-F13** delivers M01-M03 with lesson, executable
+    notebook, lab brief, and assessment for every unit. M04-M08 and M15-M17 are
+    published as five further sections: **Model Training**, **LLM Fine-Tuning**,
+    **AI Agents**, **Production**, and **Capstone**, with 33 lessons, seven executed
+    notebooks, eight lab briefs, and five assessments. M09-M14 remain published as
+    the four applied vertical slices: Conversational AI, Computer Vision, Speech
+    and Audio, and Video AI. M00 orientation is delivered through the
     [roadmap](../course/roadmap.md), [learning paths](../course/learning-paths.md),
     [study guide](../course/how-to-study.md), and the
     [M00 plan](../syllabus/level-0-start.md#m00).
+
+    Foundation and new-section notebooks were executed top-to-bottom on Windows
+    11 with Python 3.12.10 on CPU. Google Colab and GPU execution remain pending
+    and are documented as limitations, not claimed results.
+
+## Published sections
+
+Each section is a vertical slice: a sequence of lessons that ends in an independent
+lab and a weighted assessment. Start at the section index.
+
+| Section | Modules | Lessons | Notebooks | Lab briefs |
+| --- | --- | --- | --- | --- |
+| [Model Training](model-training/index.md) | M04-M05 | 10 | 2 | 2 |
+| [LLM Fine-Tuning](llm-fine-tuning/index.md) | M06-M08 | 10 | 3 | 3 |
+| [AI Agents](ai-agents/index.md) | M15 | 5 | 1 | 1 |
+| [Production](production/index.md) | M16 | 5 | 1 | 1 |
+| [Capstone](capstone/index.md) | M17 | 3 | reuses M04-M16 | 1 |
+| [Conversational AI](chatbots-rag/index.md) | M09-M10 | 16 | script-based | 8 projects |
+| [Computer Vision](computer-vision/index.md) | M11-M12 | 14 | script-based | 8 |
+| [Speech and Audio](speech-audio/index.md) | M13 | 14 | script-based | 8 |
+| [Video AI](video-ai/index.md) | M14 | 15 | script-based | 8 |
 
 ## Foundation sequence
 
@@ -72,25 +94,24 @@ from the [templates](../technical/templates/index.md).
 | M01 | Python and AI development environment | 0 | 12 | CPU-only | [Published as F02](m01-environment/index.md) |
 | M02 | Machine learning foundations | 1 | 16 | CPU-only | [Published as F03-F10](f03-numpy-pandas/index.md) |
 | M03 | Deep learning foundations | 1 | 16 | CPU or GPU | [Published as F11-F13](f11-neural-networks/index.md) |
-| M04 | Training models from scratch | 1 | 18 | GPU recommended | [Plan](../syllabus/level-1-foundations.md#m04) |
-| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU-only | [Plan](../syllabus/level-1-foundations.md#m05) |
-| M06 | Transformers and language models | 2 | 18 | CPU or GPU | [Plan](../syllabus/level-2-language.md#m06) |
-| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required | [Plan](../syllabus/level-2-language.md#m07) |
-| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required | [Plan](../syllabus/level-2-language.md#m08) |
-| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU | [Plan](../syllabus/level-2-language.md#m09) |
-| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU-only | [Plan](../syllabus/level-2-language.md#m10) |
-| M11 | Image classification and computer vision | 3 | 18 | GPU recommended | [Plan](../syllabus/level-3-vision-video.md#m11) |
-| M12 | Object detection, tracking, transfer learning | 3 | 20 | GPU required | [Plan](../syllabus/level-3-vision-video.md#m12) |
-| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | GPU recommended | [Plan](../syllabus/level-3-vision-video.md#m13) |
-| M14 | Video understanding and video analytics | 3 | 22 | GPU recommended | [Plan](../syllabus/level-3-vision-video.md#m14) |
-| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU or API | [Plan](../syllabus/level-4-agents.md#m15) |
-| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU-only | [Plan](../syllabus/level-5-production.md#m16) |
-| M17 | Integrated capstone | 5 | 40 | Depends | [Plan](../syllabus/level-5-production.md#m17) |
+| M04 | Training models from scratch | 1 | 18 | GPU recommended | [Published](model-training/index.md) |
+| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU-only | [Published](model-training/index.md) |
+| M06 | Transformers and language models | 2 | 18 | CPU or GPU | [Published](llm-fine-tuning/index.md) |
+| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required | [Published](llm-fine-tuning/index.md) |
+| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required | [Published](llm-fine-tuning/index.md) |
+| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU | [Published as CA01-CA16](chatbots-rag/index.md) |
+| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU-only | [Published as CA09-CA16](chatbots-rag/index.md) |
+| M11 | Image classification and computer vision | 3 | 18 | CPU-only | [Published as CV01-CV10](computer-vision/index.md) |
+| M12 | Object detection, tracking, transfer learning | 3 | 20 | CPU-only | [Published as CV08-CV14](computer-vision/index.md) |
+| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | CPU-only | [Published as SA01-SA14](speech-audio/index.md) |
+| M14 | Video understanding and video analytics | 3 | 22 | CPU-only | [Published as VD01-VD15](video-ai/index.md) |
+| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU or API | [Published](ai-agents/index.md) |
+| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU-only | [Published](production/index.md) |
+| M17 | Integrated capstone | 5 | 40 | Depends | [Published](capstone/index.md) |
 
-"Plan" means the module's objectives, practical work, rubric, and deliverables
-are specified, but the lesson and notebook are not yet published. Do not treat a
-plan as a finished lesson. The [syllabus status key](../syllabus/index.md#status)
-defines each stage.
+Every published section states its hardware, datasets, and execution status in its
+index and assessment. Where a path could not be executed here (for example a GPU
+or a Hugging Face download), the lesson says so and gives the CPU alternative.
 
 ## Start with F01
 

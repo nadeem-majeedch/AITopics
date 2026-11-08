@@ -1,0 +1,84 @@
+name: Deploy documentation
+
+# Builds the MkDocs site with a strict build and publishes it to GitHub Pages as
+# a project site at https://nadeem-majeedch.github.io/AITopics/.
+#
+# Deployment path: successful Validate repository run on main, or manual
+# dispatch. Pull requests do not deploy. Waiting for validation prevents a docs
+# push from publishing before the repository gate has passed.
+
+on:
+  workflow_run:
+    workflows: ["Validate repository"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: the build job only reads the repository. The deploy job adds
+# the two permissions the Pages deployment action requires.
+permissions:
+  contents: read
+
+# Never run two Pages deployments at once. Do not cancel a deployment in
+# progress: a half-published site is worse than a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the validated commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements/docs.txt
+
+      - name: Install documentation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements/docs.txt
+
+      - name: Check links, anchors, and navigation
+        run: python scripts/check_docs_links.py
+
+      - name: Build site (strict)
+        run: python -m mkdocs build --strict
+
+      - name: Check built site for project-prefix problems
+        run: python scripts/check_docs_links.py --site site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

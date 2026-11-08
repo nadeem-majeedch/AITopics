@@ -3,14 +3,23 @@
 The course has **18 modules in 6 levels**. This page explains how the module
 plans are structured and maps the course to the 16 learning areas it covers.
 
-!!! warning "Plans and the published foundation sequence"
+!!! warning "Plans and published lessons"
     Every module below has a complete plan: objectives, prerequisites, study
     time, theory, notebook, lab, rubric, deliverables, and next step. **F01-F13
     are published** with lessons, executable notebooks, lab briefs, and
-    assessments, delivering M01-M03. M04-M17 still publish plans only. Lesson
-    pages and notebooks are authored in the order defined in
-    [Implementation phases](../planning/implementation-phases.md) and must pass
-    the [quality standards](../planning/quality-standards.md) before release.
+    assessments, delivering M01-M03. M04-M08 and M15-M17 are published as
+    sections: [Model Training](../lessons/model-training/index.md),
+    [LLM Fine-Tuning](../lessons/llm-fine-tuning/index.md),
+    [AI Agents](../lessons/ai-agents/index.md),
+    [Production](../lessons/production/index.md), and
+    [Capstone](../lessons/capstone/index.md). M09-M14 are published as applied
+    slices: [Conversational AI](../lessons/chatbots-rag/index.md),
+    [Computer Vision](../lessons/computer-vision/index.md),
+    [Speech and Audio](../lessons/speech-audio/index.md), and
+    [Video AI](../lessons/video-ai/index.md). Published lessons must pass the
+    [quality standards](../planning/quality-standards.md) before release; the
+    per-module map is in
+    [Curriculum coverage](../planning/curriculum-coverage.md).
 
 ## Hardware legend
 
@@ -125,8 +134,11 @@ communication. The capstone has its own weighted rubric. See
 | Content in review | Authored content is under technical and pedagogical review |
 | Published | Lesson, notebook, lab, and assessment are available and the notebook has been executed on the supported environments |
 
-At the time of this release, **F01-F13 are published** and deliver M01-M03;
-M04-M17 are **plan published**. The foundation notebooks have been executed on
-Windows 11 CPU. Google Colab verification is pending, and no foundation notebook
-has been executed on a GPU. No module is marked fully verified until its notebook
-has run on every supported environment.
+At the time of this release, every module from M01 to M17 is **published**:
+F01-F13 deliver M01-M03, M04-M08 and M15-M17 are five sections, and M09-M14 are
+four applied slices. M00 orientation is delivered through the roadmap, learning
+paths, study guide, and its plan. All twenty notebooks published by these
+sections (thirteen foundation and seven new) have been executed on Windows 11
+CPU. Google Colab verification is pending, and no notebook has been executed on a
+GPU; CPU-only and optional-GPU paths are stated per lesson. No module is marked
+fully verified on every supported environment.

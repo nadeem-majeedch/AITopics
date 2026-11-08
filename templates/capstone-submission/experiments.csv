@@ -1,0 +1,2 @@
+experiment_id,date,git_commit,code_digest,data_digest,config,seed,dataset_split,model,hyperparameters,metrics,runtime_seconds,hardware,decision,notes
+EXP-001,[replace YYYY-MM-DD],[replace short sha],[replace sha256 of src/],[replace manifest or split digest],[replace configs/train.yaml],[replace integer],[replace e.g. train=672 val=144 test=144],[replace model name and size],[replace key=value; key=value],[replace metric=value; metric=value with n and interval],[replace],[replace CPU/GPU and threads],[replace keep/reject/final],[replace why, including failures]

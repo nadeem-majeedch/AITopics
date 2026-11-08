@@ -12,13 +12,59 @@ Department of Data Science (PUCIT), University of the Punjab, Lahore, Pakistan.
 [Learning paths](docs/course/learning-paths.md) ·
 [Capstone projects](docs/course/projects.md)
 
-> **Course status: foundation sequence F01-F13 published.**
-> Thirteen units now have a complete lesson, executable notebook, lab brief, and
-> assessment. F01-F13 deliver the approved M01-M03 material at a more granular
-> pace. All foundation notebooks were executed top-to-bottom on Windows 11 with
-> Python 3.12.10 on CPU; Google Colab and GPU verification are still pending.
-> M04-M17 publish their plans only. See [Lessons](docs/lessons/index.md) and
-> [Implementation phases](docs/planning/implementation-phases.md).
+> **Course status: all eighteen modules have published learning material.**
+> The foundation sequence F01-F13 delivers M01-M03 with a complete lesson,
+> executable notebook, lab brief, and assessment. Five further sections cover
+> M04-M08 and M15-M17: [Model Training](docs/lessons/model-training/index.md),
+> [LLM Fine-Tuning](docs/lessons/llm-fine-tuning/index.md),
+> [AI Agents](docs/lessons/ai-agents/index.md),
+> [Production](docs/lessons/production/index.md), and
+> [Capstone](docs/lessons/capstone/index.md). M09-M14 remain published as the
+> applied slices Conversational AI, Computer Vision, Speech and Audio, and Video
+> AI. All twenty notebooks (thirteen foundation and seven new) were executed
+> top-to-bottom on Windows 11 CPU; Google Colab and GPU verification are still
+> pending. See [Lessons](docs/lessons/index.md) and the
+> [curriculum coverage map](docs/planning/curriculum-coverage.md).
+
+> **New: Computer Vision section.** A complete Level 3 slice ships with 14
+> modules, 8 runnable labs, a face-safety module with measured demographic gaps,
+> and a model-card template. It starts at what a pixel value means and ends at a
+> documented, benchmarked model. Every program runs offline on a laptop CPU with
+> CC0-1.0 synthetic data. Start at
+> [Computer Vision](docs/lessons/computer-vision/index.md).
+
+> **New: Speech and Audio section.** A complete Level 3 slice ships with 14
+> modules, 8 runnable labs, a consent-and-rights page, and a model-card template.
+> It starts at sampling rate and ends at a documented voice interface, with WER,
+> robustness, fairness, and latency measured rather than asserted. Every program
+> runs offline on a laptop CPU: all audio is synthesised locally under CC0-1.0,
+> so no one has to record a voice to take the course. Start at
+> [Speech and Audio](docs/lessons/speech-audio/index.md).
+
+> **New: Video AI section.** A complete Level 3 slice ships with 15 modules, 8
+> runnable labs, a governance page, and a model card. It starts at what a frame is
+> and ends at a counted crossing with a measured error: detection on frames,
+> track IDs, line counting, domain adaptation, action recognition, profiling, and
+> the privacy limits of the whole pipeline. Every program runs offline on a laptop
+> CPU with CC0-1.0 synthetic traffic video that the repository generates itself.
+> Start at [Video AI](docs/lessons/video-ai/index.md).
+
+> **New: Conversational AI section.** A complete Level 2 slice now ships with 16
+> modules, 8 runnable projects, and a section assessment. It starts at a
+> rule-based FAQ bot and ends at a domain assistant with retrieval, citations,
+> refusals, and a measured evaluation. Every exercise runs offline on a laptop
+> CPU. Start at
+> [Conversational AI](docs/lessons/chatbots-rag/index.md).
+
+> **New: Capstone projects and assessment bank.** Twelve fully specified projects
+> run from a tabular baseline to a tool-using agent with approvals. Each brief
+> includes scope and non-goals, data and licensing, a baseline, milestones, a
+> folder layout, development tasks, an evaluation plan, a weighted rubric, a report
+> template, and a demo checklist. Eight assessment banks (quizzes, code reading,
+> debugging, scenarios, lab assessments, evaluation exercises, revision) ship with
+> separate self-study solutions. Start at the
+> [project index](docs/course/projects/index.md) or the
+> [assessment bank](docs/course/assessments/index.md).
 
 ---
 
@@ -149,24 +195,25 @@ syllabus remain authoritative for credit and prerequisites.
 | M01 | Python and AI development environment | 0 | 12 | CPU-only | [Published as F02](docs/lessons/m01-environment/index.md) |
 | M02 | Machine learning foundations | 1 | 16 | CPU-only | [Published as F03-F10](docs/lessons/f03-numpy-pandas/index.md) |
 | M03 | Deep learning foundations | 1 | 16 | CPU or GPU | [Published as F11-F13](docs/lessons/f11-neural-networks/index.md) |
-| M04 | Training models from scratch | 1 | 18 | GPU recommended | [Plan](docs/syllabus/level-1-foundations.md#m04) |
-| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU-only | [Plan](docs/syllabus/level-1-foundations.md#m05) |
-| M06 | Transformers and language models | 2 | 18 | CPU or GPU | [Plan](docs/syllabus/level-2-language.md#m06) |
-| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required | [Plan](docs/syllabus/level-2-language.md#m07) |
-| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required | [Plan](docs/syllabus/level-2-language.md#m08) |
-| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU | [Plan](docs/syllabus/level-2-language.md#m09) |
-| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU-only | [Plan](docs/syllabus/level-2-language.md#m10) |
-| M11 | Image classification and computer vision | 3 | 18 | GPU recommended | [Plan](docs/syllabus/level-3-vision-video.md#m11) |
-| M12 | Object detection, tracking, transfer learning | 3 | 20 | GPU required | [Plan](docs/syllabus/level-3-vision-video.md#m12) |
-| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | GPU recommended | [Plan](docs/syllabus/level-3-vision-video.md#m13) |
-| M14 | Video understanding and video analytics | 3 | 22 | GPU recommended | [Plan](docs/syllabus/level-3-vision-video.md#m14) |
-| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU or API | [Plan](docs/syllabus/level-4-agents.md#m15) |
-| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU-only | [Plan](docs/syllabus/level-5-production.md#m16) |
-| M17 | Integrated capstone | 5 | 40 | Depends | [Plan](docs/syllabus/level-5-production.md#m17) |
+| M04 | Training models from scratch | 1 | 18 | GPU recommended | [Published](docs/lessons/model-training/index.md) |
+| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU-only | [Published](docs/lessons/model-training/index.md) |
+| M06 | Transformers and language models | 2 | 18 | CPU or GPU | [Published](docs/lessons/llm-fine-tuning/index.md) |
+| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required | [Published](docs/lessons/llm-fine-tuning/index.md) |
+| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required | [Published](docs/lessons/llm-fine-tuning/index.md) |
+| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU | [Published as CA01-CA16](docs/lessons/chatbots-rag/index.md) |
+| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU-only | [Published as CA09-CA16](docs/lessons/chatbots-rag/index.md) |
+| M11 | Image classification and computer vision | 3 | 18 | CPU-only | [Published as CV01-CV10](docs/lessons/computer-vision/index.md) |
+| M12 | Object detection, tracking, transfer learning | 3 | 20 | CPU-only | [Published as CV08-CV14](docs/lessons/computer-vision/index.md) |
+| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | CPU-only | [Published as SA01-SA14](docs/lessons/speech-audio/index.md) |
+| M14 | Video understanding and video analytics | 3 | 22 | CPU-only | [Published as VD01-VD15](docs/lessons/video-ai/index.md) |
+| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU-only core | [Published](docs/lessons/ai-agents/index.md) |
+| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU-only | [Published](docs/lessons/production/index.md) |
+| M17 | Integrated capstone | 5 | 40 | Depends | [Published](docs/lessons/capstone/index.md) |
 
 A **plan** defines objectives, practical work, rubric, and deliverables; it is not
-a finished lesson. The [lessons index](docs/lessons/index.md) shows what is
-published.
+a finished lesson. The [lessons index](docs/lessons/index.md) shows each published
+section, and the [curriculum coverage map](docs/planning/curriculum-coverage.md)
+maps every module to its lessons, notebook, labs, and assessment.
 
 ## Study independently
 
@@ -329,6 +376,15 @@ and storage issues.
 - **F01-F13 use four synthetic tables.** They are generated locally under
   CC0-1.0 by `scripts/make_foundation_data.py`, contain no real people, and are
   documented in [Foundation data and dependencies](docs/technical/foundation-assets.md).
+- **The computer vision section generates all five of its datasets locally**
+  under CC0-1.0 with `scripts/make_vision_data.py`: classification, objects,
+  detection boxes, segmentation masks, and synthetic faces. No downloads and no
+  personal data. Lab 1 asks you to repeat the exercise on a licensed real dataset.
+- **The speech and audio section generates its own corpora** under CC0-1.0 with
+  `scripts/make_audio_data.py`: formant speech (24 synthetic voices, six words)
+  and procedural environmental sounds, plus a two-speaker diarization mix. No
+  recordings of people, so no consent paperwork; the realism cost is stated in
+  every module and in the dataset card.
 - **Later modules use dataset cards and download scripts.** Raw datasets are not
   committed. Each card records the source, license, size, checksum, and intended
   use.
@@ -391,17 +447,25 @@ proposal.
 | --- | --- | --- |
 | `README.md` | Student entry point | Available |
 | `docs/` | Published course site: lessons, roadmap, syllabus, study guides, planning, technical docs | Available |
-| `docs/lessons/` | Published lessons, notebook guides, labs, assessments | F01-F13 available |
+| `docs/lessons/` | Published lessons, notebook guides, labs, assessments | F01-F13 and M04-M08, M15-M17 sections available |
+| `docs/lessons/chatbots-rag/` | Conversational AI section: 16 modules, 8 project briefs, assessment | Available |
+| `projects/chatbots-rag/` | Runnable chatbot projects A-H and the shared `chatbot_core` package | Available |
+| `docs/lessons/computer-vision/` | Computer vision section: 14 modules, 8 lab manuals, face exercises, model-card template, assessment | Available |
+| `projects/computer-vision/` | Runnable vision labs, the shared `vision_core` package, and the synthetic data generator | Available |
+| `docs/lessons/speech-audio/` | Speech and audio section: 14 modules, 8 lab manuals, ethics page, model-card template, assessment | Available |
+| `projects/speech-audio/` | Runnable audio labs, the shared `speech_core` package, and the synthetic audio generator | Available |
+| `docs/lessons/video-ai/` | Video AI section: 15 modules, 8 lab manuals, governance statement, model card, assessment | Available |
+| `projects/video-ai/` | Runnable video labs, the shared `video_core` package, and the synthetic video generator | Available |
 | `docs/course/` | Roadmap, paths, study guide, conventions, assessments, projects, FAQ | Available |
 | `docs/syllabus/` | Detailed plans for all 18 modules | Available |
-| `notebooks/` | Executable guided notebooks by learning area | F01-F13 available |
+| `notebooks/` | Executable guided notebooks by learning area | 20 available: F01-F13 and seven section notebooks |
 | `labs/` | Lab starters and submission templates | Foundation starters available |
-| `projects/` | Capstone templates and submission structure | Planned |
+| `projects/` | Shared course packages and runnable section code | Available |
 | `datasets/` | Dataset cards and download scripts; raw data is never committed | Foundation card and generator available |
 | `scripts/` | Setup, download, evaluation, and maintenance automation | Foundation data generator available |
-| `tests/` | Tests for shared utilities and notebook smoke checks | Planned |
+| `tests/` | Unit and regression tests for shared course packages | Available |
 | `requirements/` | Split dependency sets (docs, base, notebooks, CPU, GPU, LLM, agents, dev) | Partially available |
-| `.github/workflows/` | CI and documentation deployment | Planned |
+| `.github/workflows/` | Documentation validation and GitHub Pages deployment | Deployment workflows added; first deployment pending |
 
 The full target tree, content ownership rules, and data policy are in the
 [repository architecture](docs/planning/repository-architecture.md).
@@ -414,11 +478,15 @@ The full target tree, content ownership rules, and data policy are in the
 | Foundation Google Colab verification | Pending |
 | Foundation GPU execution | Not executed; optional GPU paths documented |
 | F02 (M01) lesson, notebook, lab, assessment | Published; notebook verified on Windows 11 |
-| M04-M17 plans | Published |
-| M04-M17 lessons and notebooks | In development |
-| Documentation build | Verified locally with `mkdocs build --strict` on 2026-10-30 |
-| Documentation site deployment | Not yet enabled |
-| License files | Pending instructor approval |
+| M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven new notebooks executed on Windows 11 CPU |
+| Conversational AI section (M09-M10 vertical slice) | Published; 24 offline unit tests passing; Streamlit and real-model paths documented but not executed here |
+| Computer Vision section (M11-M12 vertical slice) | Published; 50 offline unit tests passing; all 8 labs and the face program executed on Windows 11 CPU; GPU and real ImageNet weights not executed here |
+| Speech and Audio section (M13 vertical slice) | Published; 55 offline unit tests passing; all 8 lab selftests exit 0 on Windows 11 CPU |
+| Video AI section (M14 vertical slice) | Published; 38 offline unit tests passing; 7 of 8 lab selftests exit 0 on Windows 11 CPU (the detector-download lab was not run) |
+| Model-training and LLM notebooks on GPU | Not executed; CPU paths complete, optional GPU paths documented |
+| Documentation build | Verified locally with `mkdocs build --strict` on 2026-10-30 and re-verified on 2026-11-07 |
+| Documentation site deployment | Workflows configured; first Pages deployment not yet run |
+| License files | Implemented and verified locally on 2026-11-07 (MIT, CC BY 4.0, CC0 1.0) |
 
 Do not treat a published plan as a finished lesson. The
 [lessons index](docs/lessons/index.md) and
@@ -446,16 +514,26 @@ dataset licenses, privacy, and the course's responsible-AI rules.
 
 ## License and attribution
 
-Course materials are intended for open educational use. A formal license has
-**not yet been approved and committed**. The recommended split is:
+AITopics uses a multi-licence structure approved by the instructor on
+2026-11-07:
 
-- **Code and notebooks:** MIT License.
-- **Prose, diagrams, and course text:** Creative Commons Attribution 4.0
+- **Original source code:** MIT License ([`LICENSE`](LICENSE)).
+- **Original educational content** (lessons, documentation, labs, notebooks,
+  templates, and diagrams): Creative Commons Attribution 4.0 International
   (CC BY 4.0), with attribution to the instructor.
+- **Original synthetic datasets:** CC0 1.0 Universal, where provenance has been
+  verified.
+- **Third-party material:** its own original licence and terms; it is not
+  relicensed by this repository.
 
-Until the license files are added, copyright remains with the author and reuse
-requires written permission. This is tracked as a release blocker in the
-[content inventory](docs/planning/content-inventory.md).
+Commercial reuse of original educational content is allowed under CC BY 4.0
+with attribution. Read [`LICENSES/README.md`](LICENSES/README.md) for the scope,
+attribution wording, and exclusions, and [`licensing-scope.json`](licensing-scope.json)
+for the machine-readable path map. Third-party datasets, dependencies, media,
+and pretrained weights keep their upstream terms; model weights are not covered
+by the repository's MIT licence. The
+[licensing and attribution register](docs/technical/licensing-and-attribution.md)
+records the evidence and the unresolved SSDLite weight terms.
 
 ## Technical documentation
 
@@ -464,6 +542,16 @@ troubleshooting, and content standards are intentionally kept out of this
 student-facing README:
 
 - [Build and deploy](docs/technical/build-and-deploy.md)
+- [GitHub Pages publication](docs/technical/GITHUB-PAGES.md)
+- [Site maintenance](docs/technical/site-maintenance.md)
+- [Final audit](docs/technical/final-audit.md)
+- [Release-readiness audit](docs/technical/release-readiness-audit.md)
+- [Licensing and attribution register](docs/technical/licensing-and-attribution.md)
+- [Licensing decision package](docs/technical/licensing-decision-package.md)
+- [Independent final licensing audit](docs/technical/final-licensing-audit.md)
+- [Licensing scope coverage](docs/technical/licensing-scope-coverage.md)
+- [Third-party licensing inventory](docs/technical/third-party-inventory.md)
+- [v1 release-candidate checklist](docs/technical/v1-release-candidate-checklist.md)
 - [Maintainer guide](docs/technical/maintainer-guide.md)
 - [Contributing](docs/technical/contributing.md)
 - [Troubleshooting](docs/technical/troubleshooting.md)

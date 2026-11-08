@@ -7,6 +7,14 @@ its risks, and present it.
 A capstone is not "a model that runs once." It is a reproducible system with
 evidence.
 
+!!! info "Twelve detailed specifications"
+    This page states the M17 requirements and the acceptance rules. The full
+    briefs - scope, data, milestones, rubric, report outline, demo checklist - are
+    in the [project index](projects/index.md), with a
+    [report template](projects/report-template.md) and a
+    [completion checklist](projects/completion-checklist.md). Start there if you
+    are choosing a project.
+
 ## Eligibility
 
 You should have completed, or be able to demonstrate the outcomes of:
@@ -37,6 +45,10 @@ Every capstone must include:
    script, seeds, and clear run instructions.
 9. **Final report** of 8-12 pages and an 8-10 minute presentation.
 10. **Reflection** on decisions, failures, and next steps.
+
+The five shapes below are the M17 acceptance categories. The
+[project index](projects/index.md) expands them into twelve briefs (P01-P12); any
+brief maps onto one of these shapes, and the requirements on this page still apply.
 
 ## Option A: Domain small-language-model assistant with RAG {#project-a}
 
@@ -177,28 +189,37 @@ over-trust in model output.
 ```text
 projects/<your-name>/capstone/
   README.md
-  proposal.md
+  requirements.txt
+  configs/
   data/
-    dataset-card.md
-    download.md          # link or script; no raw data committed
+    ...                    # download or generation script; no raw data committed
   notebooks/
     01-data-audit.ipynb
     02-baseline.ipynb
     03-model.ipynb
     04-evaluation.ipynb
   src/
-    ...
   tests/
-    ...
-  reports/
-    final-report.md
+  outputs/
+  artifacts/
+  submission/
+    project-scope.md
+    dataset-card.md
+    experiments.csv
     model-card.md
-    security-review.md
+    evaluation-report.md
+    threat-and-responsible-use-review.md
+    reproducibility.md
+    README.md
+    release-notes.md
+    final-report.md
   demo/
     app.py
-  requirements.txt
-  reflection.md
 ```
+
+Every capstone submits the same ten files in `submission/`. Copy them from the
+[capstone submission package](projects/submission-package.md), which also
+maps each file to the three checkpoint gates and provides the final checklist.
 
 Do not commit datasets, model weights, API keys, or personal data. Provide
 download scripts and checksums instead.

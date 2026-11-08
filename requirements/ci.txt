@@ -1,0 +1,13 @@
+# Complete CPU-only environment used by .github/workflows/validate-docs.yml.
+#
+# The union is deliberate: the unit suite imports the foundation, vision, audio,
+# and video packages, so a CI image that installs only one section would skip
+# real tests. Every file below is CPU-only; no GPU wheel, Hugging Face download,
+# or paid API is required.
+#
+# Install from the repository root:
+#   python -m pip install -r requirements/ci.txt
+-r cpu.txt
+-r vision.txt
+-r audio.txt
+-r video.txt

@@ -1,0 +1,33 @@
+{
+  "_comment": "Default configuration for lab7_video_analytics.py. Override any of these on the command line.",
+  "video": "street_day",
+  "stride": 1,
+  "limit": null,
+  "model": "tiny",
+  "score_threshold": 0.5,
+  "nms_iou": 0.3,
+  "tracking": {
+    "enabled": true,
+    "max_age": 6,
+    "min_hits": 2,
+    "iou_threshold": 0.3
+  },
+  "counting": {
+    "enabled": true,
+    "line": {
+      "kind": "vertical",
+      "at": 0.55,
+      "anchor": "bottom"
+    }
+  },
+  "output": {
+    "video": "outputs/lab7_analytics.mp4",
+    "summary": "outputs/lab7_summary.json",
+    "fourcc": "mp4v",
+    "draw_trails": true
+  },
+  "runtime": {
+    "warn_below_fps": 5.0,
+    "max_frames_without_detection": 30
+  }
+}

@@ -4,6 +4,13 @@ Assessment in this course is designed to produce evidence of capability, not a
 single exam score. Every module ends with a small artifact; the capstone combines
 them into a defensible system.
 
+!!! info "Question banks and solutions"
+    Ready-to-use quizzes, code-reading exercises, debugging challenges, scenarios,
+    lab assessments, and revision questions are in the
+    [assessment bank](assessments/index.md). Answer keys live in a separate
+    [solutions folder](assessments/solutions/index.md). None of it is graded or
+    verified; the rubrics exist for self-assessment.
+
 !!! note "Self-study and formal credit"
     This public course is built for self-study. Completing it does **not**
     automatically grant university credit or a certificate. Enrolled students

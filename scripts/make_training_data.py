@@ -1,4 +1,4 @@
-"""Generate the synthetic datasets used by the T01-T10 and P01-P08 units.
+"""Generate the synthetic datasets used by the M04-M08 training units.
 
 All data is synthetic and released CC0-1.0. No personal data, scraped text, or
 third-party content is used. The generator is deterministic for a fixed seed.
@@ -86,14 +86,25 @@ RESOLUTION_NOTES = {
 
 def _make_tickets(rng: random.Random) -> tuple[pd.DataFrame, pd.DataFrame]:
     rows: list[dict] = []
+    seen_text: set[str] = set()
     ticket_id = 1000
     for customer_index in range(100):
         customer_id = f"C{customer_index:03d}"
         for label in ("billing", "technical", "account"):
             for _ in range(2):
-                template = rng.choice(TICKET_TEMPLATES[label])
-                order = rng.randint(10000, 99999)
-                text = template.format(order=order)
+                # Several templates contain no ``{order}`` placeholder, so two
+                # draws of the same template would render identical text.
+                # Redraw until the rendered ticket is new: ten templates times
+                # 90k order numbers leaves plenty of headroom.
+                for _attempt in range(100):
+                    template = rng.choice(TICKET_TEMPLATES[label])
+                    order = rng.randint(10000, 99999)
+                    text = template.format(order=order)
+                    if text not in seen_text:
+                        break
+                else:  # pragma: no cover - defensive, cannot trigger here
+                    raise RuntimeError(f"could not render a unique {label} ticket")
+                seen_text.add(text)
                 rows.append(
                     {
                         "ticket_id": f"T{ticket_id}",

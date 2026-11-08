@@ -52,5 +52,8 @@ public issues.
 
 The course content is authored and maintained by the instructor with
 contributions from students and reviewers. Contribution standards are documented
-in [Contributing](../technical/contributing.md). Licensing is described in the
-repository README and is pending final approval.
+in [Contributing](../technical/contributing.md). The instructor approved the
+licensing architecture on 2026-11-07: MIT for original code, CC BY 4.0 for
+original educational content, and CC0 1.0 for verified original synthetic data.
+Third-party material keeps its upstream terms. See
+[LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md).

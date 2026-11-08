@@ -12,14 +12,21 @@ Professor in the Department of Data Science (PUCIT), University of the Punjab,
 Lahore, Pakistan.
 
 !!! warning "Course status"
-    **The foundation sequence F01-F13 is published** as complete lessons with
-    executable notebooks, labs, and assessments. It delivers the approved M01-M03
-    material at a more granular pace plus a pre-M01 Python unit. All foundation
-    notebooks were executed on Windows 11 CPU; Google Colab and GPU verification
-    are still pending. M04-M17 currently publish their plans only. Check the
-    [lessons index](lessons/index.md) and
-    [implementation phases](planning/implementation-phases.md) for the current
-    state.
+    **All eighteen modules now have published learning material.** The foundation
+    sequence F01-F13 delivers M01-M03 with executable notebooks, labs, and
+    assessments. Five sections cover the rest: [Model Training](lessons/model-training/index.md)
+    (M04-M05), [LLM Fine-Tuning](lessons/llm-fine-tuning/index.md) (M06-M08),
+    [AI Agents](lessons/ai-agents/index.md) (M15), [Production](lessons/production/index.md)
+    (M16), and [Capstone](lessons/capstone/index.md) (M17). The applied slices
+    [Conversational AI](lessons/chatbots-rag/index.md) (M09-M10),
+    [Computer Vision](lessons/computer-vision/index.md) (M11-M12),
+    [Speech and Audio](lessons/speech-audio/index.md) (M13), and
+    [Video AI](lessons/video-ai/index.md) (M14) remain available as well.
+
+    All seven new notebooks and the thirteen foundation notebooks were executed on
+    Windows 11 CPU. Google Colab and GPU execution are still pending and are
+    documented as limitations. Check the [lessons index](lessons/index.md) for
+    per-section execution status.
 
 ## What this course teaches, and why
 
@@ -268,21 +275,21 @@ the objectives, practical work, and rubric; it is not a finished lesson.
 
     ---
 
-    18 h · GPU recommended · Plan
+    18 h · GPU recommended · **Published**
 
     Train a CNN, augment data, tune hyperparameters, and log experiments.
 
-    [Read the plan](syllabus/level-1-foundations.md#m04)
+    [Open M04-M05](lessons/model-training/index.md)
 
 -   **M05 · Dataset preparation, labeling, cleaning, and augmentation**
 
     ---
 
-    14 h · CPU-only · Plan
+    14 h · CPU-only · **Published**
 
     Labeling guidelines, quality checks, augmentation, and dataset cards.
 
-    [Read the plan](syllabus/level-1-foundations.md#m05)
+    [Open M04-M05](lessons/model-training/index.md)
 
 </div>
 
@@ -294,51 +301,51 @@ the objectives, practical work, and rubric; it is not a finished lesson.
 
     ---
 
-    18 h · CPU or GPU · Plan
+    18 h · CPU or GPU · **Published**
 
     Tokenization, attention, transformer blocks, and a tiny language model.
 
-    [Read the plan](syllabus/level-2-language.md#m06)
+    [Open M06-M08](lessons/llm-fine-tuning/index.md)
 
 -   **M07 · Small language models and supervised fine-tuning**
 
     ---
 
-    24 h · GPU required · Plan
+    24 h · GPU required · **Published**
 
     Format instruction data, fine-tune a small model, and evaluate it.
 
-    [Read the plan](syllabus/level-2-language.md#m07)
+    [Open M06-M08](lessons/llm-fine-tuning/index.md)
 
 -   **M08 · LoRA, QLoRA, quantization, and efficient training**
 
     ---
 
-    18 h · GPU required · Plan
+    18 h · GPU required · **Published**
 
     Compare adapters and quantization on memory, quality, and cost.
 
-    [Read the plan](syllabus/level-2-language.md#m08)
+    [Open M06-M08](lessons/llm-fine-tuning/index.md)
 
 -   **M09 · Chatbots and conversational applications**
 
     ---
 
-    16 h · CPU or GPU · Plan
+    16 h · CPU or GPU · **Published**
 
     Prompting, conversation state, guardrails, and chatbot evaluation.
 
-    [Read the plan](syllabus/level-2-language.md#m09)
+    [Open Conversational AI](lessons/chatbots-rag/index.md)
 
 -   **M10 · Embeddings, vector search, and RAG**
 
     ---
 
-    18 h · CPU-only · Plan
+    18 h · CPU-only · **Published**
 
     Embed documents, retrieve evidence, generate with citations, and evaluate.
 
-    [Read the plan](syllabus/level-2-language.md#m10)
+    [Open Conversational AI](lessons/chatbots-rag/index.md)
 
 </div>
 
@@ -350,41 +357,41 @@ the objectives, practical work, and rubric; it is not a finished lesson.
 
     ---
 
-    18 h · GPU recommended · Plan
+    18 h · CPU-only · **Published**
 
     Transfer learning, augmentation, domain shift, and honest evaluation.
 
-    [Read the plan](syllabus/level-3-vision-video.md#m11)
+    [Open Computer Vision](lessons/computer-vision/index.md)
 
 -   **M12 · Object detection, tracking, and transfer learning**
 
     ---
 
-    20 h · GPU required · Plan
+    20 h · CPU-only · **Published**
 
     Detection metrics, tracking, annotation quality, and deployment limits.
 
-    [Read the plan](syllabus/level-3-vision-video.md#m12)
+    [Open Computer Vision](lessons/computer-vision/index.md)
 
 -   **M13 · Speech recognition, audio classification, and speech generation**
 
     ---
 
-    22 h · GPU recommended · Plan
+    22 h · CPU-only · **Published**
 
     ASR, audio classification, speech generation, and WER/CER evaluation.
 
-    [Read the plan](syllabus/level-3-vision-video.md#m13)
+    [Open Speech and Audio](lessons/speech-audio/index.md)
 
 -   **M14 · Video understanding and video analytics**
 
     ---
 
-    22 h · GPU recommended · Plan
+    22 h · CPU-only · **Published**
 
     Frame sampling, tracking, temporal reasoning, and privacy-preserving analytics.
 
-    [Read the plan](syllabus/level-3-vision-video.md#m14)
+    [Open Video AI](lessons/video-ai/index.md)
 
 </div>
 
@@ -396,11 +403,11 @@ the objectives, practical work, and rubric; it is not a finished lesson.
 
     ---
 
-    24 h · CPU or API · Plan
+    24 h · CPU-only core · **Published**
 
     Tools, memory, permissions, failure handling, observability, and agent evaluation.
 
-    [Read the plan](syllabus/level-4-agents.md#m15)
+    [Open AI Agents](lessons/ai-agents/index.md)
 
 </div>
 
@@ -412,21 +419,21 @@ the objectives, practical work, and rubric; it is not a finished lesson.
 
     ---
 
-    20 h · CPU-only · Plan
+    20 h · CPU-only · **Published**
 
     Evaluation design, red teaming, privacy, packaging, deployment, and monitoring.
 
-    [Read the plan](syllabus/level-5-production.md#m16)
+    [Open Production](lessons/production/index.md)
 
 -   **M17 · Integrated capstone**
 
     ---
 
-    40 h · Depends on option · Plan
+    40 h · Depends on option · **Published**
 
     Propose, build, evaluate, document, and demonstrate a complete AI system.
 
-    [Read the plan](syllabus/level-5-production.md#m17)
+    [Open Capstone](lessons/capstone/index.md)
 
 </div>
 
@@ -569,17 +576,24 @@ code and the exact page or notebook.
 
 ## License and attribution
 
-Course materials are intended for open educational use. A formal license has
-**not yet been approved and committed**. The recommended split is:
+AITopics uses a multi-licence structure approved by the instructor on
+2026-11-07:
 
-- **Code and notebooks:** MIT License.
-- **Prose, diagrams, and course text:** Creative Commons Attribution 4.0
+- **Original source code:** MIT License.
+- **Original educational content** (lessons, documentation, labs, notebooks,
+  templates, and diagrams): Creative Commons Attribution 4.0 International
   (CC BY 4.0), with attribution to the instructor.
+- **Original synthetic datasets:** CC0 1.0 Universal, where provenance has been
+  verified.
+- **Third-party material:** its own original licence and terms; it is not
+  relicensed by this repository.
 
-Until the license files are added, copyright remains with the author and reuse
-requires written permission. See the
-[licensing decision](planning/repository-architecture.md#licensing) and the
-[content inventory](planning/content-inventory.md) for the release blocker.
+Commercial reuse of original educational content is allowed under CC BY 4.0
+with attribution. Read
+[LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md)
+for the scope and attribution wording, and see the
+[licensing and attribution register](technical/licensing-and-attribution.md) for
+the evidence, third-party exclusions, and unresolved SSDLite weight terms.
 
 ## Course status and maintenance
 
@@ -589,11 +603,12 @@ requires written permission. See the
 | Foundation Google Colab verification | Pending |
 | Foundation GPU execution | Not executed; optional paths documented |
 | F02 (M01) lesson, notebook, lab, assessment | Published; notebook verified on Windows 11 |
-| M04-M17 plans | Published |
-| M04-M17 lessons and notebooks | In development |
+| Conversational AI (M09-M10), Computer Vision (M11-M12), Speech and Audio (M13), Video AI (M14) | Published: lessons, labs, assessments, runnable code, measured results |
+| M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven new notebooks executed on Windows 11 CPU |
+| Model-training and LLM notebooks on GPU | Not executed; CPU paths complete, GPU/pretrained paths documented as optional |
 | Documentation build | Verified locally with `mkdocs build --strict` |
-| Documentation site deployment | Not yet enabled |
-| License files | Pending instructor approval |
+| Documentation site deployment | Workflows configured; first Pages deployment not yet run |
+| License files | Implemented and verified locally on 2026-11-07 (MIT, CC BY 4.0, CC0 1.0) |
 
 Maintainers and contributors should read the
 [repository architecture](planning/repository-architecture.md),

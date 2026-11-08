@@ -79,22 +79,18 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/production/m16_production.ipynb`
+**Notebook:** `notebooks/production/m16_production.ipynb`, executed on Windows 11
+CPU. The lesson sequence is [PR01-PR05](../lessons/production/index.md).
 
-The notebook will:
+The notebook evaluates a churn classifier with Wilson intervals and a bootstrap,
+builds a reliability table and fits temperature scaling, computes PSI for two live
+windows, measures a guard on attacks and benign requests, renders and audits a model
+card, writes and verifies a manifest, tampers with a copy to show detection, and
+serves the artifact on loopback while measuring p50 and p95 latency.
 
-1. Take a small model or RAG pipeline from an earlier module.
-2. Write an evaluation plan with metrics, slices, and failure criteria.
-3. Build a FastAPI service with input validation and structured errors.
-4. Add tests for normal, edge, and malicious inputs.
-5. Containerize the service and run it locally.
-6. Measure latency, throughput, and memory.
-7. Add structured logs and a health endpoint.
-8. Run a red-team checklist and record findings.
-9. Draft a model card and a rollback plan.
+**Data:** the course's synthetic churn table; no personal data.
 
-**Hardware:** CPU-only for small models and RAG; a GPU is optional for serving
-larger models.
+**Hardware:** CPU-only; the serving step binds a loopback HTTP port.
 
 ### Independent lab
 

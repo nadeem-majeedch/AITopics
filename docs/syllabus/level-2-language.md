@@ -68,23 +68,21 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/llm-fine-tuning/m06_transformers.ipynb`
+**Notebook:** `notebooks/llm-fine-tuning/m06_transformers.ipynb`, executed on
+Windows 11 CPU. The lesson sequence is
+[LF01-LF04](../lessons/llm-fine-tuning/index.md).
 
-The notebook will:
+The notebook builds a character tokenizer and a small BPE tokenizer on the same
+synthetic corpus, implements scaled dot-product attention and a transformer block,
+trains a 239,040-parameter decoder-only model for 400 steps, and measures training
+and validation loss and perplexity. It also inspects an attention map and generated
+samples.
 
-1. Train a character-level tokenizer and a small BPE tokenizer on the same corpus.
-2. Compare vocabulary size, sequence length, and compression.
-3. Implement causal self-attention and a transformer block.
-4. Assemble and train a tiny decoder-only model.
-5. Compute training and validation loss and perplexity.
-6. Generate text with different temperatures and top-p values.
-7. Probe memorization by comparing train and validation continuations.
-8. Visualize an attention map and interpret it cautiously.
+**Dataset:** 2,200 synthetic sentences from a fixed grammar, generated locally
+under CC0-1.0; nothing is downloaded.
 
-**Dataset:** TinyShakespeare (public domain) for the core path. TinyStories may
-be used as an optional larger corpus; verify its current license.
-
-**Hardware:** A tiny model trains on CPU in minutes; a GPU makes the lab faster.
+**Hardware:** CPU-only (about 25 seconds of training in the recorded run); a GPU is
+optional.
 
 ### Independent lab
 
@@ -186,27 +184,22 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb`
+**Notebook:** `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb`, executed on
+Windows 11 CPU. The lesson sequence is
+[LF05-LF07](../lessons/llm-fine-tuning/index.md).
 
-The notebook will:
+The notebook builds a character-level base model on synthetic FAQ text, applies one
+chat template at training and inference, shifts labels and masks prompt tokens, then
+fine-tunes on 120 instruction pairs. It evaluates exact match, first-12-token
+accuracy, word F1, and forgetting on a retained task, with 16 validation and 16 test
+pairs split by question template.
 
-1. Inspect a small instruct model's tokenizer, chat template, and license.
-2. Build 500-1,000 instruction examples from owned course content.
-3. Validate roles, token lengths, duplicates, and template rendering.
-4. Create a held-out set of 50 prompts before training.
-5. Fine-tune with the Hugging Face `Trainer` or TRL `SFTTrainer`.
-6. Log loss, learning rate, and GPU memory.
-7. Compare base and tuned models on the held-out prompts.
-8. Score outputs with a rubric plus a small human spot check.
-9. Write a model card.
+**Dataset:** synthetic FAQ pairs generated locally under CC0-1.0. Splits are
+disjoint by question template, not by topic.
 
-**Suggested base models:** SmolLM2-360M-Instruct, Qwen2.5-0.5B-Instruct, or a
-similar small instruct model. Verify each model's license and terms.
-
-**Dataset:** course-owned FAQ or documentation; no personal or copyrighted data.
-
-**Hardware:** GPU required for the core path. A free T4 with 16 GB VRAM is
-sufficient for a 0.5B model with small batches and gradient accumulation.
+**Hardware:** CPU-only (about 30 seconds of training in the recorded run). The
+optional Hugging Face instruct-model path needs a GPU and is documented as
+unexecuted here.
 
 ### Independent lab
 
@@ -314,21 +307,19 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb`
+**Notebook:** `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb`, executed on
+Windows 11 CPU. The lesson sequence is
+[LF08-LF10](../lessons/llm-fine-tuning/index.md).
 
-The notebook will:
+The notebook attaches a rank-4 LoRA adapter to the local tiny model, compares its
+quality and parameter count with full fine-tuning, merges the adapter and measures
+the merge delta, then quantizes the base to int8 and int4 and reports size,
+accuracy, and per-item agreement. It ends with the export and serving contract.
 
-1. Load a small instruct model in 4-bit mode.
-2. Attach a LoRA adapter and print trainable parameter counts.
-3. Train on a small SFT dataset with QLoRA.
-4. Measure peak GPU memory and runtime.
-5. Compare LoRA and QLoRA settings on the same evaluation set.
-6. Merge the adapter into the base model.
-7. Export a GGUF or run a quantized inference path.
-8. Measure latency and quality before and after quantization.
+**Dataset:** the synthetic FAQ pairs from M07.
 
-**Hardware:** GPU required. Use a free T4 or better. Native Windows may require
-a bitsandbytes workaround; Colab or WSL2 is the reliable path.
+**Hardware:** CPU-only. The optional 4-bit Hugging Face/bitsandbytes path needs a
+GPU and a model download; it is documented as optional and was not executed here.
 
 ### Independent lab
 
@@ -431,9 +422,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/chatbots-rag/m09_chatbot.ipynb`
+**Section:** [chatbots-rag](../lessons/chatbots-rag/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Load a small local instruct model or connect to an optional hosted model.
 2. Implement a chat loop with a system prompt and bounded history.
@@ -545,9 +536,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/chatbots-rag/m10_rag.ipynb`
+**Section:** [chatbots-rag](../lessons/chatbots-rag/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Curate a small corpus of course-owned documents.
 2. Parse and chunk with metadata (title, section, source, URL).

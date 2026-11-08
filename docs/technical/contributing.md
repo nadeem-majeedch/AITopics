@@ -4,10 +4,12 @@ Contributions improve the course for everyone. This page explains how to report
 problems, propose content, and submit changes without creating legal or technical
 problems.
 
-!!! warning "Licensing is pending"
-    The course license has not been approved. Small corrections and issue reports
-    are welcome now. Large code or content contributions may be deferred until
-    the contribution terms are clear. Ask before investing significant work.
+!!! info "Licensing"
+    Original code is MIT-licensed, original educational content is CC BY 4.0,
+    and verified original synthetic datasets are CC0 1.0. Third-party material
+    keeps its upstream terms. Read
+    [LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md)
+    before reusing or contributing material.
 
 ## Ways to contribute
 
@@ -66,7 +68,9 @@ Open an issue with these answers before writing the content.
 
 ```bash
 python -m mkdocs build --strict
-python -m pytest
+python scripts/check_licensing.py
+python -m unittest discover -s tests -v
+python scripts/check_notebooks.py --validate
 ```
 
 4. Add or update tests for code changes.
@@ -192,9 +196,12 @@ disclosure.
 
 ## Licensing of contributions
 
-The course license is pending. Until it is approved, do not assume that
-contributions will be relicensed. For substantial contributions, wait for the
-instructor's guidance.
+Contribute only material you have the right to license. Original code
+contributions are accepted under MIT, and original educational content under
+CC BY 4.0, consistent with the files they modify. Third-party material must
+retain its original licence and attribution; state the source and terms in the
+pull request. If you cannot grant these terms, open an issue before investing
+significant work.
 
 ## Questions
 

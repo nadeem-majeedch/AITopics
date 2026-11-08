@@ -17,7 +17,7 @@ remote repository referenced in the task.
 | GitHub Pages | Not configured; no deployment files found |
 | Documentation framework | None found |
 | Notebooks, tests, workflows | None found |
-| License files | None found |
+| License files | None found at the initial audit; implemented and verified 2026-11-07 |
 | Existing completed work | None accessible |
 
 **Implication:** this phase created the architecture from scratch. If a private
@@ -93,8 +93,9 @@ AITopics/
 ├── CONTRIBUTING.md                   planned     Short GitHub-facing pointer
 ├── CODE_OF_CONDUCT.md                planned     Community expectations
 ├── SECURITY.md                       planned     Vulnerability reporting
-├── LICENSE                           blocked     Pending instructor approval
-├── LICENSES/                         blocked     Code and prose license texts
+├── LICENSE                           available   MIT text for original source code
+├── LICENSES/                         available   CC BY 4.0 and CC0 1.0 texts, scope map, synthetic-data record
+├── licensing-scope.json              available   Machine-readable scope and exceptions
 ├── docs/
 │   ├── index.md                      available   Course home
 │   ├── course/                       available   Roadmap, paths, study guide, conventions, assessment, projects, FAQ
@@ -360,15 +361,17 @@ level. Do not add empty pages to navigation to "reserve" space.
 | Documentation framework | MkDocs Material | Fast static build, built-in search, Mermaid, tabs, good Windows support, simple GitHub Pages deployment. Material 9.8.0 reports end of life on 2027-05-05; Zensical is its successor and must be evaluated before then. |
 | Alternative rejected | Jupyter Book | Strong notebook integration but heavier; notebooks are already separate and not all lessons need execution |
 | Alternative rejected | Sphinx | Better for API reference than a linear course; steeper contribution curve |
-| Hosting | GitHub Pages via Actions (planned) | Free, static, versioned with the repository |
+| Hosting | GitHub Pages via Actions | Free, static, versioned with the repository |
 | Notebook execution | Separate from docs build | Avoids long, GPU-dependent site builds; execution is a content QA step |
 | Versioning | Git tags and course editions | Simple; versioned docs can be added later if needed |
 | Search | MkDocs built-in | No external service or tracking |
 | Analytics | None by default | Student privacy; add only with consent and documentation |
 | Comments | GitHub Issues | Avoids third-party tracking and moderation overhead |
 
-`site_url` is intentionally commented out until Pages is enabled. The build does
-not claim a live URL.
+`site_url` is set to the project-site URL
+(`https://nadeem-majeedch.github.io/AITopics/`) and the deployment workflow is in
+`.github/workflows/deploy-pages.yml`. No deployment has been run, so no live URL
+is claimed. See [GitHub Pages publication](../technical/GITHUB-PAGES.md).
 
 ## Security and privacy
 
@@ -385,14 +388,19 @@ not claim a live URL.
 
 ## Licensing
 
-Licensing is a release blocker, not a cosmetic file.
+The instructor approved the licensing architecture on 2026-11-07. It is
+implemented and validated locally; instructor review of the final report is
+pending.
 
-- Recommended: MIT for code and notebooks, CC BY 4.0 for prose and diagrams.
-- The instructor must approve the final terms.
-- Third-party datasets, images, models, and quotations keep their own licenses
-  and must be attributed.
-- Until `LICENSE` and `LICENSES/` exist, the repository is not ready for public
-  release, regardless of content quality.
+- MIT for original source code, tests, and build configuration.
+- CC BY 4.0 for original educational content, including lessons, documentation,
+  labs, notebooks, templates, and diagrams.
+- CC0 1.0 for original synthetic datasets after provenance verification.
+- Third-party datasets, images, models, dependencies, and quotations keep their
+  own licences and must be attributed. Pretrained weights are not MIT.
+- `LICENSE`, `LICENSES/`, `licensing-scope.json`, and
+  `scripts/check_licensing.py` define and enforce the scope. CI runs the
+  validator; see the [licensing register](../technical/licensing-and-attribution.md).
 
 ## Extensibility
 

@@ -1,0 +1,14 @@
+# Optional stack for the conversational AI section (chatbots-rag).
+#
+# The core exercises need only requirements/base.txt. Nothing in the offline
+# path (chatbot_core with FakeModelClient + HashingEmbedder) imports these.
+#
+# Install:
+#   python -m pip install -r requirements/cpu.txt
+#   python -m pip install -r requirements/llm.txt
+#
+# sentence-transformers pulls in torch; cpu.txt already provides a CPU-only
+# wheel, so install it first to avoid a CUDA download on a laptop.
+
+streamlit>=1.39,<2
+sentence-transformers>=3.2,<4

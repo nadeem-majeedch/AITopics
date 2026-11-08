@@ -76,26 +76,19 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/ai-agents/m15_agents.ipynb`
+**Notebook:** `notebooks/ai-agents/m15_agents.ipynb`, executed on Windows 11 CPU.
+The lesson sequence is [AG01-AG05](../lessons/ai-agents/index.md).
 
-The notebook will:
+The notebook builds a scripted-model agent harness with three tools, strict
+schemas, a policy with path containment, an approval gate, run budgets, and
+persistent memory with provenance. It demonstrates a `final` run, a
+`repeated_action` stop, `approval_denied`, `policy_denied`, an untrusted-output
+envelope, and a three-task evaluation that scores 2/3 because a negative control
+fails.
 
-1. Define three tools with typed schemas: a calculator, a SQLite query tool with
-   a read-only database, and a document search tool.
-2. Implement a minimal agent loop with a step limit, timeout, and stop condition.
-3. Add tool validation, error messages, and retries.
-4. Add short-term memory and a summarization policy.
-5. Record a trace for every step: thought/action, tool, arguments, result,
-   latency, and tokens.
-6. Run ten development tasks and inspect failures.
-7. Inject a malicious document and a malformed tool response.
-8. Compare the custom loop with a framework implementation at a high level.
+**Tools:** local and sandboxed; no network, payments, or credentials.
 
-**Tools:** local and sandboxed; no real payments, credentials, or external side
-effects.
-
-**Hardware:** CPU is sufficient with a hosted API or a small local model. A local
-large model needs a GPU.
+**Hardware:** CPU-only; no API key is required.
 
 ### Independent lab
 

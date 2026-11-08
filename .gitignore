@@ -15,7 +15,7 @@ env/
 .ruff_cache/
 .coverage
 htmlcov/
-
+.freebuff/
 # -----------------------------------------------------------------------------
 # Jupyter
 # -----------------------------------------------------------------------------
@@ -39,11 +39,16 @@ datasets/*
 !datasets/**/
 !datasets/**/README.md
 datasets/foundations/generated/
+datasets/training/generated/
 models/
 checkpoints/
 runs/
 outputs/
 wandb/
+
+# Model/data caches written by scripts (e.g. TORCH_HOME for the video section)
+.cache/
+**/.cache/
 mlruns/
 *.pt
 *.pth
@@ -75,6 +80,7 @@ mlruns/
 # -----------------------------------------------------------------------------
 .env
 .env.*
+!.env.example
 secrets/
 kaggle.json
 .huggingface/

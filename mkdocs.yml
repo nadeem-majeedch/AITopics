@@ -4,16 +4,18 @@ site_description: >-
   deploying language, vision, speech, video, and agentic AI systems.
 site_author: Engr. Dr. Muhammad Nadeem Majeed
 
-# Provisional URL. Enable it only after GitHub Pages is configured.
-# site_url: https://nadeem-majeedch.github.io/AITopics/
+# GitHub Pages project site. The /AITopics/ prefix is part of the published URL:
+# MkDocs writes relative links, so pages and assets resolve under the prefix.
+# See docs/technical/GITHUB-PAGES.md before changing this value.
+site_url: https://nadeem-majeedch.github.io/AITopics/
 
 repo_url: https://github.com/nadeem-majeedch/AITopics
 repo_name: nadeem-majeedch/AITopics
 edit_uri: edit/main/docs/
 
 copyright: >-
-  Copyright 2026 Engr. Dr. Muhammad Nadeem Majeed. Course licensing is
-  described in the repository README.
+  Copyright (c) 2026 Muhammad Nadeem Majeed. Course licensing is described in
+  the repository README.
 
 theme:
   name: material
@@ -54,8 +56,45 @@ nav:
       - Learning paths: course/learning-paths.md
       - How to study: course/how-to-study.md
       - Course conventions: course/course-conventions.md
-      - Assessments: course/assessments.md
-      - Capstone projects: course/projects.md
+      - Assessments:
+          - Overview: course/assessments/index.md
+          - Weighting and integrity: course/assessments.md
+          - Chapter quizzes: course/assessments/quiz-bank.md
+          - Conceptual questions: course/assessments/conceptual.md
+          - Code-reading exercises: course/assessments/code-reading.md
+          - Debugging challenges: course/assessments/debugging.md
+          - Scenario questions: course/assessments/scenarios.md
+          - Lab assessments: course/assessments/lab-assessments.md
+          - Evaluation exercises: course/assessments/evaluation-exercises.md
+          - Revision questions: course/assessments/revision.md
+          - Solutions:
+              - How to use: course/assessments/solutions/index.md
+              - Quiz answers: course/assessments/solutions/quiz-bank.md
+              - Conceptual answers: course/assessments/solutions/conceptual.md
+              - Code-reading answers: course/assessments/solutions/code-reading.md
+              - Debugging answers: course/assessments/solutions/debugging.md
+              - Scenario answers: course/assessments/solutions/scenarios.md
+              - Lab approaches: course/assessments/solutions/lab-assessments.md
+              - Evaluation working: course/assessments/solutions/evaluation-exercises.md
+              - Revision answers: course/assessments/solutions/revision.md
+      - Capstone projects:
+          - Project index: course/projects/index.md
+          - M17 requirements: course/projects.md
+          - P01 - Tabular prediction: course/projects/p01-tabular-prediction.md
+          - P02 - Text classifier: course/projects/p02-text-classifier.md
+          - P03 - LoRA fine-tuning: course/projects/p03-lora-finetune.md
+          - P04 - Grounded chatbot: course/projects/p04-grounded-chatbot.md
+          - P05 - Local assistant GUI: course/projects/p05-local-assistant-gui.md
+          - P06 - Image classifier: course/projects/p06-image-classifier.md
+          - P07 - Object detector: course/projects/p07-object-detector.md
+          - P08 - Speech transcription: course/projects/p08-speech-transcription.md
+          - P09 - Vehicle analytics: course/projects/p09-video-vehicle-analytics.md
+          - P10 - Garment attributes: course/projects/p10-garment-attributes.md
+          - P11 - Action recognition: course/projects/p11-action-recognition.md
+          - P12 - Tool-using agent: course/projects/p12-tool-using-agent.md
+          - Report template: course/projects/report-template.md
+          - Completion checklist: course/projects/completion-checklist.md
+          - Submission package: course/projects/submission-package.md
       - FAQ: course/faq.md
   - Lessons:
       - lessons/index.md
@@ -126,6 +165,189 @@ nav:
               - Guided notebook: lessons/f13-reproducibility/notebook.md
               - Lab: lessons/f13-reproducibility/lab.md
               - Assessment: lessons/f13-reproducibility/assessment.md
+  - Model Training (M04-M05):
+      - lessons/model-training/index.md
+      - Modules:
+          - 1 - The training loop: lessons/model-training/mt01-training-loop.md
+          - 2 - Loss and optimizer: lessons/model-training/mt02-loss-and-optimizer.md
+          - 3 - Augmentation and regularization: lessons/model-training/mt03-augmentation-and-regularization.md
+          - 4 - Evaluation and error analysis: lessons/model-training/mt04-evaluation-and-error-analysis.md
+          - 5 - Checkpoints and compute: lessons/model-training/mt05-checkpoints-and-compute.md
+          - 6 - Dataset audit: lessons/model-training/mt06-dataset-audit.md
+          - 7 - Cleaning and labels: lessons/model-training/mt07-cleaning-and-labels.md
+          - 8 - Leakage and splits: lessons/model-training/mt08-leakage-and-splits.md
+          - 9 - Label noise: lessons/model-training/mt09-label-noise.md
+          - 10 - Dataset cards: lessons/model-training/mt10-dataset-cards.md
+      - Labs:
+          - 1 - Training ablation: lessons/model-training/labs/lab-1-training-ablation.md
+          - 2 - Dataset audit: lessons/model-training/labs/lab-2-dataset-audit.md
+      - Assessment: lessons/model-training/assessment.md
+  - LLM Fine-Tuning (M06-M08):
+      - lessons/llm-fine-tuning/index.md
+      - Modules:
+          - 1 - Tokens and embeddings: lessons/llm-fine-tuning/lf01-tokens-and-embeddings.md
+          - 2 - Attention: lessons/llm-fine-tuning/lf02-attention.md
+          - 3 - The transformer block: lessons/llm-fine-tuning/lf03-transformer-block.md
+          - 4 - Tiny language model training: lessons/llm-fine-tuning/lf04-tiny-lm-training.md
+          - 5 - SFT data and templates: lessons/llm-fine-tuning/lf05-sft-data-and-templates.md
+          - 6 - SFT loss and masking: lessons/llm-fine-tuning/lf06-sft-loss-and-masking.md
+          - 7 - Evaluating assistants: lessons/llm-fine-tuning/lf07-evaluating-assistants.md
+          - 8 - LoRA: lessons/llm-fine-tuning/lf08-lora.md
+          - 9 - Quantization and QLoRA: lessons/llm-fine-tuning/lf09-quantization-and-qlora.md
+          - 10 - Merging and serving: lessons/llm-fine-tuning/lf10-merging-and-serving.md
+      - Labs:
+          - 1 - Tiny language model: lessons/llm-fine-tuning/labs/lab-1-tiny-lm.md
+          - 2 - SFT and LoRA: lessons/llm-fine-tuning/labs/lab-2-sft-and-lora.md
+          - 3 - Efficiency report: lessons/llm-fine-tuning/labs/lab-3-efficiency-report.md
+      - Assessment: lessons/llm-fine-tuning/assessment.md
+  - Conversational AI:
+      - lessons/chatbots-rag/index.md
+      - Modules:
+          - 1 - What a chatbot is: lessons/chatbots-rag/ca01-what-is-a-chatbot.md
+          - 2 - Rules, retrieval, and generation: lessons/chatbots-rag/ca02-chatbot-types.md
+          - 3 - Calling a model from Python: lessons/chatbots-rag/ca03-calling-a-model.md
+          - 4 - History and context windows: lessons/chatbots-rag/ca04-history-and-context.md
+          - 5 - Prompts and structured output: lessons/chatbots-rag/ca05-prompts-and-structured-output.md
+          - 6 - Streamlit interface: lessons/chatbots-rag/ca06-streamlit-interface.md
+          - 7 - Running a model locally: lessons/chatbots-rag/ca07-local-models.md
+          - 8 - Hosted API, optional: lessons/chatbots-rag/ca08-hosted-api.md
+          - 9 - Embeddings and similarity: lessons/chatbots-rag/ca09-embeddings.md
+          - 10 - Chunking and metadata: lessons/chatbots-rag/ca10-chunking.md
+          - 11 - Vector search and retrieval: lessons/chatbots-rag/ca11-vector-search.md
+          - 12 - Retrieval-augmented generation: lessons/chatbots-rag/ca12-rag.md
+          - 13 - Citations and abstention: lessons/chatbots-rag/ca13-citations-and-abstention.md
+          - 14 - Evaluation and error analysis: lessons/chatbots-rag/ca14-evaluation.md
+          - 15 - Fine-tuned models: lessons/chatbots-rag/ca15-fine-tuned-models.md
+          - 16 - Privacy and deployment: lessons/chatbots-rag/ca16-privacy-and-deployment.md
+      - Projects:
+          - A - Rule-based FAQ bot: lessons/chatbots-rag/projects/a-faq-bot.md
+          - B - Simple LLM chatbot: lessons/chatbots-rag/projects/b-llm-chatbot.md
+          - C - Streamlit app: lessons/chatbots-rag/projects/c-streamlit-app.md
+          - D - Local-model chatbot: lessons/chatbots-rag/projects/d-local-model.md
+          - E - Course-documents bot: lessons/chatbots-rag/projects/e-course-docs-bot.md
+          - F - Cited assistant: lessons/chatbots-rag/projects/f-cited-assistant.md
+          - G - Evaluation harness: lessons/chatbots-rag/projects/g-evaluation.md
+          - H - Domain assistant: lessons/chatbots-rag/projects/h-domain-assistant.md
+      - Assessment: lessons/chatbots-rag/assessment.md
+  - Computer Vision:
+      - lessons/computer-vision/index.md
+      - Modules:
+          - 1 - Images, pixels, channels: lessons/computer-vision/cv01-digital-images.md
+          - 2 - Datasets and annotations: lessons/computer-vision/cv02-datasets-and-annotation-formats.md
+          - 3 - Preprocessing and augmentation: lessons/computer-vision/cv03-preprocessing-and-augmentation.md
+          - 4 - Convolutional networks: lessons/computer-vision/cv04-convolutional-networks.md
+          - 5 - Classification from scratch: lessons/computer-vision/cv05-classification-from-scratch.md
+          - 6 - Transfer learning: lessons/computer-vision/cv06-transfer-learning.md
+          - 7 - Fine-tuning: lessons/computer-vision/cv07-fine-tuning.md
+          - 8 - Training detectors: lessons/computer-vision/cv08-training-detectors.md
+          - 9 - Boxes, IoU, and mAP: lessons/computer-vision/cv09-boxes-iou-map.md
+          - 10 - Segmentation: lessons/computer-vision/cv10-segmentation.md
+          - 11 - Faces, detection vs recognition: lessons/computer-vision/cv11-face-detection-vs-recognition.md
+          - 12 - Embeddings and similarity: lessons/computer-vision/cv12-embeddings-and-similarity.md
+          - 13 - Optimization and inference: lessons/computer-vision/cv13-optimization-and-inference.md
+          - 14 - Evaluation and deployment: lessons/computer-vision/cv14-evaluation-robustness-deployment.md
+      - Labs:
+          - 1 - Licensed dataset classifier: lessons/computer-vision/labs/lab1-licensed-dataset-classifier.md
+          - 2 - CNN and learning curves: lessons/computer-vision/labs/lab2-cnn-learning-curves.md
+          - 3 - Scratch vs transfer: lessons/computer-vision/labs/lab3-scratch-vs-transfer.md
+          - 4 - Fine-tune everyday objects: lessons/computer-vision/labs/lab4-finetune-everyday-objects.md
+          - 5 - Annotate and train a detector: lessons/computer-vision/labs/lab5-annotate-and-train-detector.md
+          - 6 - Detector thresholds: lessons/computer-vision/labs/lab6-detector-thresholds.md
+          - 7 - Image similarity app: lessons/computer-vision/labs/lab7-similarity-app.md
+          - 8 - Latency and size: lessons/computer-vision/labs/lab8-deployment-comparison.md
+      - Face exercises: lessons/computer-vision/faces.md
+      - Model and dataset cards: lessons/computer-vision/model-card.md
+      - Assessment: lessons/computer-vision/assessment.md
+  - Speech and Audio:
+      - lessons/speech-audio/index.md
+      - Modules:
+          - 1 - Audio fundamentals: lessons/speech-audio/sa01-audio-fundamentals.md
+          - 2 - Loading and preprocessing: lessons/speech-audio/sa02-loading-and-preprocessing.md
+          - 3 - Waveforms, spectrograms, Mel: lessons/speech-audio/sa03-waveform-spectrogram-mel.md
+          - 4 - Segmentation and datasets: lessons/speech-audio/sa04-segmentation-and-datasets.md
+          - 5 - Classical classification: lessons/speech-audio/sa05-classical-classification.md
+          - 6 - Neural audio classifier: lessons/speech-audio/sa06-neural-audio-classifier.md
+          - 7 - ASR and speech to text: lessons/speech-audio/sa07-asr-and-stt.md
+          - 8 - Word error rate: lessons/speech-audio/sa08-wer-and-transcription-evaluation.md
+          - 9 - Adapting a pretrained model: lessons/speech-audio/sa09-adapting-pretrained-asr.md
+          - 10 - Text to speech: lessons/speech-audio/sa10-tts-and-speech-generation.md
+          - 11 - Speaker embeddings and diarization: lessons/speech-audio/sa11-speaker-embeddings-and-diarization.md
+          - 12 - Audio event detection: lessons/speech-audio/sa12-audio-event-detection.md
+          - 13 - Voice-enabled chatbot: lessons/speech-audio/sa13-voice-chatbot.md
+          - 14 - Optimization and deployment: lessons/speech-audio/sa14-optimization-and-deployment.md
+      - Labs:
+          - A - Environmental sound classifier: lessons/speech-audio/labs/lab-a-environmental-sound-classifier.md
+          - B - Waveform vs spectrogram: lessons/speech-audio/labs/lab-b-waveform-vs-spectrogram.md
+          - C - Transcribe a short clip: lessons/speech-audio/labs/lab-c-transcribe-clip.md
+          - D - WER evaluation: lessons/speech-audio/labs/lab-d-wer-evaluation.md
+          - E - Adapt a pretrained model: lessons/speech-audio/labs/lab-e-adaptation.md
+          - F - Speech-to-text interface: lessons/speech-audio/labs/lab-f-stt-interface.md
+          - G - Voice chatbot: lessons/speech-audio/labs/lab-g-voice-chatbot.md
+          - H - Speed vs quality: lessons/speech-audio/labs/lab-h-model-comparison.md
+      - Ethics and consent: lessons/speech-audio/ethics-and-consent.md
+      - Model cards: lessons/speech-audio/model-card.md
+      - Assessment: lessons/speech-audio/assessment.md
+  - Video AI:
+      - lessons/video-ai/index.md
+      - Modules:
+          - 1 - Digital video: lessons/video-ai/vd01-digital-video.md
+          - 2 - Reading and writing: lessons/video-ai/vd02-reading-and-writing.md
+          - 3 - Frame extraction and datasets: lessons/video-ai/vd03-frame-extraction-and-datasets.md
+          - 4 - Labelling and annotation formats: lessons/video-ai/vd04-labelling-and-annotation-formats.md
+          - 5 - Image models vs temporal models: lessons/video-ai/vd05-image-vs-temporal-models.md
+          - 6 - Detection on frames: lessons/video-ai/vd06-detection-on-frames.md
+          - 7 - Tracking and track IDs: lessons/video-ai/vd07-tracking-and-track-ids.md
+          - 8 - Counting and traffic flow: lessons/video-ai/vd08-counting-and-traffic-flow.md
+          - 9 - Vehicle classification and adaptation: lessons/video-ai/vd09-vehicle-classification-and-adaptation.md
+          - 10 - Clothing and appearance: lessons/video-ai/vd10-clothing-and-appearance.md
+          - 11 - Action recognition: lessons/video-ai/vd11-action-recognition.md
+          - 12 - Video classification and events: lessons/video-ai/vd12-video-classification-and-events.md
+          - 13 - Fine-tuning for video: lessons/video-ai/vd13-fine-tuning.md
+          - 14 - Evaluation and deployment: lessons/video-ai/vd14-evaluation-and-deployment.md
+          - 15 - Responsible video analytics: lessons/video-ai/vd15-responsible-video-analytics.md
+      - Labs:
+          - 1 - Video preprocessing: lessons/video-ai/labs/lab-1-preprocessing.md
+          - 2 - Object detection: lessons/video-ai/labs/lab-2-object-detection.md
+          - 3 - Tracking and counting: lessons/video-ai/labs/lab-3-tracking-and-counting.md
+          - 4 - Domain adaptation: lessons/video-ai/labs/lab-4-domain-adaptation.md
+          - 5 - Garment attributes: lessons/video-ai/labs/lab-5-garment-attributes.md
+          - 6 - Action recognition: lessons/video-ai/labs/lab-6-action-recognition.md
+          - 7 - Integrated analytics: lessons/video-ai/labs/lab-7-integrated-analytics.md
+          - 8 - Performance: lessons/video-ai/labs/lab-8-performance.md
+      - Governance: lessons/video-ai/governance.md
+      - Model card: lessons/video-ai/model-card.md
+      - Assessment: lessons/video-ai/assessment.md
+  - AI Agents (M15):
+      - lessons/ai-agents/index.md
+      - Modules:
+          - 1 - The agent loop: lessons/ai-agents/ag01-agent-loop.md
+          - 2 - Tool schemas: lessons/ai-agents/ag02-tool-schemas.md
+          - 3 - Memory and state: lessons/ai-agents/ag03-memory-and-state.md
+          - 4 - Budgets and approvals: lessons/ai-agents/ag04-budgets-and-approvals.md
+          - 5 - Injection and evaluation: lessons/ai-agents/ag05-injection-and-evaluation.md
+      - Labs:
+          - 1 - Support agent: lessons/ai-agents/labs/lab-1-support-agent.md
+      - Assessment: lessons/ai-agents/assessment.md
+  - Production (M16):
+      - lessons/production/index.md
+      - Modules:
+          - 1 - Metrics and intervals: lessons/production/pr01-metrics-and-intervals.md
+          - 2 - Calibration: lessons/production/pr02-calibration.md
+          - 3 - Drift: lessons/production/pr03-drift.md
+          - 4 - Guardrails and cards: lessons/production/pr04-guardrails-and-cards.md
+          - 5 - Artifacts and serving: lessons/production/pr05-artifacts-and-serving.md
+      - Labs:
+          - 1 - Evaluation and serving: lessons/production/labs/lab-1-evaluation-and-serving.md
+      - Assessment: lessons/production/assessment.md
+  - Capstone (M17):
+      - lessons/capstone/index.md
+      - Modules:
+          - 1 - Scoping and data: lessons/capstone/cp01-scoping-and-data.md
+          - 2 - Build and evidence: lessons/capstone/cp02-build-and-evidence.md
+          - 3 - Evaluation and packaging: lessons/capstone/cp03-evaluation-and-packaging.md
+      - Labs:
+          - 1 - Capstone package: lessons/capstone/labs/lab-1-capstone-package.md
+      - Assessment: lessons/capstone/assessment.md
   - Syllabus:
       - Overview: syllabus/index.md
       - Level 0 - Orientation and environment: syllabus/level-0-start.md
@@ -138,9 +360,24 @@ nav:
       - Repository architecture: planning/repository-architecture.md
       - Implementation phases: planning/implementation-phases.md
       - Content inventory: planning/content-inventory.md
+      - Curriculum coverage: planning/curriculum-coverage.md
       - Quality standards: planning/quality-standards.md
   - Technical:
       - Build and deploy: technical/build-and-deploy.md
+      - GitHub Pages publication: technical/GITHUB-PAGES.md
+      - Site maintenance: technical/site-maintenance.md
+      - Final audit: technical/final-audit.md
+      - Release-readiness audit: technical/release-readiness-audit.md
+      - Licensing and attribution: technical/licensing-and-attribution.md
+      - Licensing decision package: technical/licensing-decision-package.md
+      - Independent final licensing audit: technical/final-licensing-audit.md
+      - Licensing scope coverage: technical/licensing-scope-coverage.md
+      - Third-party licensing inventory: technical/third-party-inventory.md
+      - v1 release-candidate checklist: technical/v1-release-candidate-checklist.md
+      - Release notes v0.1.0-rc.1 draft: technical/release-notes-v0.1.0-rc.1.md
+      - Student pilot protocol: technical/student-pilot-protocol.md
+      - Capstone pilot report: technical/capstone-pilot-report.md
+      - P06 deduplication study: technical/p06-deduplication-study.md
       - Maintainer guide: technical/maintainer-guide.md
       - Contributing: technical/contributing.md
       - Troubleshooting: technical/troubleshooting.md

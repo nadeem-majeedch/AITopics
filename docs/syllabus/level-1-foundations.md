@@ -315,23 +315,20 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/model-training/m04_training_from_scratch.ipynb`
+**Notebook:** `notebooks/model-training/m04_training_from_scratch.ipynb`, executed
+on Windows 11 CPU. The lesson sequence is
+[MT01-MT05](../lessons/model-training/index.md).
 
-The notebook will:
+The notebook trains a small CNN from scratch on 300 synthetic shape images. It
+compares a random split with a grouped split and measures the near-duplicate
+leakage, compares plain and augmented training, restores a checkpoint, times fp32
+against bf16, and inspects per-class errors. The section index reports the measured
+numbers.
 
-1. Build a CIFAR-10 data pipeline with augmentation.
-2. Train a small CNN from scratch with a fixed seed.
-3. Log losses, metrics, learning rate, and samples to TensorBoard.
-4. Add one regularization technique and measure the effect.
-5. Enable mixed precision if CUDA is available.
-6. Save the best checkpoint and reload it.
-7. Evaluate per-class accuracy and inspect misclassified images.
+**Dataset:** 300 shape images generated locally by `vision_core` under CC0-1.0.
 
-**Dataset:** CIFAR-10. Check the dataset's current terms before redistribution;
-do not commit images.
-
-**Hardware:** GPU recommended. CPU works with a reduced subset and a small
-model, but training will be slow.
+**Hardware:** CPU-only (under a minute in the recorded run); a GPU is optional and
+is not required for any measured result.
 
 ### Independent lab
 
@@ -429,19 +426,16 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/model-training/m05_data_engineering.ipynb`
+**Notebook:** `notebooks/model-training/m05_data_engineering.ipynb`, executed on
+Windows 11 CPU. The lesson sequence is
+[MT06-MT10](../lessons/model-training/index.md).
 
-The notebook will:
+The notebook starts from 650 deliberately messy synthetic ticket rows and profiles
+missing labels, duplicates, class balance, and near-duplicates. It builds a
+group-aware split, measures overlap between splits, adds controlled label noise,
+computes Cohen's kappa, and generates a dataset card from the cleaned data.
 
-1. Load a deliberately messy small dataset.
-2. Profile missing values, duplicates, and label distribution.
-3. Detect near-duplicates and cross-split leakage.
-4. Build group-aware splits.
-5. Compute agreement on a double-labeled subset.
-6. Apply a label-preserving augmentation policy.
-7. Generate a dataset card from a template.
-
-**Dataset:** a small, course-provided messy sample plus a public dataset. No
+**Dataset:** synthetic support tickets generated locally under CC0-1.0; no
 personal data.
 
 **Hardware:** CPU-only.

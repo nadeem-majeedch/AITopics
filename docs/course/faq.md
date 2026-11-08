@@ -55,6 +55,12 @@ Yes. The instructions target Windows 11 and Google Colab, but almost everything
 works on macOS and Linux. Windows-specific setup notes are in
 [Troubleshooting](../technical/troubleshooting.md).
 
+!!! warning "What has actually been verified"
+    The recorded executions in this release are on Windows 11 CPU. macOS, Linux,
+    and Google Colab are supported targets, but their notebooks, lab runs, and
+    GPU paths have not been verified here, so treat platform-specific output as
+    unconfirmed rather than as a tested result.
+
 ## Can I use an AMD or Intel GPU?
 
 The supported GPU path is NVIDIA CUDA, plus free Colab/Kaggle GPUs. AMD and Intel

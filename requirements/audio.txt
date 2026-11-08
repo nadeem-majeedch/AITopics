@@ -1,0 +1,30 @@
+# Speech and audio section (Modules SA01-SA14, Labs A-H)
+#
+# CPU-only and installable on top of cpu.txt. Nothing here downloads model
+# weights, and no lab needs a microphone, an audio device, or a paid API key.
+#
+# Why the stack is this small:
+#   * librosa, soundfile, sounddevice, torchaudio, and matplotlib are deliberately
+#     absent. Each one fails on a different locked-down machine, and all five are
+#     replaceable with a few dozen lines: WAV I/O uses the standard library's
+#     `wave`, resampling and filtering use SciPy, plots are Pillow PNGs plus ASCII
+#     spectrograms, and playback reports "no audio device" instead of raising.
+#   * torch is required for the two neural models (classifier and CTC recogniser).
+#   * scikit-learn is used by Module SA05's optional classical-baseline path.
+#
+# Verified on Windows 11 / Python 3.12.10 / CPU with:
+#   torch 2.14.1+cpu, numpy 2.5.4, scipy 1.18.1, scikit-learn 1.9.1, pillow 13.0.0
+
+torch>=2.2,<3
+numpy>=1.26,<3
+scipy>=1.11,<2
+pillow>=10,<14
+
+# Optional: only for the scikit-learn logistic-regression baseline in SA05.
+# Every lab runs without it; the module shows the equivalent NumPy code.
+scikit-learn>=1.4,<2
+
+# Optional, not installed by the verified environment: a neural TTS package for
+# the "real pretrained speech generation" path in SA10. It needs weights of
+# hundreds of MB, so the section reports it as unavailable instead of requiring it.
+#   piper-tts>=1.2

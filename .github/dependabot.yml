@@ -1,0 +1,23 @@
+version: 2
+# Keep the documentation toolchain and the workflow actions current without
+# touching the course's ML dependency sets. Updates open pull requests that run
+# .github/workflows/validate-docs.yml before merge.
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    allow:
+      - dependency-name: "mkdocs"
+      - dependency-name: "mkdocs-material"
+    commit-message:
+      prefix: "chore(docs)"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(ci)"

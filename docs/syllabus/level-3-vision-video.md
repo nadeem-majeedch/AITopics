@@ -66,9 +66,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/computer-vision/m11_image_classification.ipynb`
+**Section:** [computer-vision](../lessons/computer-vision/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Build an image dataset with a documented split.
 2. Fine-tune a small pretrained CNN on a 10-class public dataset.
@@ -185,9 +185,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/computer-vision/m12_detection_tracking.ipynb`
+**Section:** [computer-vision](../lessons/computer-vision/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Load a licensed 200-500 image detection subset in COCO format.
 2. Validate boxes, classes, and split integrity.
@@ -307,9 +307,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/speech-audio/m13_speech_audio.ipynb`
+**Section:** [speech-audio](../lessons/speech-audio/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Load and inspect audio: sample rate, duration, waveform, spectrogram.
 2. Run a small Whisper model on a few clips and compute WER/CER.
@@ -437,9 +437,9 @@ By the end of this module, you can:
 
 ### Guided notebook
 
-**Planned path:** `notebooks/video-ai/m14_video_analytics.ipynb`
+**Section:** [video-ai](../lessons/video-ai/index.md) - published as script-based labs, not a notebook.
 
-The notebook will:
+The practical sequence:
 
 1. Decode a short licensed clip and inspect frame rate and resolution.
 2. Sample frames and build clips for an action-recognition model.

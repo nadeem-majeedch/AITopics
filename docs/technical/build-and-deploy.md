@@ -11,13 +11,19 @@ course.
 | Configuration | `mkdocs.yml` at repository root |
 | Content root | `docs/` |
 | Build output | `site/` (gitignored) |
-| GitHub Pages | **Not configured** |
-| `site_url` | Commented out in `mkdocs.yml` until Pages is enabled |
-| Deployment workflow | Not created |
+| GitHub Pages | Configured for publication; **no deployment run yet** |
+| `site_url` | `https://nadeem-majeedch.github.io/AITopics/` (project-site prefix) |
+| Deployment workflow | `.github/workflows/deploy-pages.yml` (after successful validation on `main`, manual dispatch) |
+| Validation workflow | `.github/workflows/validate-docs.yml` (pull requests, `main` pushes, and manual dispatch; docs, licensing validation, Python tests, notebooks, and manifests) |
+| Publication guide | [GitHub Pages publication](GITHUB-PAGES.md) |
 | Build verification | See [Verification log](#verification-log) |
 
 The architecture phase intentionally did not enable deployment or modify remote
-settings.
+settings. The publication workflow and configuration have since been added; the
+repository's Pages settings must still be switched to **GitHub Actions** by a
+maintainer, and the first deployment has not been run. See
+[GitHub Pages publication](GITHUB-PAGES.md) for the settings, the verification
+steps, and the exact behaviour of both workflows.
 
 ## Requirements
 
@@ -116,9 +122,14 @@ This assumes the default branch is `main`. Confirm the branch before publishing.
 publishing. The architecture phase could not verify the branch because the remote
 repository was not accessible.
 
-## GitHub Pages deployment (planned)
+## GitHub Pages deployment
 
-Do not enable this until the license is approved and the launch gate passes.
+The repository now contains a deployment workflow and a validation workflow. The
+live settings and the verification procedure are documented in
+[GitHub Pages publication](GITHUB-PAGES.md); the summary below is for context.
+
+Do not enable publication until the license is approved and the launch gate
+passes.
 
 ### Prerequisites
 
@@ -128,61 +139,24 @@ Do not enable this until the license is approved and the launch gate passes.
 4. A passing `mkdocs build --strict`.
 5. A license file committed.
 
-### Planned workflow
+### Workflow files
 
-The following workflow is a starting point. Verify current action versions
-before committing.
+Deployment is defined in the repository, not in this page:
 
-```yaml
-name: docs
+| File | Purpose |
+| --- | --- |
+| `.github/workflows/deploy-pages.yml` | Strict build, link/anchor/prefix checks, upload the Pages artifact, deploy |
+| `.github/workflows/validate-docs.yml` | Whole-repository gate: strict docs build plus CPU dependency install, `pip check`, licensing validation, 253 unit tests, manifest fixture tests, project and generated-data checks, and all 20 notebooks; no Pages permissions |
+| `.github/dependabot.yml` | Monthly updates for `mkdocs`, `mkdocs-material`, and the Actions used |
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-      - run: python -m pip install -r requirements/docs.txt
-      - run: python -m mkdocs build --strict
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-Set this in `mkdocs.yml` before the first deployment:
+`site_url` is already set to the project-site URL:
 
 ```yaml
 site_url: https://nadeem-majeedch.github.io/AITopics/
 ```
 
-The URL is provisional until Pages is enabled and verified.
+The live URL remains unverified until a workflow run succeeds and the checks in
+[Verify publication](GITHUB-PAGES.md#verify-publication) have been run.
 
 ### Alternative hosting
 
@@ -207,8 +181,31 @@ Notebook execution is a separate quality gate:
 - Update the "last executed" metadata.
 - Add the result to the module checklist.
 
-Notebook smoke tests will run a fast subset in CI once Phase 1 is complete. They
-will not replace full execution on the stated hardware.
+The validation workflow now executes every notebook on a fresh CPU kernel with a
+300-second per-cell timeout. It does not replace full execution on GPU or Colab,
+which remain separately documented limitations. Run the same check locally with:
+
+```bash
+python scripts/check_notebooks.py --validate
+python scripts/check_notebooks.py --execute --timeout 300
+```
+
+## Generated dataset manifests
+
+Generated datasets are git-ignored, so a clean checkout has nothing to verify.
+The CI command reports **SKIPPED** in that case; it never reports a skipped check
+as a passed dataset. The checker itself is exercised by
+`tests/test_vision_manifests.py` with a small synthetic fixture.
+
+After generating the complete P06 and experimental sets, run the optional real
+data gate:
+
+```bash
+python scripts/check_vision_manifests.py
+python scripts/check_vision_manifests.py --require-datasets
+```
+
+The second command exits with status 2 if no `objects_p06*` dataset is present.
 
 ## Versioning and rollback
 
@@ -243,6 +240,11 @@ will not replace full execution on the stated hardware.
 | 2026-10-30 | Windows 11, Python 3.12.10 | `nbformat.validate` on 13 foundation notebooks | Passed: 13 notebooks valid |
 | 2026-10-30 | Windows 11, Python 3.12.10 | `python -m py_compile scripts/make_foundation_data.py` | Passed |
 | 2026-10-30 | Windows 11, MkDocs 1.6.1, Material 9.8.0 | `mkdocs build --strict` after F01-F13 | Passed; 85 pages built in 2.09 s, 0 warnings |
+| 2026-11-04 | Windows 11, Python 3.12.10, MkDocs 1.6.1, Material 9.8.0 | `python scripts/check_docs_links.py` | Passed; 224 Markdown files, every relative link, anchor, and nav entry resolves |
+| 2026-11-04 | Same environment | `python -m mkdocs build --strict` with `site_url` set | Passed; 223 pages built in 5.20 s, 0 warnings |
+| 2026-11-04 | Same environment | `python scripts/check_docs_links.py --site site` | Passed; 223 built pages, relative URLs resolve and every absolute URL uses the `/AITopics` prefix |
+| 2026-11-04 | Same environment | Serve the build under `tmp/pages-sim/AITopics` and request pages, CSS, JavaScript, favicon, `sitemap.xml`, and search with HTTP | Passed; every asset and page returned 200 under the prefix, canonical URL and all 224 sitemap entries carry `https://nadeem-majeedch.github.io/AITopics/`, and search returned 9 matching documents with prefixed result links |
+| 2026-11-04 | Same environment | `check-jsonschema` against the GitHub workflow schema and the Dependabot 2.0 schema | Passed for both workflows and `.github/dependabot.yml`; a deliberately malformed workflow was rejected, so the check is not a no-op |
 | 2026-10-30 | Same environment | Relative-link and anchor check after F01-F13 | Passed; 903 links across 85 Markdown files in `docs/` and `README.md`, 0 missing files or anchors; 25 links in `labs/` and `datasets/` also pass |
 
 Update this table only after actually running the command. Do not claim a build
@@ -272,6 +274,8 @@ issues.
 
 ## Related documents
 
+- [GitHub Pages publication](GITHUB-PAGES.md)
+- [Site maintenance](site-maintenance.md)
 - [Repository architecture](../planning/repository-architecture.md)
 - [Quality standards](../planning/quality-standards.md)
 - [Maintainer guide](maintainer-guide.md)

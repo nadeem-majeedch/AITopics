@@ -1,0 +1,25 @@
+# Computer vision section (Modules CV01-CV14, Labs 1-8)
+#
+# CPU-only and installable on top of cpu.txt. Nothing here downloads model
+# weights: the transfer lab uses the offline backbone built by the section's own
+# scripts, and torchvision is used only for architecture definitions and for the
+# optional pretrained-weights path that reports its own failure.
+#
+# Why not OpenCV, scikit-image, or matplotlib:
+#   * OpenCV and scikit-image would be a second image-processing API for students
+#     to learn, and neither is needed for resize, blur, or colour conversion.
+#   * matplotlib is not installed in the verified environment; the labs draw
+#     learning curves with Pillow instead, so the plots work everywhere the rest
+#     of the code does.
+#
+# Verified on Windows 11 / Python 3.12.10 / CPU with:
+#   torch 2.14.1+cpu, torchvision 0.29.1+cpu, pillow 13.0.0, numpy 2.5.4
+
+torch>=2.2,<3
+torchvision>=0.17,<1
+pillow>=10,<14
+numpy>=1.26,<3
+
+# Optional: only needed if you follow the real-pretrained-weights path in
+# Module 6, which requires network access to download weights.
+#   torchvision models are already covered above.

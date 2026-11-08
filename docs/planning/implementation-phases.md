@@ -47,6 +47,11 @@ decisions without generating lesson content.
 - [x] No fake notebooks, no empty lesson chapters, no fabricated test results.
 - [x] `mkdocs build --strict` passes. See the verification log below.
 
+**Completed on 2026-11-06:** M04-M05 lessons, notebooks, labs, and assessment;
+M06-M08, M15-M17 sections; seven additional executed notebooks. See the
+[curriculum coverage](curriculum-coverage.md) and
+[final audit](../technical/final-audit.md).
+
 **Verification log:**
 
 | Date | Check | Result |
@@ -129,13 +134,16 @@ failures; over-engineering the shared package.
 
 **Estimated effort:** 2-3 person-weeks.
 
-**Phase 1 remains the active phase.**
+**Phase 1 is complete.** Phases 2-6 are authored; Phases 7-9 (assessment QA,
+pilot, and launch) remain.
 
 ## Phase 2 - Level 0 and Level 1 content (M00-M05)
 
-**Status:** in progress. The foundation sequence F01-F13 is published and
-delivers M01-M03. M04-M05 remain planned, and Colab, GPU, and second-person
-review are outstanding.
+**Status:** complete for content. The foundation sequence F01-F13 delivers M01-M03,
+and M04-M05 are published as the ten-lesson
+[Model Training](../lessons/model-training/index.md) section with two executed
+notebooks, two lab briefs, and an assessment. Colab, GPU, and a second-person
+review remain outstanding.
 
 **Goal:** deliver the foundation path as a complete, reviewed learning sequence.
 
@@ -149,7 +157,7 @@ review are outstanding.
 
 **Exit criteria:**
 
-- [ ] Six modules published with lesson, notebook, lab, and rubric.
+- [x] Six modules published with lesson, notebook, lab, and rubric.
 - [ ] Each notebook runs on the stated hardware or documents a tested fallback.
 - [ ] Dataset cards include license, checksum, and known bias.
 - [ ] At least one external reviewer checks technical correctness.
@@ -393,7 +401,7 @@ at least one applied path. P7-P9 are sequential.
 | Risk | Impact | Mitigation |
 | --- | --- | --- |
 | Remote repository is private or misnamed | Work diverges from existing content | Reconcile before Phase 1; use the inventory procedure |
-| License not approved | Cannot publish legally | Treat as a release blocker; obtain written approval early |
+| Licence implementation review | Publication terms may be inconsistent | The approved MIT, CC BY 4.0, and CC0 1.0 architecture is implemented; review and commit it before publication |
 | Limited GPU access | Training labs stall | Free-tier plans, smaller models, CPU fallbacks, partner labs |
 | Dataset link rot or license change | Labs break or become illegal | Checksums, mirrors, dataset cards, quarterly review |
 | Library/API drift | Notebooks stop running | Pinned requirements, smoke tests, quarterly execution audit |

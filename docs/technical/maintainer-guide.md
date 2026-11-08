@@ -107,6 +107,11 @@ Record:
 If a notebook cannot be reproduced, mark it **unverified** and open an issue. Do
 not silently leave it online as if it were current.
 
+Every pull request validates and executes all notebooks with
+`scripts/check_notebooks.py`. A published notebook must pass both the structural
+check and the CPU execution path; the optional GPU or Colab run remains a
+separate verification.
+
 ## Dataset onboarding
 
 Before a dataset enters the course:
