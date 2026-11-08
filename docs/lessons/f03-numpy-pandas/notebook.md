@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f03_numpy_pandas.ipynb`  
-**Hardware:** CPU-only; NumPy and pandas  
+**Notebook file:** `notebooks/foundations/f03_numpy_pandas.ipynb`
+**Open notebook:** [F03 guided notebook](../../notebooks/foundations/f03_numpy_pandas.ipynb)
+**Hardware:** CPU-only; NumPy and pandas
 **Time:** 2-3 hours including reading the explanations
 
 The notebook builds its own 400-row synthetic table, so there is no download and

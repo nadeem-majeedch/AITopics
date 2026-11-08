@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f06_eda.ipynb`  
-**Hardware:** CPU-only  
+**Notebook file:** `notebooks/foundations/f06_eda.ipynb`
+**Open notebook:** [F06 guided notebook](../../notebooks/foundations/f06_eda.ipynb)
+**Hardware:** CPU-only
 **Time:** 2-3 hours including reading the figures
 
 The notebook is a repository file. It generates the house table, makes three

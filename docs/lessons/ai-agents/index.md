@@ -25,7 +25,7 @@ the harness, not to sampling.
 | 4 | [AG04](ag04-budgets-and-approvals.md) | stop reasons and human gates |
 | 5 | [AG05](ag05-injection-and-evaluation.md) | indirect injection and task scoring |
 
-Notebook: `notebooks/ai-agents/m15_agents.ipynb`.
+Notebook: [M15 - Tool-using agents](../../notebooks/ai-agents/m15_agents.ipynb).
 
 ## Measured anchors
 

@@ -91,7 +91,11 @@ class FakeModelClient:
     """Deterministic extractive model used by the offline path and the tests."""
 
     name: str = "fake-extractive-v1"
-    min_overlap: int = 1
+    # A single shared word is often incidental ("workshop" in an unrelated
+    # sentence). Require two content words from the question to appear in the
+    # chunk's title, section, or text. A one-word question may still match when
+    # that word is the whole question.
+    min_overlap: int = 2
     min_ratio: float = 0.2
 
     def complete(self, messages: Sequence[dict[str, str]], temperature: float = 0.0) -> str:
@@ -104,41 +108,72 @@ class FakeModelClient:
     def _extract(prompt: str, marker: str) -> str:
         if marker not in prompt:
             return ""
-        return prompt.split(marker, 1)[1].strip()
+        tail = prompt.split(marker, 1)[1].strip()
+        # The user turn appends an instruction paragraph after the question. Keep
+        # only the question: instruction words must not enter the lexical-overlap
+        # score, which would make answerable questions look unsupported.
+        return tail.split("\n\n", 1)[0].strip()
 
     @staticmethod
-    def _parse_evidence(prompt: str) -> dict[int, str]:
-        blocks: dict[int, str] = {}
+    def _parse_evidence(prompt: str) -> dict[int, tuple[str, str]]:
+        """Return ``{number: (header, body)}`` for every evidence block.
+
+        The header carries the chunk's title and section. It is useful for
+        deciding whether a question is supported, but it must not be offered as
+        an answer sentence.
+        """
+        blocks: dict[int, tuple[str, str]] = {}
         body = prompt.split("EVIDENCE:", 1)[1] if "EVIDENCE:" in prompt else ""
         body = body.split("QUESTION:", 1)[0]
         current: int | None = None
+        header = ""
         buffer: list[str] = []
         for line in body.splitlines():
-            match = re.match(r"^\[(\d+)\]", line.strip())
+            stripped = line.strip()
+            match = re.match(r"^\[(\d+)\]", stripped)
             if match:
                 if current is not None:
-                    blocks[current] = " ".join(buffer).strip()
+                    blocks[current] = (header, " ".join(buffer).strip())
                 current = int(match.group(1))
-                header = re.sub(r"^\(.*?\)\s*", "", line[match.end():].strip())
-                buffer = [header] if header else []
-            elif current is not None and line.strip():
-                buffer.append(line.strip())
+                header = stripped[match.end():].strip()
+                buffer = []
+            elif current is not None and stripped:
+                buffer.append(stripped)
         if current is not None:
-            blocks[current] = " ".join(buffer).strip()
+            blocks[current] = (header, " ".join(buffer).strip())
         return blocks
 
-    def _answer(self, question: str, evidence: dict[int, str]) -> dict:
+    def _answer(self, question: str, evidence: dict[int, tuple[str, str]]) -> dict:
         asked = content_words(question)
         if not asked:
             return {"answer": ABSTAIN_TEXT, "citations": [], "confident": False}
 
         sentences: dict[int, list[str]] = {
             index: [part.strip() for part in re.split(r"(?<=[.!?])\s+", text) if part.strip()]
-            for index, text in evidence.items()
+            for index, (_header, text) in evidence.items()
         }
+
+        # Match against the chunk's title, section, and text. Headings often
+        # state the topic that the body only implies.
+        contexts = {
+            index: content_words(f"{header} {text}")
+            for index, (header, text) in evidence.items()
+        }
+        supported: set[int] = set()
+        for index, words in contexts.items():
+            overlap = asked & words
+            enough_terms = len(overlap) >= self.min_overlap
+            whole_short_question = len(asked) == 1 and asked <= words
+            if (enough_terms or whole_short_question) and len(overlap) / len(asked) >= self.min_ratio:
+                supported.add(index)
+
+        if not supported:
+            return {"answer": ABSTAIN_TEXT, "citations": [], "confident": False}
 
         scored: list[tuple[float, int, int, int]] = []
         for index, parts in sentences.items():
+            if index not in supported:
+                continue
             for position, sentence in enumerate(parts):
                 overlap = asked & content_words(sentence)
                 if overlap:
@@ -148,9 +183,7 @@ class FakeModelClient:
             return {"answer": ABSTAIN_TEXT, "citations": [], "confident": False}
 
         scored.sort(key=lambda item: (-item[0], -item[1], item[2], item[3]))
-        best_ratio, best_overlap, best_index, best_position = scored[0]
-        if best_overlap < self.min_overlap or best_ratio < self.min_ratio:
-            return {"answer": ABSTAIN_TEXT, "citations": [], "confident": False}
+        _best_ratio, _best_overlap, best_index, best_position = scored[0]
 
         # Answer with the best sentence and the one that follows it in the same
         # chunk: a fact is often stated on the line after its subject.

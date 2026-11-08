@@ -23,7 +23,7 @@ a card that can be audited, and an artifact whose bytes you can verify.
 | 4 | [PR04](pr04-guardrails-and-cards.md) | adversarial recall/FPR and audited cards |
 | 5 | [PR05](pr05-artifacts-and-serving.md) | manifests and p50/p95 latency |
 
-Notebook: `notebooks/production/m16_production.ipynb`.
+Notebook: [M16 - Evaluation and serving](../../notebooks/production/m16_production.ipynb).
 
 ## Measured anchors
 

@@ -1,9 +1,11 @@
 # Draft release notes — v0.1.0-rc.1
 
-**Status: release-candidate draft, not a published release.** The tag has not been
-created, the repository has not been pushed for this candidate, GitHub Actions has
-not run, GitHub Pages has not been published, and no human student pilot has been
-completed. Do not describe this draft as a verified release.
+**Status: release-candidate draft, not a published release.** Local validation
+passed with documented limitations on 2026-11-08. The tag has not been created,
+the repository has not been pushed for this candidate, GitHub Actions has not run
+the validation or deployment workflow, GitHub Pages has not been published, and no
+human student pilot has been completed. Do not describe this draft as a verified
+public release.
 
 **Candidate version:** `v0.1.0-rc.1`  
 **Prepared:** 2026-11-08  
@@ -32,7 +34,8 @@ learning experience is not required.
 | Area | Coverage |
 | --- | --- |
 | Curriculum | 18 modules, with the foundation sequence F01–F13 delivering M01–M03 |
-| Notebooks | 20 executable notebooks: 13 foundation and 7 module notebooks |
+| Notebooks | 26 executable notebooks: 13 foundation and 13 module notebooks |
+| Notebook library | Direct links to all 26 notebooks, with rendered pages and downloadable sources |
 | Labs | Independent lab briefs with rubrics, including the F01 toolkit lab |
 | Applied sections | Model training, LLM fine-tuning, conversational AI, computer vision, speech and audio, video AI, agents, and production |
 | Capstones | 12 fully specified projects, from a tabular baseline to a tool-using agent with approvals |
@@ -85,9 +88,12 @@ wheel set is an exact reproduction of CI.
 
 - Every notebook is stored with its outputs and was executed top to bottom on a
   Windows 11 CPU environment during the local audit.
-- The final local audit executed 20 notebooks and 169 code cells in 135.2
+- The final local audit executed 26 notebooks and 223 code cells in 176.1
   seconds with zero failures. This is a local result, not a GitHub Actions
   result.
+- The deterministic chatbot/RAG parser was repaired on 2026-11-08: instruction
+  text is no longer treated as part of the question, and support now requires
+  meaningful evidence overlap. All 253 unit tests pass.
 - Generated data is git-ignored; the deterministic generators and seeds are
   recorded in [`LICENSES/SYNTHETIC-DATA.md`](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/SYNTHETIC-DATA.md).
 - Synthetic data is generated locally rather than downloaded. No dataset,
@@ -109,6 +115,8 @@ wheel set is an exact reproduction of CI.
   pilot. It is not evidence of learning outcomes or usability.
 - GPU, Google Colab, and optional hosted models were not verified for this
   candidate.
+- The 20 pre-existing notebooks do not all follow the 14-section template used
+  by the six applied notebooks added for M09-M14.
 - The course is self-study; it does not provide a submission channel, graded
   credential, or guaranteed marker.
 - No code-similarity audit was performed. External references are cited, but the
@@ -135,17 +143,18 @@ wheel set is an exact reproduction of CI.
 | Check | Status |
 | --- | --- |
 | Local Python suite | 253 tests passed |
-| Licensing validator | PASS, 8 checks, 556 release files classified |
-| Notebook validation | 20 notebooks valid |
-| Notebook execution | 20 notebooks, 169 code cells, 0 failures |
+| Licensing validator | PASS, 8 checks, 560 release files classified |
+| Notebook validation | 26 notebooks valid |
+| Notebook execution | 26 notebooks, 223 code cells, 176.1 s, 0 failures |
 | P06 fixture | 9 tests passed |
+| Course inventory | 18 modules, 105 lesson files, 26 notebooks, 52 labs/project briefs, 21 assessments |
 | Course projects | 12 projects, 12 complete specifications, 8 assessment banks |
-| Markdown links and anchors | 289 Markdown files resolve |
-| Strict MkDocs build | 288 pages |
-| Built-site `/AITopics` prefix | 288 pages, no prefix problems |
+| Markdown links and anchors | 295 Markdown files resolve |
+| Strict MkDocs build | 322 pages, 0 warnings |
+| Built-site `/AITopics` prefix | 322 pages, no prefix or broken-link problems |
 | Workflow schemas | Valid with `check-jsonschema` 0.39.0 |
-| GitHub Actions | **Not run** |
-| GitHub Pages | **Not published or verified live** |
+| GitHub Actions | **Not run; 2 Dependabot runs only** |
+| GitHub Pages | **HTTP 404; not published or verified live** |
 | Human student pilot | **Not completed**; protocol prepared |
 | SSDLite weight terms | **Unresolved** |
 

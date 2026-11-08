@@ -19,11 +19,13 @@ Department of Data Science (PUCIT), University of the Punjab, Lahore, Pakistan.
 > [LLM Fine-Tuning](docs/lessons/llm-fine-tuning/index.md),
 > [AI Agents](docs/lessons/ai-agents/index.md),
 > [Production](docs/lessons/production/index.md), and
-> [Capstone](docs/lessons/capstone/index.md). M09-M14 remain published as the
+> [Capstone](docs/lessons/capstone/index.md). M09-M14 are published as the
 > applied slices Conversational AI, Computer Vision, Speech and Audio, and Video
-> AI. All twenty notebooks (thirteen foundation and seven new) were executed
-> top-to-bottom on Windows 11 CPU; Google Colab and GPU verification are still
-> pending. See [Lessons](docs/lessons/index.md) and the
+> AI, each with a guided notebook. All **26 notebooks** (13 foundation and 13
+> section notebooks) were executed top-to-bottom on Windows 11 CPU; Google Colab
+> and GPU verification are still pending. Every notebook is one click away in the
+> [Notebook Library](docs/notebook-library.md). See
+> [Lessons](docs/lessons/index.md) and the
 > [curriculum coverage map](docs/planning/curriculum-coverage.md).
 
 > **New: Computer Vision section.** A complete Level 3 slice ships with 14
@@ -458,7 +460,7 @@ proposal.
 | `projects/video-ai/` | Runnable video labs, the shared `video_core` package, and the synthetic video generator | Available |
 | `docs/course/` | Roadmap, paths, study guide, conventions, assessments, projects, FAQ | Available |
 | `docs/syllabus/` | Detailed plans for all 18 modules | Available |
-| `notebooks/` | Executable guided notebooks by learning area | 20 available: F01-F13 and seven section notebooks |
+| `notebooks/` | Executable guided notebooks by learning area | 26 available: F01-F13 and 13 section notebooks, all linked from the [Notebook Library](docs/notebook-library.md) |
 | `labs/` | Lab starters and submission templates | Foundation starters available |
 | `projects/` | Shared course packages and runnable section code | Available |
 | `datasets/` | Dataset cards and download scripts; raw data is never committed | Foundation card and generator available |
@@ -478,13 +480,14 @@ The full target tree, content ownership rules, and data policy are in the
 | Foundation Google Colab verification | Pending |
 | Foundation GPU execution | Not executed; optional GPU paths documented |
 | F02 (M01) lesson, notebook, lab, assessment | Published; notebook verified on Windows 11 |
-| M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven new notebooks executed on Windows 11 CPU |
-| Conversational AI section (M09-M10 vertical slice) | Published; 24 offline unit tests passing; Streamlit and real-model paths documented but not executed here |
-| Computer Vision section (M11-M12 vertical slice) | Published; 50 offline unit tests passing; all 8 labs and the face program executed on Windows 11 CPU; GPU and real ImageNet weights not executed here |
-| Speech and Audio section (M13 vertical slice) | Published; 55 offline unit tests passing; all 8 lab selftests exit 0 on Windows 11 CPU |
-| Video AI section (M14 vertical slice) | Published; 38 offline unit tests passing; 7 of 8 lab selftests exit 0 on Windows 11 CPU (the detector-download lab was not run) |
+| M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven notebooks executed on Windows 11 CPU |
+| M09-M14 guided notebooks | Published and executed on Windows 11 CPU: chatbots, RAG, image classification, object detection, speech/audio, video analytics |
+| Conversational AI section (M09-M10 vertical slice) | Published; 24 offline unit tests passing; M09 and M10 notebooks executed; Streamlit and real-model paths documented but not executed here |
+| Computer Vision section (M11-M12 vertical slice) | Published; 50 offline unit tests passing; M11 and M12 notebooks executed; all 8 labs and the face program executed on Windows 11 CPU; GPU and real ImageNet weights not executed here |
+| Speech and Audio section (M13 vertical slice) | Published; 55 offline unit tests passing; M13 notebook executed; all 8 lab selftests exit 0 on Windows 11 CPU |
+| Video AI section (M14 vertical slice) | Published; 38 offline unit tests passing; M14 notebook executed; 7 of 8 lab selftests exit 0 on Windows 11 CPU (the detector-download lab was not run) |
 | Model-training and LLM notebooks on GPU | Not executed; CPU paths complete, optional GPU paths documented |
-| Documentation build | Verified locally with `mkdocs build --strict` on 2026-10-30 and re-verified on 2026-11-07 |
+| Documentation build | Verified locally with `mkdocs build --strict` on 2026-10-30, 2026-11-07, and 2026-11-08 |
 | Documentation site deployment | Workflows configured; first Pages deployment not yet run |
 | License files | Implemented and verified locally on 2026-11-07 (MIT, CC BY 4.0, CC0 1.0) |
 

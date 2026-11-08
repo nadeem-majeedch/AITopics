@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f01_python_ai.ipynb`  
-**Hardware:** CPU-only, standard library only  
+**Notebook file:** `notebooks/foundations/f01_python_ai.ipynb`
+**Open notebook:** [F01 guided notebook](../../notebooks/foundations/f01_python_ai.ipynb)
+**Hardware:** CPU-only, standard library only
 **Time:** 2-3 hours including reading the explanations
 
 The notebook is a repository file, not a web page. You run it from your clone in

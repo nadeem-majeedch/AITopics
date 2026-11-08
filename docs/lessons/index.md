@@ -11,16 +11,18 @@ for objectives, hours, and module scope.
     notebook, lab brief, and assessment for every unit. M04-M08 and M15-M17 are
     published as five further sections: **Model Training**, **LLM Fine-Tuning**,
     **AI Agents**, **Production**, and **Capstone**, with 33 lessons, seven executed
-    notebooks, eight lab briefs, and five assessments. M09-M14 remain published as
+    notebooks, eight lab briefs, and five assessments. M09-M14 are published as
     the four applied vertical slices: Conversational AI, Computer Vision, Speech
-    and Audio, and Video AI. M00 orientation is delivered through the
+    and Audio, and Video AI, each with an executed guided notebook (M09-M14). M00
+    orientation is delivered through the
     [roadmap](../course/roadmap.md), [learning paths](../course/learning-paths.md),
     [study guide](../course/how-to-study.md), and the
     [M00 plan](../syllabus/level-0-start.md#m00).
 
-    Foundation and new-section notebooks were executed top-to-bottom on Windows
-    11 with Python 3.12.10 on CPU. Google Colab and GPU execution remain pending
-    and are documented as limitations, not claimed results.
+    All 26 notebooks were executed top-to-bottom on Windows 11 with Python
+    3.12.10 on CPU. The [Notebook Library](../notebook-library.md) links every one
+    directly. Google Colab and GPU execution remain pending and are documented as
+    limitations, not claimed results.
 
 ## Published sections
 
@@ -29,15 +31,15 @@ lab and a weighted assessment. Start at the section index.
 
 | Section | Modules | Lessons | Notebooks | Lab briefs |
 | --- | --- | --- | --- | --- |
-| [Model Training](model-training/index.md) | M04-M05 | 10 | 2 | 2 |
-| [LLM Fine-Tuning](llm-fine-tuning/index.md) | M06-M08 | 10 | 3 | 3 |
-| [AI Agents](ai-agents/index.md) | M15 | 5 | 1 | 1 |
-| [Production](production/index.md) | M16 | 5 | 1 | 1 |
+| [Model Training](model-training/index.md) | M04-M05 | 10 | [M04](../notebooks/model-training/m04_training_from_scratch.ipynb), [M05](../notebooks/model-training/m05_data_engineering.ipynb) | 2 |
+| [LLM Fine-Tuning](llm-fine-tuning/index.md) | M06-M08 | 10 | [M06](../notebooks/llm-fine-tuning/m06_transformers.ipynb), [M07](../notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb), [M08](../notebooks/llm-fine-tuning/m08_lora_qlora.ipynb) | 3 |
+| [AI Agents](ai-agents/index.md) | M15 | 5 | [M15](../notebooks/ai-agents/m15_agents.ipynb) | 1 |
+| [Production](production/index.md) | M16 | 5 | [M16](../notebooks/production/m16_production.ipynb) | 1 |
 | [Capstone](capstone/index.md) | M17 | 3 | reuses M04-M16 | 1 |
-| [Conversational AI](chatbots-rag/index.md) | M09-M10 | 16 | script-based | 8 projects |
-| [Computer Vision](computer-vision/index.md) | M11-M12 | 14 | script-based | 8 |
-| [Speech and Audio](speech-audio/index.md) | M13 | 14 | script-based | 8 |
-| [Video AI](video-ai/index.md) | M14 | 15 | script-based | 8 |
+| [Conversational AI](chatbots-rag/index.md) | M09-M10 | 16 | [M09](../notebooks/chatbots-rag/m09_chatbots.ipynb), [M10](../notebooks/chatbots-rag/m10_rag.ipynb) | 8 projects |
+| [Computer Vision](computer-vision/index.md) | M11-M12 | 14 | [M11](../notebooks/computer-vision/m11_image_classification.ipynb), [M12](../notebooks/computer-vision/m12_object_detection.ipynb) | 8 |
+| [Speech and Audio](speech-audio/index.md) | M13 | 14 | [M13](../notebooks/speech-audio/m13_speech_audio.ipynb) | 8 |
+| [Video AI](video-ai/index.md) | M14 | 15 | [M14](../notebooks/video-ai/m14_video_ai.ipynb) | 8 |
 
 ## Foundation sequence
 
@@ -45,21 +47,21 @@ The foundation sequence is the recommended starting path. Its units map onto the
 approved module codes, so later prerequisites such as "M02 completed" are
 satisfied by finishing F03-F10.
 
-| Unit | Title | Implements | Hours | Hardware | Lesson |
-| --- | --- | --- | --- | --- | --- |
-| F01 | Python essentials for AI | pre-M01 | 8 | CPU-only | [Published](f01-python-ai/index.md) |
-| F02 | Virtual environments, packages, Jupyter, Colab | M01 | 12 | CPU-only | [Published](m01-environment/index.md) |
-| F03 | NumPy and pandas for datasets | M02 | 8 | CPU-only | [Published](f03-numpy-pandas/index.md) |
-| F04 | Cleaning, missing values, categories, normalization | M02/M05 | 10 | CPU-only | [Published](f04-data-cleaning/index.md) |
-| F05 | Train, validation, and test splits | M02 | 8 | CPU-only | [Published](f05-splits/index.md) |
-| F06 | Exploratory data analysis and visualization | M02 | 8 | CPU-only | [Published](f06-eda/index.md) |
-| F07 | Supervised and unsupervised learning | M02 | 8 | CPU-only | [Published](f07-supervised-unsupervised/index.md) |
-| F08 | Regression and classification | M02 | 10 | CPU-only | [Published](f08-regression-classification/index.md) |
-| F09 | Decision trees, random forests, gradient boosting | M02 | 10 | CPU-only | [Published](f09-tree-ensembles/index.md) |
-| F10 | Metrics, overfitting, leakage, cross-validation | M02 | 10 | CPU-only | [Published](f10-metrics-validation/index.md) |
-| F11 | Neural network fundamentals | M03 | 10 | CPU or GPU | [Published](f11-neural-networks/index.md) |
-| F12 | Tensors, gradients, losses, optimizers, backpropagation | M03 | 12 | CPU or GPU | [Published](f12-backpropagation/index.md) |
-| F13 | CPU/GPU, seeds, reproducibility, tracking | M03 | 8 | CPU-only core | [Published](f13-reproducibility/index.md) |
+| Unit | Title | Implements | Hours | Hardware | Lesson | Notebook |
+| --- | --- | --- | --- | --- | --- | --- |
+| F01 | Python essentials for AI | pre-M01 | 8 | CPU-only | [Published](f01-python-ai/index.md) | [F01](../notebooks/foundations/f01_python_ai.ipynb) |
+| F02 | Virtual environments, packages, Jupyter, Colab | M01 | 12 | CPU-only | [Published](m01-environment/index.md) | [F02](../notebooks/foundations/m01_environment_check.ipynb) |
+| F03 | NumPy and pandas for datasets | M02 | 8 | CPU-only | [Published](f03-numpy-pandas/index.md) | [F03](../notebooks/foundations/f03_numpy_pandas.ipynb) |
+| F04 | Cleaning, missing values, categories, normalization | M02/M05 | 10 | CPU-only | [Published](f04-data-cleaning/index.md) | [F04](../notebooks/foundations/f04_data_cleaning.ipynb) |
+| F05 | Train, validation, and test splits | M02 | 8 | CPU-only | [Published](f05-splits/index.md) | [F05](../notebooks/foundations/f05_splits.ipynb) |
+| F06 | Exploratory data analysis and visualization | M02 | 8 | CPU-only | [Published](f06-eda/index.md) | [F06](../notebooks/foundations/f06_eda.ipynb) |
+| F07 | Supervised and unsupervised learning | M02 | 8 | CPU-only | [Published](f07-supervised-unsupervised/index.md) | [F07](../notebooks/foundations/f07_supervised_unsupervised.ipynb) |
+| F08 | Regression and classification | M02 | 10 | CPU-only | [Published](f08-regression-classification/index.md) | [F08](../notebooks/foundations/f08_regression_classification.ipynb) |
+| F09 | Decision trees, random forests, gradient boosting | M02 | 10 | CPU-only | [Published](f09-tree-ensembles/index.md) | [F09](../notebooks/foundations/f09_tree_ensembles.ipynb) |
+| F10 | Metrics, overfitting, leakage, cross-validation | M02 | 10 | CPU-only | [Published](f10-metrics-validation/index.md) | [F10](../notebooks/foundations/f10_metrics_validation.ipynb) |
+| F11 | Neural network fundamentals | M03 | 10 | CPU or GPU | [Published](f11-neural-networks/index.md) | [F11](../notebooks/foundations/f11_neural_networks.ipynb) |
+| F12 | Tensors, gradients, losses, optimizers, backpropagation | M03 | 12 | CPU or GPU | [Published](f12-backpropagation/index.md) | [F12](../notebooks/foundations/f12_backpropagation.ipynb) |
+| F13 | CPU/GPU, seeds, reproducibility, tracking | M03 | 8 | CPU-only core | [Published](f13-reproducibility/index.md) | [F13](../notebooks/foundations/f13_reproducibility.ipynb) |
 
 F01-F13 total 122 guided hours, which is more than the 44 hours assigned to
 M01-M03 in the syllabus. The difference is deliberate: the foundation units add

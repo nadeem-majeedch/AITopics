@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f04_data_cleaning.ipynb`  
-**Hardware:** CPU-only; pandas and scikit-learn  
+**Notebook file:** `notebooks/foundations/f04_data_cleaning.ipynb`
+**Open notebook:** [F04 guided notebook](../../notebooks/foundations/f04_data_cleaning.ipynb)
+**Hardware:** CPU-only; pandas and scikit-learn
 **Time:** 3-4 hours including reading the explanations
 
 The notebook builds a deliberately messy 328-row table with seed `7`, then cleans

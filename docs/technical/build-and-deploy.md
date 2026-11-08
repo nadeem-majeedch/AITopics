@@ -146,7 +146,7 @@ Deployment is defined in the repository, not in this page:
 | File | Purpose |
 | --- | --- |
 | `.github/workflows/deploy-pages.yml` | Strict build, link/anchor/prefix checks, upload the Pages artifact, deploy |
-| `.github/workflows/validate-docs.yml` | Whole-repository gate: strict docs build plus CPU dependency install, `pip check`, licensing validation, 253 unit tests, manifest fixture tests, project and generated-data checks, and all 20 notebooks; no Pages permissions |
+| `.github/workflows/validate-docs.yml` | Whole-repository gate: strict docs build plus CPU dependency install, `pip check`, licensing validation, 253 unit tests, manifest fixture tests, project and generated-data checks, and all 26 notebooks; no Pages permissions |
 | `.github/dependabot.yml` | Monthly updates for `mkdocs`, `mkdocs-material`, and the Actions used |
 
 `site_url` is already set to the project-site URL:

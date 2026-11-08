@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f07_supervised_unsupervised.ipynb`  
-**Hardware:** CPU-only  
+**Notebook file:** `notebooks/foundations/f07_supervised_unsupervised.ipynb`
+**Open notebook:** [F07 guided notebook](../../notebooks/foundations/f07_supervised_unsupervised.ipynb)
+**Hardware:** CPU-only
 **Time:** 2-3 hours including the cluster profile reading
 
 The notebook generates 420 synthetic customers, clusters them without using the

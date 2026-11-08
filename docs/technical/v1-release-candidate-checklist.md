@@ -25,7 +25,7 @@ This page is not legal advice. It records what has and has not been verified.
 | Public licence map | `LICENSES/README.md`, scope and attribution wording | **Complete** |
 | Synthetic-data provenance | `LICENSES/SYNTHETIC-DATA.md`, nine generators and P06 record | **Complete** |
 | Machine-readable scopes | `licensing-scope.json`, four scopes and five third-party exclusions | **Complete** |
-| Repository-wide coverage | `scripts/check_licensing.py`, all 556 release files classified | **Passing locally** |
+| Repository-wide coverage | `scripts/check_licensing.py`, all 560 release files classified | **Passing locally** |
 | Regression tests | `tests/test_licensing.py`, 11 tests including coverage gaps | **Passing locally** |
 | CI gate | `.github/workflows/validate-docs.yml`, no Pages permissions; PR, `main` push, and manual dispatch | **Configured; not run on GitHub** |
 | Documentation build | Strict MkDocs build and built-site prefix check | **Passing locally** |
@@ -72,7 +72,7 @@ requests targeting `main`, pushes to `main`, and manual dispatch, and covers:
 | P06 manifest fixture | `python -m unittest tests.test_vision_manifests -v` | **Passing** |
 | Vision dataset manifests | `python scripts/check_vision_manifests.py` | **3 datasets PASS; 57 duplicate warnings** |
 | Course projects | `python scripts/check_course_projects.py` | **12 projects, 12 complete specs, 8 banks** |
-| Notebook JSON validation | `python scripts/check_notebooks.py --validate` | **20 notebooks valid** |
+| Notebook JSON validation | `python scripts/check_notebooks.py --validate` | **26 notebooks valid** |
 | Notebook execution | `python scripts/check_notebooks.py --execute --timeout 300` | **20 executed, 0 failures** |
 | Documentation links | `python scripts/check_docs_links.py` | **Passing locally** |
 | Strict MkDocs build | `python -m mkdocs build --strict` | **Passing locally** |
@@ -110,7 +110,7 @@ Run these in order after the instructor authorises the commit and push:
       every release file classified.
 - [ ] Confirm the licensing tests and the full unit suite pass.
 - [ ] Confirm the P06 fixture, vision manifests, and course-project checks pass.
-- [ ] Confirm all 20 notebooks validate and execute within the 25-minute job
+- [ ] Confirm all 26 notebooks validate and execute within the 25-minute job
       timeout.
 - [ ] Confirm the documentation job checks links, builds with `--strict`, and
       passes the `/AITopics` prefix check.

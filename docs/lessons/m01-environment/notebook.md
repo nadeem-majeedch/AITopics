@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/m01_environment_check.ipynb`  
-**Hardware:** CPU-only; optional GPU cells skip themselves  
+**Notebook file:** `notebooks/foundations/m01_environment_check.ipynb`
+**Open notebook:** [M01 guided notebook](../../notebooks/foundations/m01_environment_check.ipynb)
+**Hardware:** CPU-only; optional GPU cells skip themselves
 **Time:** 2-3 hours including reading the explanations
 
 The notebook is a repository file, not a web page. You run it from your clone in

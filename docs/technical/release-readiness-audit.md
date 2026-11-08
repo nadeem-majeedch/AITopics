@@ -1,7 +1,7 @@
 # Release-readiness audit
 
-Audit date: **2026-11-07**. Scope: the complete repository at the working tree
-that contains the 18-module curriculum, 20 notebooks, 12 capstone specifications,
+Audit date: **2026-11-08**. Scope: the complete repository at the working tree
+that contains the 18-module curriculum, 26 notebooks, 12 capstone specifications,
 eight assessment banks, the P06 deduplication study, and the documentation site.
 
 This audit was performed by an agent. It includes automated execution and an
@@ -11,16 +11,45 @@ deployment was verified.
 
 ## Verdict
 
-**NOT READY for a public release.**
+**VALIDATION PASSED WITH DOCUMENTED LIMITATIONS (local). Ready for deployment
+review, not yet a verified public release.**
 
-The curriculum and automated checks are substantially complete, and the
-licensing architecture is now **implemented and verified locally**, and the
-copyright holder's legal name is **instructor-confirmed**. Three
-release-process gates remain: the new CI workflow has **not run on GitHub
-Actions**, GitHub Pages is **not verified live**, and no human student pilot has
-been completed. These are not evidence that the lessons are wrong. Once those
-gates are exercised, the verdict can move to **RELEASE READY WITH WARNINGS**
+The curriculum and automated checks are complete, the chatbot/RAG regression is
+repaired, and the licensing architecture is **implemented and verified locally**.
+All required local gates pass. Three release-process gates remain: the CI
+workflow has **not run on GitHub Actions**, GitHub Pages is **not verified live**
+(the API and URL return HTTP 404), and no human student pilot has been completed.
+These are not evidence that the lessons are wrong. Once those gates are exercised
+and the deployment is verified, the public-release verdict can be reconsidered
 while the documented environment and upstream-weight limitations remain.
+
+## 2026-11-08 validation update
+
+- Added and executed six applied notebooks: M09-M14. The library now has 26
+  notebooks and 223 code cells; the full execution check took 176.1 s.
+- Repaired a chatbot/RAG parser regression. The two initially failing tests were
+  `test_rag_missing_document_abstains` and
+  `test_rag_irrelevant_retrieval_is_not_used_as_evidence`. The parser correctly
+  excluded the user-turn JSON instruction, but the support rule still accepted a
+  single incidental word. Support now matches the evidence header plus body and
+  requires two content words (with a one-word-question exception).
+- Re-ran the complete suite: **253 tests, OK**.
+- Re-ran notebook validation and execution: **26 valid, 26 executed, 223 cells,
+  0 failures**.
+- Re-ran the course inventory: **18 modules, 105 lesson files, 26 notebooks, 52
+  labs/project briefs, 21 assessments**; M09-M14 satisfy the 14-section standard.
+- Re-ran links and the site: **295 Markdown files, 322 built pages, 0 warnings,
+  0 broken links**.
+- Licensing: **PASS, 8 checks, 560 release files classified**.
+- Whitespace: `git diff --check` and `git diff --cached --check` clean.
+- GitHub Pages remains **HTTP 404**. The Actions API shows **2 Dependabot runs**
+  and **no validation or deployment run**.
+
+See the [Repository content audit](repository-content-audit.md),
+[Notebook coverage audit](notebook-coverage-audit.md),
+[Navigation and link audit](navigation-and-link-audit.md),
+[GitHub Pages deployment audit](github-pages-deployment-audit.md), and
+[Student usability audit](student-usability-audit.md) for the detailed evidence.
 
 ## Baseline before this pass
 
@@ -31,10 +60,10 @@ while the documented environment and upstream-weight limitations remain.
 | Documentation links | `scripts/check_docs_links.py` checks relative links, heading anchors, and navigation entries | Working |
 | Strict documentation build | `mkdocs build --strict` | Working, zero warnings |
 | Built-site prefix | `scripts/check_docs_links.py --site site` checks the `/AITopics` project prefix | Working |
-| Unit tests | `unittest` suite covering foundations, vision, audio, video, chatbots, agents, LLM fine-tuning, and course projects | 233 tests |
+| Unit tests | `unittest` suite covering foundations, vision, audio, video, chatbots, agents, LLM fine-tuning, and course projects | 253 tests |
 | Project specifications | `scripts/check_course_projects.py` checks 12 specs, rubrics, and eight assessment banks | Working |
 | P06 manifest | `scripts/make_vision_data.py --check` verifies the generated set | Working when `data/` exists |
-| Notebook execution | All 20 notebooks had been executed on Windows 11 CPU and stored without errors | Historical evidence in the notebooks |
+| Notebook execution | All 26 notebooks had been executed on Windows 11 CPU and stored without errors | Historical evidence in the notebooks |
 | Deployment | `.github/workflows/deploy-pages.yml` builds, uploads, and deploys after successful validation on `main`, or manual dispatch | Present, never run on GitHub |
 | Documentation CI | `.github/workflows/validate-docs.yml` ran links, strict build, and prefix check on documentation-only pull requests | Present, documentation only |
 
@@ -123,16 +152,16 @@ results.
 | Licensing validator | **PASS: 8 checks, 0 failures** |
 | Licensing tests | **11 tests, OK** (missing file, missing exception, conflicting SPDX, unresolved weights, synthetic attribution, mixed configuration, tampered text, unclassified file, non-content placeholder, overlapping scopes, full repository) |
 | Manifest gate tests | **9 tests, OK** (synthetic fixture; no P06 download) |
-| Notebook JSON and stored outputs | **20 notebooks valid, 0 errors, 0 unexecuted cells** |
-| Notebook execution | **20 notebooks, 169 code cells, 135.2 s locally, 0 failures** |
+| Notebook JSON and stored outputs | **26 notebooks valid, 0 errors, 0 unexecuted cells** |
+| Notebook execution | **26 notebooks, 223 code cells, 176.1 s locally, 0 failures** |
 | P06 original manifest | **960 images, 0 problems, 57 same-split duplicate warnings, no source overlap** |
 | P06 deduplicated manifest | **902 images, 0 problems, 0 warnings, no source overlap** |
 | P06 balanced manifest | **240 images, 0 problems, 0 warnings, no source overlap** |
 | All present vision manifests | **3 datasets, 0 failed, 57 accepted duplicate-content warnings** |
 | Project specifications | **12 projects, 12 complete specs, 8 assessment banks with solutions** |
-| Markdown links and anchors | **289 Markdown files, 0 broken links or anchors** |
+| Markdown links and anchors | **295 Markdown files, 0 broken links or anchors** |
 | Strict MkDocs build | **0 warnings** |
-| Built site | **288 pages, 0 prefix or broken-asset problems, `/AITopics` prefix** |
+| Built site | **322 pages, 0 prefix or broken-asset problems, `/AITopics` prefix** |
 | Workflow schemas | **2 workflows and the Dependabot config valid** |
 | Dependency consistency | **`pip check` clean; CI requirement resolution has no conflict** |
 
@@ -198,7 +227,7 @@ notebooks.
 | 2. Understand prerequisites | Pass | Roadmap has a knowledge, hardware, and software readiness table |
 | 3. Follow the roadmap | Pass | Six learning paths and a module map link to published lessons |
 | 4. Open the first lesson | Pass | F01 has lesson, notebook guide, lab, and assessment |
-| 5. Execute a beginner notebook | Pass locally | F01 needs only the standard library; all 20 notebooks execute on CPU. Colab is documented but was not run |
+| 5. Execute a beginner notebook | Pass locally | F01 needs only the standard library; all 26 notebooks execute on CPU. Colab is documented but was not run |
 | 6. Complete a lab | Pass with caveat | F01 has a starter file and rubric; the page states the author did not complete this lab and no solution is published |
 | 7. Find an assessment | Pass | Each foundation unit has a self-scored assessment; eight banks have separate solutions |
 | 8. Select a capstone | Pass | Twelve specifications are indexed by difficulty, effort, and hardware |

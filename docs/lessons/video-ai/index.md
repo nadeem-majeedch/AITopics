@@ -28,6 +28,10 @@ extract, label, split by video, detect, associate, count, and measure. Every num
 these modules was produced by the code in `projects/video-ai` and is reproducible with one
 command.
 
+!!! abstract "Guided notebook"
+    Start with [M14 - Video AI and traffic analytics](../../notebooks/video-ai/m14_video_ai.ipynb).
+    It renders a scene, tracks noisy detections, counts a tripwire, and measures MOTA.
+
 | | |
 | --- | --- |
 | **Level** | 3 - Vision and video (after CV01-CV09 and F03-F13) |

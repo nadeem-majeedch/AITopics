@@ -160,7 +160,7 @@ The file name is historical; the workflow now covers the whole repository.
 | Triggers | pull requests targeting `main`; pushes to `main`; `workflow_dispatch` |
 | Permissions | `contents: read` only |
 | Concurrency | per-ref, `cancel-in-progress: true` |
-| Python job | install `requirements/ci.txt`, `pip check`, licensing validation, 253 unit tests, a synthetic manifest fixture, project checks, generated-data check, notebook JSON validation, and execution of all 20 notebooks |
+| Python job | install `requirements/ci.txt`, `pip check`, licensing validation, 253 unit tests, a synthetic manifest fixture, project checks, generated-data check, notebook JSON validation, and execution of all 26 notebooks |
 | Documentation job | install docs dependencies, link/anchor/nav check, strict build, and prefix check |
 | Pages actions | none; no artifact upload, no deployment job |
 

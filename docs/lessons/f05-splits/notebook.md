@@ -2,8 +2,9 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f05_splits.ipynb`  
-**Hardware:** CPU-only; no GPU cells  
+**Notebook file:** `notebooks/foundations/f05_splits.ipynb`
+**Open notebook:** [F05 guided notebook](../../notebooks/foundations/f05_splits.ipynb)
+**Hardware:** CPU-only; no GPU cells
 **Time:** 2-3 hours including the explanations
 
 The notebook is a repository file. You run it from your clone in JupyterLab or

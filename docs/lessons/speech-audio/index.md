@@ -28,6 +28,10 @@ Fourteen modules, eight labs, a consent and rights page, and a documented capsto
 Everything runs on a laptop CPU with no account, no download, and no dataset licence to
 negotiate.
 
+!!! abstract "Guided notebook"
+    Start with [M13 - Speech and audio AI](../../notebooks/speech-audio/m13_speech_audio.ipynb).
+    It covers log-Mel features, speaker-grouped splits, robustness, speaker EER, and CTC.
+
 | | |
 | --- | --- |
 | **Level** | 3 - Speech and audio (after F03-F13) |

@@ -133,11 +133,11 @@ Local validation on 2026-11-07:
 | `python scripts/check_licensing.py` | **PASS**, 8 checks, 0 failures |
 | Licensing unit tests | **11 tests, OK** |
 | Full Python suite | **253 tests, OK** |
-| Notebook JSON validation | **20 notebooks valid** |
+| Notebook JSON validation | **26 notebooks valid** |
 | Course project specifications | **12 projects, 12 complete specs, 8 assessment banks** |
-| Markdown links and anchors | **289 Markdown files, 0 failures** |
-| Strict MkDocs build | **288 pages, 0 warnings** |
-| Built-site prefix check | **288 pages, `/AITopics` prefix, 0 problems** |
+| Markdown links and anchors | **295 Markdown files, 0 failures** |
+| Strict MkDocs build | **322 pages, 0 warnings** |
+| Built-site prefix check | **322 pages, `/AITopics` prefix, 0 problems** |
 | Workflow and Dependabot schemas | **Valid** — rechecked with `check-jsonschema` 0.39.0 |
 | `pip check` | **Clean** |
 

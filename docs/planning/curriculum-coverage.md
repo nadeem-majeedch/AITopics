@@ -1,12 +1,11 @@
-# Curriculum coverage: M04-M08 and M15-M17
+# Curriculum coverage: M04-M16
 
-This page maps the eight modules that previously published only plans, projects, and
-code to their now-published lessons, notebooks, labs, and assessments. It is
-maintainer documentation: it records what exists, what was executed, and what
-remains limited. Student navigation belongs in the
-[lessons index](../lessons/index.md).
+This page maps the modules from M04 to M16 to their published lessons, notebooks,
+labs, and assessments. It is maintainer documentation: it records what exists, what
+was executed, and what remains limited. Student navigation belongs in the
+[lessons index](../lessons/index.md) and the [notebook library](../notebook-library.md).
 
-Status as of **2026-11-06**. Every notebook below was executed top-to-bottom in the
+Status as of **2026-11-08**. Every notebook below was executed top-to-bottom in the
 project virtual environment on Windows 11, Python 3.12.10, CPU only, unless a
 limitation says otherwise.
 
@@ -19,12 +18,21 @@ limitation says otherwise.
 | M06 | 4 | `notebooks/llm-fine-tuning/m06_transformers.ipynb` | 3 (shared) | 1 | Published, executed |
 | M07 | 3 | `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb` | 3 (shared) | 1 | Published, executed |
 | M08 | 3 | `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb` | 3 (shared) | 1 | Published, executed |
+| M09 | 16 | [M09 notebook](../notebooks/chatbots-rag/m09_chatbots.ipynb) | 8 projects (shared) | 1 | Published, executed |
+| M10 | 16 (shared) | [M10 notebook](../notebooks/chatbots-rag/m10_rag.ipynb) | 8 projects (shared) | 1 | Published, executed |
+| M11 | 14 | [M11 notebook](../notebooks/computer-vision/m11_image_classification.ipynb) | 8 (shared) | 1 | Published, executed |
+| M12 | 14 (shared) | [M12 notebook](../notebooks/computer-vision/m12_object_detection.ipynb) | 8 (shared) | 1 | Published, executed |
+| M13 | 14 | [M13 notebook](../notebooks/speech-audio/m13_speech_audio.ipynb) | 8 | 1 | Published, executed |
+| M14 | 15 | [M14 notebook](../notebooks/video-ai/m14_video_ai.ipynb) | 8 | 1 | Published, executed |
 | M15 | 5 | `notebooks/ai-agents/m15_agents.ipynb` | 1 | 1 | Published, executed |
 | M16 | 5 | `notebooks/production/m16_production.ipynb` | 1 | 1 | Published, executed |
 | M17 | 3 | reuses M04-M16 notebooks | 1 | 1 | Published; capstone is project work, not a new notebook |
 
-Total: **33 lessons, 5 section indexes, 5 assessments, 8 lab briefs, 7 new
-executed notebooks**, plus one shared package and one bug fix described below.
+Total for M04-M08 and M15-M17: **33 lessons, 7 executed notebooks, 8 lab briefs,
+and 5 assessments**. The four applied slices add **M09-M14 with six executed
+notebooks** and their existing lesson, lab, and assessment corpus. The whole course
+now ships **26 executed notebooks**, all linked from the
+[notebook library](../notebook-library.md).
 
 ## M04 - Training models from scratch
 
@@ -115,6 +123,26 @@ a free win.
 Shared code: `projects/llm-fine-tuning/llm_core/` (`data`, `tokenizer`, `model`,
 `train`, `sft`, `lora`, `quantize`, `evaluate`). Reused by all three notebooks and
 covered by `tests/test_llm_fine_tuning.py` (33 tests).
+
+## M09-M14 - Applied vertical slices
+
+These six notebooks close the gap between the ten existing applied lessons and a
+runnable guided practical. Each uses the section's tested `*_core` package and its
+CC0-1.0 synthetic data. No notebook downloads a model or a dataset.
+
+| Module | Notebook | Evidence from the executed run |
+| --- | --- | --- |
+| M09 | [m09_chatbots.ipynb](../notebooks/chatbots-rag/m09_chatbots.ipynb) | Six cited FAQ chunks; BM25, dense, and hybrid rankings; bounded history retains 2 of 10 messages; injection flagged with two matches; email and student id redacted |
+| M10 | [m10_rag.ipynb](../notebooks/chatbots-rag/m10_rag.ipynb) | Registration answer cites `registration.md`; fabricated `[99]` rejected; strict configuration abstains on an off-corpus question |
+| M11 | [m11_image_classification.ipynb](../notebooks/computer-vision/m11_image_classification.ipynb) | 210/45/45 grouped images; 0.867 test accuracy against 0.40 majority baseline; per-class confusion and confident errors |
+| M12 | [m12_object_detection.ipynb](../notebooks/computer-vision/m12_object_detection.ipynb) | 40 images, 59 boxes; mAP@0.5 0.169; per-class AP; predicted boxes inspected against truth |
+| M13 | [m13_speech_audio.ipynb](../notebooks/speech-audio/m13_speech_audio.ipynb) | 135/30/27 clips split by source with zero source overlap; synthetic four-class test accuracy 1.0; worst robustness condition narrowband 4 kHz; speaker EER 0.331; CTC toy decode `stra` |
+| M14 | [m14_video_ai.ipynb](../notebooks/video-ai/m14_video_ai.ipynb) | 60 frames, 8 vehicles; oracle count 8/8; noisy tracker MOTA 0.9812 with 0 ID switches and 9 false negatives; tracked count 8/8; measured tracker RTF 0.002 |
+
+These results are evidence that the notebooks execute and that their measurement
+paths work. They are not evidence of real-world accuracy: M11-M14 use small
+synthetic corpora, and M13's perfect classifier score reflects separable synthetic
+classes. The notebooks state that limitation next to the numbers.
 
 ## M15 - AI agents
 

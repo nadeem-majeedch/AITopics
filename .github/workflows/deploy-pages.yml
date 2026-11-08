@@ -4,8 +4,10 @@ name: Deploy documentation
 # a project site at https://nadeem-majeedch.github.io/AITopics/.
 #
 # Deployment path: successful Validate repository run on main, or manual
-# dispatch. Pull requests do not deploy. Waiting for validation prevents a docs
-# push from publishing before the repository gate has passed.
+# dispatch. Pull requests do not deploy. Release branches are validated by
+# validate-docs.yml but do not deploy automatically: merge to main is the
+# publication act. Waiting for validation prevents a docs push from publishing
+# before the repository gate has passed.
 
 on:
   workflow_run:

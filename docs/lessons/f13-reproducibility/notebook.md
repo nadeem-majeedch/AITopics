@@ -2,11 +2,12 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f13_reproducibility.ipynb`  
+**Notebook file:** `notebooks/foundations/f13_reproducibility.ipynb`
+**Open notebook:** [F13 guided notebook](../../notebooks/foundations/f13_reproducibility.ipynb)
 **Hardware:** CPU-only core. A GPU, if present, is used automatically for timing
-and training; the notebook does not require one.  
+and training; the notebook does not require one.
 **Time:** About 3 hours including the explanations; the code runs in about a
-minute.  
+minute.
 **Execution status:** Verified on Windows 11 CPU with Python 3.12.10 and
 PyTorch 2.4.1+cpu. The GPU display branch was **not** executed in the authoring
 environment.

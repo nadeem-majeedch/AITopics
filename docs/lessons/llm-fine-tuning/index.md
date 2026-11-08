@@ -17,9 +17,9 @@ present.
 
 | Module | Question | Lessons | Notebook |
 | --- | --- | --- | --- |
-| M06 | How does a transformer predict the next token? | [LF01](lf01-tokens-and-embeddings.md) - [LF04](lf04-tiny-lm-training.md) | `notebooks/llm-fine-tuning/m06_transformers.ipynb` |
-| M07 | How do you turn a base model into an instruction follower? | [LF05](lf05-sft-data-and-templates.md) - [LF07](lf07-evaluating-assistants.md) | `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb` |
-| M08 | How do you fine-tune and serve with a small memory budget? | [LF08](lf08-lora.md) - [LF10](lf10-merging-and-serving.md) | `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb` |
+| M06 | How does a transformer predict the next token? | [LF01](lf01-tokens-and-embeddings.md) - [LF04](lf04-tiny-lm-training.md) | [Open notebook](../../notebooks/llm-fine-tuning/m06_transformers.ipynb) |
+| M07 | How do you turn a base model into an instruction follower? | [LF05](lf05-sft-data-and-templates.md) - [LF07](lf07-evaluating-assistants.md) | [Open notebook](../../notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb) |
+| M08 | How do you fine-tune and serve with a small memory budget? | [LF08](lf08-lora.md) - [LF10](lf10-merging-and-serving.md) | [Open notebook](../../notebooks/llm-fine-tuning/m08_lora_qlora.ipynb) |
 
 ## Measured anchors
 

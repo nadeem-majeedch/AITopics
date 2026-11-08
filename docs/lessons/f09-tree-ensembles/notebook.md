@@ -2,9 +2,10 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f09_tree_ensembles.ipynb`  
-**Hardware:** CPU-only; the forest uses all available cores through `n_jobs=-1`  
-**Time:** 2-3 hours including reading the explanations  
+**Notebook file:** `notebooks/foundations/f09_tree_ensembles.ipynb`
+**Open notebook:** [F09 guided notebook](../../notebooks/foundations/f09_tree_ensembles.ipynb)
+**Hardware:** CPU-only; the forest uses all available cores through `n_jobs=-1`
+**Time:** 2-3 hours including reading the explanations
 **Execution status:** verified on Windows 11 CPU with Python 3.12.10. Colab and GPU paths were not executed.
 
 The notebook generates its own 500-row student table. You do not need the CSV,

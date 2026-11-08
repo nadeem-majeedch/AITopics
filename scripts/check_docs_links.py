@@ -23,6 +23,7 @@ Exit status is 0 when clean and 1 when problems are found, so it can gate CI.
 from __future__ import annotations
 
 import argparse
+import posixpath
 import re
 import sys
 from pathlib import Path
@@ -97,6 +98,33 @@ class Page:
         self.anchors = anchors(path.read_text(encoding="utf-8"))
 
 
+def web_target(path: Path, raw_path: str) -> str:
+    """Resolve a link relative to the page's *site* path.
+
+    MkDocs strips ``docs_dir`` from page URLs, so a page at
+    ``docs/lessons/model-training/index.md`` is served at
+    ``/lessons/model-training/``. A link such as ``../../notebooks/x.ipynb``
+    therefore points at ``/notebooks/x.ipynb`` even though the source-path join
+    would land in ``docs/notebooks``. Virtual notebook mounts are checked against
+    this site-relative path.
+    """
+    page = path.relative_to(DOCS).as_posix()
+    return posixpath.normpath(posixpath.join(posixpath.dirname(page), raw_path))
+
+
+def virtual_target_exists(path: Path, raw_path: str) -> bool:
+    """True when a link resolves to a mounted notebook outside docs_dir."""
+    target = web_target(path, raw_path)
+    if target.startswith("../") or target == "..":
+        return False
+    candidate = (ROOT / target).resolve()
+    try:
+        candidate.relative_to(ROOT)
+    except ValueError:
+        return False
+    return candidate.is_file()
+
+
 def nav_files(config: dict) -> list[str]:
     files: list[str] = []
 
@@ -151,7 +179,7 @@ def check_sources() -> list[str]:
             if not raw_path:
                 continue
             resolved = (path.parent / raw_path).resolve()
-            if not resolved.exists():
+            if not resolved.exists() and not virtual_target_exists(path, raw_path):
                 problems.append(f"{path.relative_to(ROOT)}: missing target {target}")
                 continue
             if parts.fragment and resolved.suffix == ".md" and resolved in pages:
@@ -166,7 +194,7 @@ def check_sources() -> list[str]:
         if entry.startswith(SKIP_SCHEMES) or entry.startswith("#"):
             continue
         candidate = DOCS / entry
-        if not candidate.exists():
+        if not candidate.exists() and not (ROOT / entry).is_file():
             problems.append(f"mkdocs.yml nav points at missing file: {entry}")
 
     return problems

@@ -2,9 +2,10 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f12_backpropagation.ipynb`  
-**Hardware:** CPU by default; uses CUDA only if `torch.cuda.is_available()` is true.  
-**Time:** About 3 hours including the explanations; the code runs in under a minute.  
+**Notebook file:** `notebooks/foundations/f12_backpropagation.ipynb`
+**Open notebook:** [F12 guided notebook](../../notebooks/foundations/f12_backpropagation.ipynb)
+**Hardware:** CPU by default; uses CUDA only if `torch.cuda.is_available()` is true.
+**Time:** About 3 hours including the explanations; the code runs in under a minute.
 **Execution status:** Verified on Windows 11 CPU with Python 3.12.10 and
 PyTorch 2.4.1+cpu. The optional GPU branch was **not** executed in the authoring
 environment.

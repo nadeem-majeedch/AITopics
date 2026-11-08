@@ -2,9 +2,10 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f10_metrics_validation.ipynb`  
-**Hardware:** CPU-only; matplotlib uses the non-interactive `Agg` backend  
-**Time:** 2-3 hours including reading the explanations  
+**Notebook file:** `notebooks/foundations/f10_metrics_validation.ipynb`
+**Open notebook:** [F10 guided notebook](../../notebooks/foundations/f10_metrics_validation.ipynb)
+**Hardware:** CPU-only; matplotlib uses the non-interactive `Agg` backend
+**Time:** 2-3 hours including reading the explanations
 **Execution status:** verified on Windows 11 CPU with Python 3.12.10. Colab and GPU paths were not executed.
 
 The notebook generates its own 500-row student table and writes one figure. It

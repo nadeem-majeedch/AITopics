@@ -20,12 +20,13 @@ data failures wearing a model costume.
 
 | Module | Question | Lessons | Notebook |
 | --- | --- | --- | --- |
-| M04 | How does a training run actually work, and what does it cost? | [MT01](mt01-training-loop.md) - [MT05](mt05-checkpoints-and-compute.md) | `notebooks/model-training/m04_training_from_scratch.ipynb` |
-| M05 | Is the data fit to train on, and can you prove it? | [MT06](mt06-dataset-audit.md) - [MT10](mt10-dataset-cards.md) | `notebooks/model-training/m05_data_engineering.ipynb` |
+| M04 | How does a training run actually work, and what does it cost? | [MT01](mt01-training-loop.md) - [MT05](mt05-checkpoints-and-compute.md) | [Open notebook](../../notebooks/model-training/m04_training_from_scratch.ipynb) |
+| M05 | Is the data fit to train on, and can you prove it? | [MT06](mt06-dataset-audit.md) - [MT10](mt10-dataset-cards.md) | [Open notebook](../../notebooks/model-training/m05_data_engineering.ipynb) |
 
 ## Measured anchors
 
-These numbers come from the notebooks in this repository, on a CPU. They are
+These numbers come from the [M04 notebook](../../notebooks/model-training/m04_training_from_scratch.ipynb)
+and the [M05 notebook](../../notebooks/model-training/m05_data_engineering.ipynb), on a CPU. They are
 anchors for comparison, not benchmarks:
 
 * the curated image split is 300 images (210/45/45); the plain CNN has 72,499

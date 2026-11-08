@@ -2,9 +2,10 @@
 
 **Module path:** [Lesson](index.md) · **Guided notebook** · [Lab brief](lab.md) · [Assessment](assessment.md)
 
-**Notebook file:** `notebooks/foundations/f11_neural_networks.ipynb`  
-**Hardware:** CPU-only. No GPU is used or required.  
-**Time:** About 2 hours including the explanations; the code itself runs in seconds.  
+**Notebook file:** `notebooks/foundations/f11_neural_networks.ipynb`
+**Open notebook:** [F11 guided notebook](../../notebooks/foundations/f11_neural_networks.ipynb)
+**Hardware:** CPU-only. No GPU is used or required.
+**Time:** About 2 hours including the explanations; the code itself runs in seconds.
 **Execution status:** Verified on Windows 11 CPU with Python 3.12.10. No GPU run
 was attempted for this notebook.
 

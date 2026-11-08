@@ -1,9 +1,10 @@
 # Final repository audit
 
-Audit date: **2026-11-06**. Scope: the whole repository after the curriculum
-completion pass for M04-M08 and M15-M17. This page records what was authored, what
-was executed, what passed, and what remains limited. It is maintainer
-documentation; students do not need it.
+Audit date: **2026-11-08**. Scope: the whole repository after the M09-M14
+notebook completion pass, the chatbot/RAG regression repair, and the full
+validation gate. This page records what was authored, what was executed, what
+passed, and what remains limited. It is maintainer documentation; students do not
+need it.
 
 For the current release decision, CI evidence, and licensing register, see the
 [Release-readiness audit](release-readiness-audit.md) and the
@@ -11,24 +12,92 @@ For the current release decision, CI evidence, and licensing register, see the
 
 ## Executive verdict
 
-**PASS WITH WARNINGS on curriculum completeness. Every module from M01 to M17 now
-has published teaching material, practical work, and assessment.**
+**VALIDATION PASSED WITH DOCUMENTED LIMITATIONS (local). The repository is ready
+for deployment review, not yet verified as a public student course.**
 
-The warnings are environmental and evidentiary, not missing chapters:
+Every required local gate passes: 253 unit tests, 26 notebook JSON checks, 26
+fresh-kernel notebook executions (223 code cells), course inventory, source and
+built-site links, strict MkDocs, licensing, and whitespace. The remaining
+limitations are environmental and evidentiary:
 
+* GitHub Pages is still unpublished: the Pages API and the project URL both
+  return HTTP 404, and no validation/deployment workflow has run on GitHub
+  Actions;
 * no notebook was executed on a GPU, and no Google Colab session was run;
 * the optional Hugging Face/bitsandbytes path in M07/M08 was not executed (CPU
   only, no model download);
 * the capstone was piloted by an agent through the three checkpoint gates, but no
   human student submission or human marking exists;
-* the licence decision is implemented and awaiting instructor review, and GitHub
-  Pages enablement remains a maintainer task; whole-repository CI is now defined
-  but has not run on GitHub.
+* the 20 pre-existing notebooks do not all follow the 14-section template used by
+  M09-M14.
+
+This is not a claim that students can already reach a public site. It is a claim
+that the repository is ready for the deployment review that precedes that step.
+
+## Current repair and validation pass (2026-11-08)
+
+### Chatbot/RAG regression
+
+The full unit suite initially reported **2 failures out of 253**:
+`test_rag_missing_document_abstains` and
+`test_rag_irrelevant_retrieval_is_not_used_as_evidence`. Both are required RAG
+quality cases, so this blocked the release.
+
+Root cause: the deterministic `FakeModelClient` parser had been corrected to stop
+treating the user-turn instruction paragraph (`Reply with the JSON object...`) as
+part of the question. That correction exposed a weaker support rule: one shared
+content word (for example, `workshop` or `much`) was enough to claim an answer.
+Before the parser fix, instruction words diluted the overlap ratio and masked the
+defect; the tests passed for the wrong reason.
+
+Fix in `projects/chatbots-rag/chatbot_core/model_client.py`:
+
+- preserve the evidence header (title and section) separately from the body;
+- decide support against the header plus body, not just one sentence;
+- require two matching content words, except for a one-word question whose whole
+  content is present;
+- keep sentence-level extraction for the returned answer and keep the JSON
+  response contract unchanged.
+
+No test was weakened, skipped, deleted, or rewritten. The two failing tests pass,
+the complete 253-test suite passes, and the 14-question offline evaluation still
+reports answer accuracy 1.0, abstention correctness 1.0, citation precision 1.0,
+recall 1.0, and hit@k 1.0.
+
+### Notebook and site completion
+
+Six applied notebooks were added and executed: M09 chatbots, M10 RAG, M11 image
+classification, M12 object detection, M13 speech/audio, and M14 video AI. The
+Notebook Library and MkDocs navigation now link all 26 notebooks. The six new
+notebooks were each rechecked for the 14-section instructional standard, including
+explicit limitations and troubleshooting.
+
+### Current measured results
+
+| Gate | Result |
+| --- | --- |
+| Full unit suite | **253 tests, OK** |
+| Notebook JSON and stored outputs | **26 notebooks valid, 0 errors** |
+| Notebook execution | **26 notebooks, 223 code cells, 176.1 s, 0 failures** |
+| Course inventory | **18 modules, 105 lesson files, 26 notebooks, 52 labs/project briefs, 21 assessments** |
+| Markdown links and anchors | **295 files, 0 broken** |
+| Strict MkDocs build | **0 warnings, 322 built pages** |
+| Built-site links and `/AITopics` prefix | **PASS** |
+| Licensing | **PASS: 8 checks, 560 release files classified** |
+| Whitespace | **`git diff --check` and `git diff --cached --check` clean** |
+| GitHub Pages | **HTTP 404; not deployed** |
+| GitHub Actions validation/deploy | **No run found; 2 Dependabot runs only** |
+
+The detailed evidence is in the [Repository content audit](repository-content-audit.md),
+[Notebook coverage audit](notebook-coverage-audit.md),
+[Navigation and link audit](navigation-and-link-audit.md),
+[GitHub Pages deployment audit](github-pages-deployment-audit.md), and
+[Student usability audit](student-usability-audit.md).
 
 The previous audit failed because seven modules published plans and projects but
-no lessons. That gap is closed: **33 new lessons, five section indexes, five
-assessments, eight lab briefs, and seven executed notebooks** now cover M04-M08 and
-M15-M17. The repository can be taught end-to-end from F01 to the capstone.
+no lessons. That gap was closed in the preceding pass: **33 new lessons, five
+section indexes, five assessments, eight lab briefs, and seven executed
+notebooks** now cover M04-M08 and M15-M17.
 
 ## Module status
 
@@ -43,17 +112,17 @@ M15-M17. The repository can be taught end-to-end from F01 to the capstone.
 | M06 transformers | LF01-LF04 | `m06_transformers` executed | 3 shared lab briefs + assessment | Complete |
 | M07 supervised fine-tuning | LF05-LF07 | `m07_sft_small_lm` executed | 3 shared lab briefs + assessment | Complete |
 | M08 LoRA and quantization | LF08-LF10 | `m08_lora_qlora` executed | 3 shared lab briefs + assessment | Complete |
-| M09 chatbots | CA01-CA08 | Script-based | 8 projects + assessment | Complete |
-| M10 RAG | CA09-CA16 | Script-based | 8 projects + assessment | Complete |
-| M11 image classification | CV01-CV10 | Script-based | 8 labs + assessment | Complete |
-| M12 detection and tracking | CV08-CV14 | Script-based | Labs 4-8 | Complete |
-| M13 speech and audio | SA01-SA14 | Script-based | 8 labs + assessment | Complete |
-| M14 video AI | VD01-VD15 | Script-based | 8 labs + assessment | Complete |
+| M09 chatbots | CA01-CA08 | `m09_chatbots` executed | 8 projects + assessment | Complete |
+| M10 RAG | CA09-CA16 | `m10_rag` executed | 8 projects + assessment | Complete |
+| M11 image classification | CV01-CV10 | `m11_image_classification` executed | 8 labs + assessment | Complete |
+| M12 detection and tracking | CV08-CV14 | `m12_object_detection` executed | Labs 4-8 | Complete |
+| M13 speech and audio | SA01-SA14 | `m13_speech_audio` executed | 8 labs + assessment | Complete |
+| M14 video AI | VD01-VD15 | `m14_video_ai` executed | 8 labs + assessment | Complete |
 | M15 agents | AG01-AG05 | `m15_agents` executed | 1 lab brief + assessment | Complete |
 | M16 production | PR01-PR05 | `m16_production` executed | 1 lab brief + assessment | Complete |
 | M17 capstone | CP01-CP03 | Reuses M04-M16 | 1 gated lab + assessment | Complete; agent-simulated pilot only |
 
-Published totals: **208 lesson and support pages across the published sections, 20
+Published totals: **208 lesson and support pages across the published sections, 26
 executable notebooks, 12 capstone specifications with weighted rubrics, 8
 assessment banks with answer keys, and 5 new section assessments**.
 
@@ -159,10 +228,12 @@ Measured anchors from the agent-simulated pilot (P03, P06, P12), recorded in the
   gate, path containment, schema validation and step budget held in every gated
   attack; the ungated ablation wrote the outbox and the post-denial note.
 
-## Executed checks and actual results
+## Historical executed checks (2026-11-06 pass)
 
 Environment: Windows 11, Python 3.12.10, CPU only. Commands were run from the
-repository root on 2026-11-06 in the project virtual environment.
+repository root on 2026-11-06 in the project virtual environment. Current
+2026-11-08 results are in the table at the top of this page and in the
+[Notebook coverage audit](notebook-coverage-audit.md).
 
 | Check | Command | Result |
 | --- | --- | --- |
@@ -204,7 +275,9 @@ All seven new notebooks were executed top-to-bottom from a fresh kernel on
 | `m16_production.ipynb` | 24 | `M16 validation passed.` |
 
 The thirteen foundation notebooks retain their earlier executed outputs and also
-have 0 error outputs. All 20 notebooks contain no unexecuted code cell.
+have 0 error outputs. All 26 notebooks contain no unexecuted code cell. The six
+M09-M14 notebooks were added and executed on 2026-11-08; the current full run is
+recorded in the [Notebook coverage audit](notebook-coverage-audit.md).
 
 ## Curriculum coverage
 
@@ -227,7 +300,7 @@ No duplicate implementations were created to inflate file counts:
 
 | Finding | Severity | Detail |
 | --- | --- | --- |
-| No GPU execution | Medium | All 20 notebooks ran on Windows 11 CPU. GPU paths are documented and labelled optional; no GPU number is claimed. |
+| No GPU execution | Medium | All 26 notebooks ran on Windows 11 CPU. GPU paths are documented and labelled optional; no GPU number is claimed. |
 | M07/M08 pretrained path not executed | Medium | The Hugging Face 4-bit QLoRA path needs a GPU and a download. The mandatory path is a CPU-sized local implementation; the pretrained path is optional and marked unexecuted. |
 | No Colab verification | Medium | No Colab session was run for any notebook. |
 | No human capstone pilot | Medium | An agent-simulated pilot ran P03, P06, and P12 through their pipelines and gates; no human student or human marker has done so. See [Capstone pilot report](capstone-pilot-report.md). |
@@ -236,8 +309,8 @@ No duplicate implementations were created to inflate file counts:
 | Lab 3 (computer vision) transfer numbers do not reproduce | High | Pre-existing, unchanged: repeated runs give 0.667 or 0.500 for the fine-tuned condition against the recorded 0.500/0.500/0.722. Needs a documented seed, larger test set, or retuned rate, plus a content decision. |
 | Video Lab 2 not executed | Medium | Pre-existing: it downloads a 13 MB checkpoint. |
 | Licence implementation review | Low | The approved MIT, CC BY 4.0, and CC0 1.0 files and validator are present in the working tree; instructor review and commit remain. |
-| GitHub Pages not enabled, no deployment | Medium | Workflows validate; the repository setting and first run are manual. No public URL is claimed. |
-| CI does not yet cover code and notebooks on GitHub | Medium | The validation workflow now installs the CPU stack, runs licensing validation and 253 tests, checks manifests and projects, and executes all 20 notebooks locally. The first GitHub Actions run is still pending. |
+| GitHub Pages not enabled, no deployment | Medium | Workflows validate; the repository setting and first run are manual. The public URL returned HTTP 404 on 2026-11-08. No public URL is claimed. |
+| CI does not yet cover code and notebooks on GitHub | Medium | The validation workflow installs the CPU stack, runs licensing validation and 253 tests, checks manifests and projects, and executes all 26 notebooks locally. The first GitHub Actions run is still pending; only two Dependabot runs are present. |
 | `scikit-learn` DLL blocked in this environment | Low | M05 uses inline Naive Bayes and kappa; documented in the notebook and coverage map. |
 
 ## Responsible AI and security
@@ -286,7 +359,24 @@ API keys.
 * `docs/lessons/capstone/index.md`, `assessment.md`, `labs/lab-1-capstone-package.md`
 * `docs/planning/curriculum-coverage.md`
 
-### New notebooks and code
+### New notebooks and code added on 2026-11-08
+
+* `notebooks/chatbots-rag/m09_chatbots.ipynb`
+* `notebooks/chatbots-rag/m10_rag.ipynb`
+* `notebooks/computer-vision/m11_image_classification.ipynb`
+* `notebooks/computer-vision/m12_object_detection.ipynb`
+* `notebooks/speech-audio/m13_speech_audio.ipynb`
+* `notebooks/video-ai/m14_video_ai.ipynb`
+* `docs/notebook-library.md`
+* `scripts/check_course_inventory.py`
+* `projects/chatbots-rag/chatbot_core/model_client.py` (support-rule regression fix)
+* `docs/technical/repository-content-audit.md`
+* `docs/technical/notebook-coverage-audit.md`
+* `docs/technical/navigation-and-link-audit.md`
+* `docs/technical/github-pages-deployment-audit.md`
+* `docs/technical/student-usability-audit.md`
+
+### Earlier notebooks and code
 
 * `notebooks/model-training/m04_training_from_scratch.ipynb`
 * `notebooks/model-training/m05_data_engineering.ipynb`

@@ -51,6 +51,43 @@ extra:
 
 nav:
   - Home: index.md
+  - Notebook Library:
+      - Overview: notebook-library.md
+      - Foundations:
+          - F01 - Python essentials: notebooks/foundations/f01_python_ai.ipynb
+          - F02 - Environment check (M01): notebooks/foundations/m01_environment_check.ipynb
+          - F03 - NumPy and pandas: notebooks/foundations/f03_numpy_pandas.ipynb
+          - F04 - Data cleaning: notebooks/foundations/f04_data_cleaning.ipynb
+          - F05 - Splits: notebooks/foundations/f05_splits.ipynb
+          - F06 - Exploratory data analysis: notebooks/foundations/f06_eda.ipynb
+          - F07 - Supervised and unsupervised: notebooks/foundations/f07_supervised_unsupervised.ipynb
+          - F08 - Regression and classification: notebooks/foundations/f08_regression_classification.ipynb
+          - F09 - Tree ensembles: notebooks/foundations/f09_tree_ensembles.ipynb
+          - F10 - Metrics and validation: notebooks/foundations/f10_metrics_validation.ipynb
+          - F11 - Neural networks: notebooks/foundations/f11_neural_networks.ipynb
+          - F12 - Backpropagation: notebooks/foundations/f12_backpropagation.ipynb
+          - F13 - Reproducibility: notebooks/foundations/f13_reproducibility.ipynb
+      - Model training (M04-M05):
+          - M04 - Training from scratch: notebooks/model-training/m04_training_from_scratch.ipynb
+          - M05 - Data engineering: notebooks/model-training/m05_data_engineering.ipynb
+      - LLMs and fine-tuning (M06-M08):
+          - M06 - Transformers: notebooks/llm-fine-tuning/m06_transformers.ipynb
+          - M07 - SFT for small language models: notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb
+          - M08 - LoRA and QLoRA: notebooks/llm-fine-tuning/m08_lora_qlora.ipynb
+      - Chatbots and RAG (M09-M10):
+          - M09 - Chatbots: notebooks/chatbots-rag/m09_chatbots.ipynb
+          - M10 - Retrieval-augmented generation: notebooks/chatbots-rag/m10_rag.ipynb
+      - Computer vision (M11-M12):
+          - M11 - Image classification: notebooks/computer-vision/m11_image_classification.ipynb
+          - M12 - Object detection: notebooks/computer-vision/m12_object_detection.ipynb
+      - Speech and audio (M13):
+          - M13 - Speech and audio AI: notebooks/speech-audio/m13_speech_audio.ipynb
+      - Video AI (M14):
+          - M14 - Video AI and traffic analytics: notebooks/video-ai/m14_video_ai.ipynb
+      - AI agents (M15):
+          - M15 - Tool-using agents: notebooks/ai-agents/m15_agents.ipynb
+      - Production (M16):
+          - M16 - Evaluation and serving: notebooks/production/m16_production.ipynb
   - Start Here:
       - Course roadmap: course/roadmap.md
       - Learning paths: course/learning-paths.md
@@ -368,6 +405,11 @@ nav:
       - Site maintenance: technical/site-maintenance.md
       - Final audit: technical/final-audit.md
       - Release-readiness audit: technical/release-readiness-audit.md
+      - Repository content audit: technical/repository-content-audit.md
+      - Notebook coverage audit: technical/notebook-coverage-audit.md
+      - Navigation and link audit: technical/navigation-and-link-audit.md
+      - GitHub Pages deployment audit: technical/github-pages-deployment-audit.md
+      - Student usability audit: technical/student-usability-audit.md
       - Licensing and attribution: technical/licensing-and-attribution.md
       - Licensing decision package: technical/licensing-decision-package.md
       - Independent final licensing audit: technical/final-licensing-audit.md
@@ -418,6 +460,10 @@ markdown_extensions:
 
 plugins:
   - search
+  - mkdocs-jupyter:
+      notebook_dirs:
+        notebooks: notebooks
+      include_source: true
 
 # Keep the build honest: fail on broken internal links and missing navigation
 # targets. External link checking is a separate Phase 8 task.

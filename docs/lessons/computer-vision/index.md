@@ -23,6 +23,11 @@ Fourteen modules, eight labs, one face-safety module with measured demographic g
 documented capstone. Everything runs on a laptop CPU with no account, no download, and no
 dataset licence to negotiate.
 
+!!! abstract "Guided notebooks"
+    Start with [M11 - Image classification](../../notebooks/computer-vision/m11_image_classification.ipynb),
+    then [M12 - Object detection](../../notebooks/computer-vision/m12_object_detection.ipynb).
+    Both train and evaluate on the section's own synthetic data.
+
 | | |
 | --- | --- |
 | **Level** | 3 - Vision and video (after F03-F13) |

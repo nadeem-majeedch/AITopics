@@ -20,6 +20,11 @@ Sixteen modules and eight projects. Everything runs on a laptop CPU with no
 account, no API key, and no model download. A hosted API and a local model are
 optional comparisons, never requirements.
 
+!!! abstract "Guided notebooks"
+    Start with [M09 - Chatbots](../../notebooks/chatbots-rag/m09_chatbots.ipynb),
+    then [M10 - Retrieval-augmented generation](../../notebooks/chatbots-rag/m10_rag.ipynb).
+    Both include saved outputs and a section on what those outputs do not prove.
+
 | | |
 | --- | --- |
 | **Level** | 2 - Language AI (follows the foundation sequence F01-F13) |

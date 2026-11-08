@@ -4,6 +4,21 @@ This inventory records what existed before the architecture work, what must be
 preserved, and what remains to be created. It is a working checklist for
 maintainers.
 
+## Current verified inventory (2026-11-08)
+
+| Item | Verified state |
+| --- | --- |
+| Modules | M00-M17, 18 modules |
+| Module lesson files | 105 assigned lesson pages (some applied lessons are shared by two modules) |
+| Notebooks | 26 valid, executed notebooks; all linked in the [Notebook Library](../notebook-library.md) |
+| Labs and project briefs | 52 unique files across foundation labs, section labs, and chatbot projects |
+| Assessments | 21 unique assessment files; M00 has no assessment |
+| Documentation build | 290 Markdown pages; `mkdocs build --strict` passes with the notebook plugin |
+| GitHub Pages | Not deployed; repository Pages API returns 404 |
+
+The historical tables below are retained as a record of the original empty-workspace
+audit. Where they conflict with this section, this section is current.
+
 ## Audit result
 
 | Item | Result |
@@ -153,7 +168,12 @@ not created.
 | M06 | `notebooks/llm-fine-tuning/m06_transformers.ipynb` | Executed on Windows CPU |
 | M07 | `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb` | Executed on Windows CPU |
 | M08 | `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb` | Executed on Windows CPU |
-| M09-M14 | Section projects are script-based | No notebook; runnable labs |
+| M09 | `notebooks/chatbots-rag/m09_chatbots.ipynb` | Executed on Windows CPU |
+| M10 | `notebooks/chatbots-rag/m10_rag.ipynb` | Executed on Windows CPU |
+| M11 | `notebooks/computer-vision/m11_image_classification.ipynb` | Executed on Windows CPU |
+| M12 | `notebooks/computer-vision/m12_object_detection.ipynb` | Executed on Windows CPU |
+| M13 | `notebooks/speech-audio/m13_speech_audio.ipynb` | Executed on Windows CPU |
+| M14 | `notebooks/video-ai/m14_video_ai.ipynb` | Executed on Windows CPU |
 | M15 | `notebooks/ai-agents/m15_agents.ipynb` | Executed on Windows CPU |
 | M16 | `notebooks/production/m16_production.ipynb` | Executed on Windows CPU |
 | M17 | Reuses the M04-M16 notebooks and packages | Capstone is project work |
@@ -274,7 +294,7 @@ including one assessment per unit and a shared synthetic dataset card.
 | Foundation and section notebooks executed only on Windows 11 CPU | Cross-environment and GPU reproducibility are unverified | Execute representative units on Colab and, where available, a GPU; record the comparison |
 | M07/M08 pretrained Hugging Face path not executed | The optional real-model path needs a GPU and a download | Keep the CPU-sized local path mandatory; document the pretrained path as optional |
 | Capstone has no sample submission | The three checkpoint gates are specified but untested against a real student package | Run a pilot submission and record the result |
-| CI has not run on GitHub | The workflow now covers docs, licensing validation, 253 unit tests, manifest fixtures, projects, generated-data checks, and all 20 notebooks locally, but no Actions runner has executed it | Merge and run the workflow; record the first green run [release audit](../technical/release-readiness-audit.md) |
+| CI has not run on GitHub | The workflow now covers docs, licensing validation, 253 unit tests, manifest fixtures, projects, generated-data checks, and all 26 notebooks locally, but no Actions runner has executed it | Merge and run the workflow; record the first green run [release audit](../technical/release-readiness-audit.md) |
 | No pilot | Time estimates and labs are untested | Run Phase 8 |
 | GitHub Pages not enabled | No public site; the deploy workflow cannot publish until the repository setting exists | Set Settings → Pages → Source: GitHub Actions, then run the deploy workflow |
 | Dataset licenses unverified | Legal risk | Verify each dataset card |
