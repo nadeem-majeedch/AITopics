@@ -72,19 +72,19 @@ hashing embeddings, `k=4`, `min_score=0.12`):
 
 | Metric | Dev (n=14) | Test (n=12) |
 | --- | --- | --- |
-| `answer_accuracy` | 0.7857 | 0.7500 |
-| `answer_accuracy_answerable` | 0.7500 | 0.7000 |
+| `answer_accuracy` | 1.0000 | 0.7500 |
+| `answer_accuracy_answerable` | 1.0000 | 0.7000 |
 | `abstention_correct` | 1.0000 | 1.0000 |
 | `false_answer_rate_unanswerable` | 0.0000 | 0.0000 |
-| `citation_precision` | 0.9000 | 1.0000 |
-| `citation_recall` | 0.7500 | 0.8000 |
+| `citation_precision` | 1.0000 | 1.0000 |
+| `citation_recall` | 1.0000 | 0.8000 |
 | `hit_at_k` | 1.0000 | 1.0000 |
-| `mean_latency_ms` | 0.786 | 0.743 |
+| `mean_latency_ms` | 0.804 | 0.775 |
 
 **Read the first row against the seventh.** Retrieval found a gold document for every
-answerable question (`hit_at_k = 1.0000`), and the system still missed roughly a quarter
-of them. If you had tuned retrieval, you would have tuned a component that was not
-failing.
+answerable question in both splits (`hit_at_k = 1.0000`). The dev split answered all
+of them; the held-out test split still missed three of twelve. That remaining gap is
+not retrieval, so tuning retrieval would not close it.
 
 **Read the refusal rows.** `abstention_correct = 1.0000` and
 `false_answer_rate = 0.0000` mean every unanswerable question produced a refusal. This
@@ -98,21 +98,18 @@ the second is the trade you must watch.
 
 ## Error analysis: the failures are the deliverable
 
-Seven questions failed. Each failure has a specific cause, and each cause is a different
-lesson:
+The dev split has no failures. Three held-out test questions fail, and each failure
+has a specific cause:
 
 | Item | Question | Failure | Cause |
 | --- | --- | --- | --- |
-| q03 | Module assessment weights | Refused | Extractive client needs sentence-level overlap; the weights sentence shares one word with the question |
-| q09 | Why evaluate retrieval separately? | Refused | Same overlap rule, despite the right passage being retrieved at rank 1 |
-| q14 | GPU needed for exercises? | Answered from the wrong section | The client scored "conversation history" against "conversational"; it quoted the context-window passage |
 | t05 | Can I get my data deleted? | Refused | Inflection mismatch: the source says "deletion", the question says "deleted" |
 | t06 | Should I fine-tune to teach facts? | Answered from a weaker section | "Using both" shared two content words; "What fine-tuning changes" shared two as well |
 | t07 | What must a citation point to? | Refused | The question's verbs ("point to") do not appear in the source sentence |
 
-Four of six are **over-refusal**, one is **misattribution**, one is **lexical mismatch**.
-That is a diagnosis, and it points at the client, not at the architecture: the pipeline
-correctly retrieved and correctly refused to cite something unsupported.
+Two are **over-refusal** and one is **misattribution**. That is a diagnosis, and it
+points at the extractive client, not at the architecture: the pipeline correctly
+retrieved the gold document and correctly refused to cite something unsupported.
 
 Contrast a report that says "accuracy is 75%". It cannot tell you whether to improve
 retrieval, the model, or the prompt. This table can.

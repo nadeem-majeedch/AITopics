@@ -8,7 +8,7 @@ problems.
     Original code is MIT-licensed, original educational content is CC BY 4.0,
     and verified original synthetic datasets are CC0 1.0. Third-party material
     keeps its upstream terms. Read
-    [LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md)
+    [LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/LICENSES/README.md)
     before reusing or contributing material.
 
 ## Ways to contribute

@@ -25,6 +25,8 @@ If not, complete M06, M09, and M10 first.
 
 ## M15 - AI agents, tool calling, memory, and workflows {#m15}
 
+**Published material:** [AI agents overview](../lessons/ai-agents/index.md).
+
 **Level 4 | 24 hours | CPU or API | Prerequisite: M06, M09, M10**
 
 ### Learning objectives

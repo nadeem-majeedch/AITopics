@@ -1,10 +1,9 @@
 # Final repository audit
 
-Audit date: **2026-11-08**. Scope: the whole repository after the M09-M14
-notebook completion pass, the chatbot/RAG regression repair, and the full
-validation gate. This page records what was authored, what was executed, what
-passed, and what remains limited. It is maintainer documentation; students do not
-need it.
+Audit date: **2026-11-09**. Scope: the whole repository after the navigation,
+resources, notebook-rendering, and publication-workflow repair pass. This page
+records what exists, what was executed, what passed, and what remains limited. It
+is maintainer documentation; students do not need it.
 
 For the current release decision, CI evidence, and licensing register, see the
 [Release-readiness audit](release-readiness-audit.md) and the
@@ -12,29 +11,157 @@ For the current release decision, CI evidence, and licensing register, see the
 
 ## Executive verdict
 
-**VALIDATION PASSED WITH DOCUMENTED LIMITATIONS (local). The repository is ready
-for deployment review, not yet verified as a public student course.**
+**READY WITH DOCUMENTED LIMITATIONS.** The local course is coherent, navigable,
+verified by its automated gates, and ready for the release owner to push and
+deploy. It is **not** yet verified as a public student course.
 
-Every required local gate passes: 253 unit tests, 26 notebook JSON checks, 26
-fresh-kernel notebook executions (223 code cells), course inventory, source and
-built-site links, strict MkDocs, licensing, and whitespace. The remaining
-limitations are environmental and evidentiary:
+Every required local gate passes on this tree: 269 unit tests, 26 notebook JSON
+checks, 26 fresh-kernel notebook executions (223 code cells, 262.4 s), course
+inventory, source and built-site links, strict MkDocs (323 pages), licensing (572
+release files), workflow schemas, and whitespace. The remaining limitations are
+environmental and evidentiary:
 
-* GitHub Pages is still unpublished: the Pages API and the project URL both
-  return HTTP 404, and no validation/deployment workflow has run on GitHub
-  Actions;
+* GitHub Pages is still unpublished: the Pages API and project URL both return
+  HTTP 404, and no validation/deployment workflow has run on GitHub Actions;
 * no notebook was executed on a GPU, and no Google Colab session was run;
 * the optional Hugging Face/bitsandbytes path in M07/M08 was not executed (CPU
   only, no model download);
 * the capstone was piloted by an agent through the three checkpoint gates, but no
   human student submission or human marking exists;
-* the 20 pre-existing notebooks do not all follow the 14-section template used by
-  M09-M14.
+* only 6 of 26 notebooks (M09-M14) meet the exact named 14-section template; the
+  other 20 are substantive, executed, and linked but use a more compact structure;
+* the public origin, search relevance, mobile layout, and the committed
+  `release/v0.1.0-rc.1` push remain unverified;
+* notebook pages offer a downloadable `.ipynb`, but the repository commits no
+  notebook SHA-256 manifest, so a download is verified by hashing it against the
+  repository copy (see [GitHub Pages publication](GITHUB-PAGES.md#release-publication-procedure-nine-steps)).
 
 This is not a claim that students can already reach a public site. It is a claim
-that the repository is ready for the deployment review that precedes that step.
+that the repository is ready for the push and deployment review that precedes
+that step, with the limitations above made explicit.
 
-## Current repair and validation pass (2026-11-08)
+## Release candidate snapshot
+
+Recorded **2026-11-09** immediately before the gates below were re-run. Nothing
+was committed, staged, pushed, tagged, or deployed to produce this snapshot.
+
+| Item | Value |
+| --- | --- |
+| Branch | `release/v0.1.0-rc.1` (also the remote default branch) |
+| Local HEAD | `c6410acbbd18af88676418ea6355395bad169e98` (`c6410ac missing notebooks add`) |
+| Upstream | `origin/release/v0.1.0-rc.1` = `5fdf5dec97439753e240b4d96b8371affd287609` |
+| Ahead / behind | 1 / 0 |
+| Staged paths | **0** |
+| Tracked changes | **59** (50 modified, 9 deleted) |
+| Untracked files | **12** |
+| Total status entries | **71** |
+| Diff size | **59 files changed, 2,510 insertions(+), 1,570 deletions(-)** (`git diff --stat`, measured on this exact tree; it includes these documentation updates) |
+
+### File-by-file inventory
+
+**Created (12, untracked).** `docs/resources/index.md`;
+`docs/technical/repository-inventory.json`; `labs/README.md`;
+`labs/ai-agents/README.md`, `labs/chatbots-rag/README.md`,
+`labs/computer-vision/README.md`, `labs/llm-fine-tuning/README.md`,
+`labs/model-training/README.md`, `labs/production/README.md`,
+`labs/speech-audio/README.md`, `labs/video-ai/README.md`;
+`tests/test_chatbot_parser_regression.py`.
+
+**Deleted (9).** The empty placeholders `labs/ai-agents/.gitkeep`,
+`labs/chatbots-rag/.gitkeep`, `labs/computer-vision/.gitkeep`,
+`labs/foundations/.gitkeep`, `labs/llm-fine-tuning/.gitkeep`,
+`labs/model-training/.gitkeep`, `labs/production/.gitkeep`,
+`labs/speech-audio/.gitkeep`, `labs/video-ai/.gitkeep`. Each is a zero-byte file
+replaced by a substantive README or by real foundation starter files; no content
+was deleted.
+
+**Modified (50).**
+
+| Area | Paths |
+| --- | --- |
+| Workflows | `.github/workflows/deploy-pages.yml`, `.github/workflows/validate-docs.yml` |
+| Notebooks (Markdown-only repair) | `notebooks/model-training/m04_training_from_scratch.ipynb`, `notebooks/model-training/m05_data_engineering.ipynb`, `notebooks/llm-fine-tuning/m06_transformers.ipynb`, `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb`, `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb`, `notebooks/ai-agents/m15_agents.ipynb`, `notebooks/production/m16_production.ipynb` |
+| Navigation and status | `mkdocs.yml`, `README.md`, `docs/index.md`, `docs/about/instructor.md`, `docs/course/roadmap.md`, `docs/course/learning-paths.md`, `docs/course/assessments/index.md`, `docs/syllabus/index.md`, `docs/syllabus/level-0-start.md`, `docs/syllabus/level-1-foundations.md`, `docs/syllabus/level-2-language.md`, `docs/syllabus/level-3-vision-video.md`, `docs/syllabus/level-4-agents.md`, `docs/syllabus/level-5-production.md`, `docs/planning/content-inventory.md`, `docs/planning/curriculum-coverage.md`, `docs/planning/repository-architecture.md` |
+| Video and robot lessons | `docs/lessons/video-ai/governance.md`, `docs/lessons/video-ai/index.md`, `docs/lessons/video-ai/model-card.md`, `docs/lessons/video-ai/vd15-responsible-video-analytics.md`, `docs/lessons/video-ai/labs/lab-1-preprocessing.md` |
+| Chatbot lesson (pre-existing) | `docs/lessons/chatbots-rag/ca14-evaluation.md`, `docs/lessons/chatbots-rag/index.md` |
+| Technical audits | `docs/technical/GITHUB-PAGES.md`, `docs/technical/build-and-deploy.md`, `docs/technical/contributing.md`, `docs/technical/final-audit.md`, `docs/technical/github-pages-deployment-audit.md`, `docs/technical/licensing-decision-package.md`, `docs/technical/navigation-and-link-audit.md`, `docs/technical/notebook-coverage-audit.md`, `docs/technical/release-notes-v0.1.0-rc.1.md`, `docs/technical/release-readiness-audit.md`, `docs/technical/repository-content-audit.md`, `docs/technical/student-usability-audit.md`, `docs/technical/v1-release-candidate-checklist.md` |
+| Code and data instructions | `projects/chatbots-rag/chatbot_core/model_client.py`, `projects/video-ai/lab_support.py`, `requirements/video.txt`, `scripts/check_course_inventory.py` |
+
+Review findings from the full diff pass: the nine deletions are only empty
+placeholders; the seven notebook diffs change Markdown cells only, with code
+sources, execution counts, and stored outputs identical to `HEAD`; the workflow
+diffs widen triggers to `release/**` without granting Pages permissions to the
+validation job; the `mkdocs.yml` diff adds the resources nav entry and updates
+`edit_uri` while leaving `site_url` unchanged. One repair defect was found and
+fixed during this review: `docs/lessons/video-ai/model-card.md` had its table
+delimiter and two rows collapsed onto a single line, which broke the rendered
+Data table. No other merged-line or generated-artifact defect was found; the
+only new build artifact is `docs/technical/repository-inventory.json`, which is
+intentionally committed as evidence.
+
+### Snapshot verification
+
+Measured on the working tree at `c6410ac` before this page was updated:
+
+| Check | Result |
+| --- | --- |
+| Notebook source integrity | **7 modified notebooks; Markdown cells only. 0 code-cell changes, 0 output changes, 0 execution-count changes; cell counts unchanged (26/23/21/17/20/21/24)** |
+| Downloadable notebook copies | **26 source notebooks, 26 copies under `site/notebooks/`; 0 SHA-256 mismatches** |
+| Pre-existing parser change | **Preserved: `model_client.py`, 13 insertions, no deletion of the behaviour it adds** |
+| Pre-existing regression test | **Preserved and passing: `tests/test_chatbot_parser_regression.py`, 16 tests OK** |
+| Credential scan of all 71 candidate paths | **0 matches for GitHub, OpenAI-style, AWS, Slack, or private-key patterns; only `.env.example` is tracked** |
+| Checkpoints and binaries | **None in the diff; no `.pt`, `.pth`, `.ckpt`, `.bin`, `.safetensors`, `.onnx`, image, or media file changed** |
+| Generated build state | **`site/`, `tmp/`, `data/`, `.venv/`, `.cache/`, `outputs/`, and `__pycache__/` are ignored and untracked; none enter the candidate** |
+| Whitespace | **`git diff --check` and `git diff --cached --check` both clean** |
+
+`scripts/check_notebooks.py --execute` runs each notebook from a fresh kernel
+without writing back to the source file, which the integrity check above
+confirms: no stored output or execution count moved during the 262.4 s run.
+
+## 2026-11-09 repair and revalidation
+
+This pass did not replace valid course material. It repaired delivery and
+navigation defects, then re-ran the gates against the files on disk.
+
+| Repair | Evidence |
+| --- | --- |
+| Fixed accidental `# ` prose prefixes and double-prefixed headings in seven notebooks (M04-M08, M15, M16) | Code cells, stored outputs, and execution counts verified unchanged |
+| Re-executed all 26 notebooks after the Markdown repair | **26 notebooks, 223 cells, 262.4 s, 0 failures** |
+| Restored the video model-card table delimiter and rows that a repair had merged into one line | Table renders again; caught in the final diff review, not by any automated gate |
+| Linked module names in the roadmap, learning paths, syllabus overview, and every syllabus level page | Every student-facing module entry now has a relative link |
+| Linked notebook paths and lesson names in curriculum coverage and the assessment coverage map | No nonexistent targets introduced; source link checker passes |
+| Added a student-facing [Datasets and Resources](../resources/index.md) page and navigation entry | Data, generator, licence, hardware, and pretrained-model guidance in one place |
+| Replaced empty top-level lab placeholders with README pointers | `labs/README.md` plus eight area READMEs; obsolete `.gitkeep` files removed |
+| Corrected the video-data generator path in seven lesson references, `lab_support.py`, and `requirements/video.txt` | Real path is `projects/video-ai/scripts/make_video_data.py` |
+| Added resource reachability and structural floors to `scripts/check_course_inventory.py`; added JSON output | `docs/technical/repository-inventory.json` |
+| Made the Pages deployment workflow selectable from the actual release branch | `workflow_run.branches` now includes `main` and `release/**`; `edit_uri` points at the current branch |
+| Rebuilt and rechecked the site | **296 source Markdown files; 323 built pages; 0 broken links; 0 prefix violations** |
+
+### Final repair-pass gate table
+
+| Gate | Result |
+| --- | --- |
+| Full unit suite | **269 tests, OK** |
+| Notebook JSON and stored outputs | **26 valid, executed, 0 stored errors** |
+| Notebook execution | **26 notebooks, 223 code cells, 262.4 s** |
+| Course inventory | **18 modules, 105 unique lesson files, 26 notebooks, 52 unique labs/project briefs, 21 unique assessments; 18 complete, 0 partial, 0 missing** |
+| Broken links before / after | **0 / 0** in the internal checker; the navigation defect was unlinked table entries, not dead hrefs |
+| Source Markdown links and anchors | **296 files, 0 broken** |
+| Strict MkDocs build | **0 warnings, 323 built pages** |
+| Built-site links and `/AITopics` prefix | **PASS: 323 pages** |
+| Licensing | **PASS: 8 checks, 572 release files classified** |
+| Workflow schemas | **PASS: two workflows and Dependabot config validate against their published schemas** |
+| Whitespace | **`git diff --check` clean** |
+| GitHub Pages | **HTTP 404; not deployed** |
+| GitHub Actions validation/deploy | **No run found; 2 Dependabot runs only** |
+
+Required totals: **18 modules; 105 expected / 105 existing lesson files; 26
+expected / 26 existing notebooks; 52 expected / 52 existing labs and project
+briefs; 21 expected / 21 existing assessments; 0 missing in every category.**
+The previous 2026-11-08 pass remains below as historical evidence. Its 159.3 s
+notebook timing and 295/322 page counts were superseded by the re-run above.
+
+## Previous repair and validation pass (2026-11-08)
 
 ### Chatbot/RAG regression
 
@@ -56,13 +183,22 @@ Fix in `projects/chatbots-rag/chatbot_core/model_client.py`:
 - decide support against the header plus body, not just one sentence;
 - require two matching content words, except for a one-word question whose whole
   content is present;
+- require the selected answer sentence (or its heading context) to carry enough
+  of the question to avoid answering a different fact from a merely related page;
 - keep sentence-level extraction for the returned answer and keep the JSON
   response contract unchanged.
 
 No test was weakened, skipped, deleted, or rewritten. The two failing tests pass,
-the complete 253-test suite passes, and the 14-question offline evaluation still
-reports answer accuracy 1.0, abstention correctness 1.0, citation precision 1.0,
-recall 1.0, and hit@k 1.0.
+and `tests/test_chatbot_parser_regression.py` adds **16** behaviour-level cases
+covering instruction separation, weak overlap, title/section/body support,
+abstention, one-word questions, citations, and malformed output. The complete
+suite is **269 tests, OK**.
+
+The 14-question dev evaluation reports answer accuracy 1.0, abstention
+correctness 1.0, citation precision 1.0, recall 1.0, and hit@k 1.0. The separate
+held-out 12-question test set reports answer accuracy 0.75 (three misses:
+t05, t06, t07); that is a documented lexical-client limitation, not a passing
+claim for the test split.
 
 ### Notebook and site completion
 
@@ -72,18 +208,18 @@ Notebook Library and MkDocs navigation now link all 26 notebooks. The six new
 notebooks were each rechecked for the 14-section instructional standard, including
 explicit limitations and troubleshooting.
 
-### Current measured results
+### Previous measured results (2026-11-08)
 
 | Gate | Result |
 | --- | --- |
-| Full unit suite | **253 tests, OK** |
+| Full unit suite | **269 tests, OK** |
 | Notebook JSON and stored outputs | **26 notebooks valid, 0 errors** |
-| Notebook execution | **26 notebooks, 223 code cells, 176.1 s, 0 failures** |
+| Notebook execution | **26 notebooks, 223 code cells, 159.3 s, 0 failures** |
 | Course inventory | **18 modules, 105 lesson files, 26 notebooks, 52 labs/project briefs, 21 assessments** |
 | Markdown links and anchors | **295 files, 0 broken** |
 | Strict MkDocs build | **0 warnings, 322 built pages** |
 | Built-site links and `/AITopics` prefix | **PASS** |
-| Licensing | **PASS: 8 checks, 560 release files classified** |
+| Licensing | **PASS: 8 checks, 561 release files classified at that time** |
 | Whitespace | **`git diff --check` and `git diff --cached --check` clean** |
 | GitHub Pages | **HTTP 404; not deployed** |
 | GitHub Actions validation/deploy | **No run found; 2 Dependabot runs only** |
@@ -122,9 +258,9 @@ notebooks** now cover M04-M08 and M15-M17.
 | M16 production | PR01-PR05 | `m16_production` executed | 1 lab brief + assessment | Complete |
 | M17 capstone | CP01-CP03 | Reuses M04-M16 | 1 gated lab + assessment | Complete; agent-simulated pilot only |
 
-Published totals: **208 lesson and support pages across the published sections, 26
-executable notebooks, 12 capstone specifications with weighted rubrics, 8
-assessment banks with answer keys, and 5 new section assessments**.
+Current published totals: **105 unique advertised lesson files, 26 executable
+notebooks, 52 unique lab/project briefs, 21 unique assessments, 12 capstone
+specifications with weighted rubrics, and 8 assessment banks with answer keys**.
 
 ## What was authored
 
@@ -231,8 +367,8 @@ Measured anchors from the agent-simulated pilot (P03, P06, P12), recorded in the
 ## Historical executed checks (2026-11-06 pass)
 
 Environment: Windows 11, Python 3.12.10, CPU only. Commands were run from the
-repository root on 2026-11-06 in the project virtual environment. Current
-2026-11-08 results are in the table at the top of this page and in the
+repository root on 2026-11-06 in the project virtual environment. The current
+2026-11-09 results are in the table at the top of this page and in the
 [Notebook coverage audit](notebook-coverage-audit.md).
 
 | Check | Command | Result |
@@ -309,8 +445,8 @@ No duplicate implementations were created to inflate file counts:
 | Lab 3 (computer vision) transfer numbers do not reproduce | High | Pre-existing, unchanged: repeated runs give 0.667 or 0.500 for the fine-tuned condition against the recorded 0.500/0.500/0.722. Needs a documented seed, larger test set, or retuned rate, plus a content decision. |
 | Video Lab 2 not executed | Medium | Pre-existing: it downloads a 13 MB checkpoint. |
 | Licence implementation review | Low | The approved MIT, CC BY 4.0, and CC0 1.0 files and validator are present in the working tree; instructor review and commit remain. |
-| GitHub Pages not enabled, no deployment | Medium | Workflows validate; the repository setting and first run are manual. The public URL returned HTTP 404 on 2026-11-08. No public URL is claimed. |
-| CI does not yet cover code and notebooks on GitHub | Medium | The validation workflow installs the CPU stack, runs licensing validation and 253 tests, checks manifests and projects, and executes all 26 notebooks locally. The first GitHub Actions run is still pending; only two Dependabot runs are present. |
+| GitHub Pages API 404, no deployment | Medium | Workflows validate; the repository setting and first run are manual. The Pages API and public URL returned HTTP 404 on 2026-11-09. No public URL is claimed. |
+| CI does not yet cover code and notebooks on GitHub | Medium | The validation workflow installs the CPU stack, runs licensing validation and 269 tests, checks manifests and projects, and executes all 26 notebooks locally. The first GitHub Actions run is still pending; only two Dependabot runs are present. |
 | `scikit-learn` DLL blocked in this environment | Low | M05 uses inline Naive Bayes and kappa; documented in the notebook and coverage map. |
 
 ## Responsible AI and security
@@ -323,25 +459,104 @@ positives and misses, and model-card claims audited against measured metrics. No
 credential-shaped string appears in tracked files, and the notebooks do not read
 API keys.
 
+## Manual publication commands
+
+The full procedure, with the browser checks and failure table, is in
+[GitHub Pages publication](GITHUB-PAGES.md#release-publication-procedure-nine-steps).
+These are the exact commands for this candidate, run from the repository root
+after reviewing the diff above:
+
+```bash
+# 1. Review (must show 0 staged, 59 tracked, 12 untracked before staging)
+git status --porcelain=v1 -uall && git diff --stat && git diff --check
+
+# 2. Commit the reviewed tree
+git add -A && git diff --cached --stat
+git commit -F - <<'MSG'
+Repair course navigation and prepare GitHub Pages publication
+
+Add the datasets/resources page, lab READMEs, module links, and notebook
+Markdown repairs; widen validation and Pages deployment to release branches;
+add inventory floors, JSON output, and parser regression tests.
+MSG
+
+# 3. Push only this branch
+git push origin release/v0.1.0-rc.1
+
+# 4. Confirm the remote commit is the reviewed commit
+git fetch origin && git rev-parse HEAD origin/release/v0.1.0-rc.1
+git rev-list --left-right --count origin/release/v0.1.0-rc.1...HEAD   # expect: 0  0
+
+# 5. One-time setting: Settings -> Pages -> Source: GitHub Actions
+gh api -X POST repos/nadeem-majeedch/AITopics/pages -f build_type=workflow
+gh api repos/nadeem-majeedch/AITopics/pages --jq '.build_type'          # expect: workflow
+
+# 6. Validation runs from the push; watch it
+gh run list --workflow=validate-docs.yml --branch release/v0.1.0-rc.1 --limit 3
+gh run watch <run-id> --exit-status
+
+# 7. Deployment follows a successful validation
+gh run list --workflow=deploy-pages.yml --limit 3
+gh run watch <run-id> --exit-status
+```
+
+Do not tag, create a release, force-push, or change any other repository setting
+as part of this publication.
+
+## Deployment verification procedure
+
+A successful run is not a published site. Verify in this order and record each
+result in the [verification log](build-and-deploy.md#verification-log):
+
+1. **Run level.** `gh run view <run-id> --json conclusion,headSha,url` reports
+   `success`, and `headSha` equals the commit from step 4. The deploy job shows a
+   `github-pages` environment URL.
+2. **HTTP level.** These must return `200`:
+
+   ```bash
+   curl -sS -o /dev/null -w "%{http_code}\n" https://nadeem-majeedch.github.io/AITopics/
+   curl -sS -o /dev/null -w "%{http_code}\n" https://nadeem-majeedch.github.io/AITopics/course/projects/
+   curl -sS -o /dev/null -w "%{http_code}\n" https://nadeem-majeedch.github.io/AITopics/notebooks/production/m16_production/
+   curl -sS -o /dev/null -w "%{http_code}\n" https://nadeem-majeedch.github.io/AITopics/sitemap.xml
+   ```
+
+3. **Content level.** The canonical link carries the `/AITopics/` prefix, the
+   stylesheet loads, and `gh api repos/nadeem-majeedch/AITopics/pages --jq
+   .status` no longer reports a missing site.
+4. **Notebook download.** Fetch the M16 `.ipynb` copy from the site and compare
+   its SHA-256 with `notebooks/production/m16_production.ipynb`; no manifest is
+   committed, so this hash comparison is the check.
+5. **Clean browser.** In a private window with an empty cache, check styling,
+   search, a deep project page, the M16 notebook page and its download, the
+   site's own 404 page, the **Edit this page** link pointing at
+   `release/v0.1.0-rc.1`, and the layout at about 390 px.
+
+Until steps 1-5 are recorded, the Pages status in this audit stays
+**not deployed**.
+
 ## Manual tasks remaining
 
 1. Review and commit the licence implementation (`LICENSE`, `LICENSES/`,
-   `licensing-scope.json`, validator, and notices) after instructor review.
-2. Enable **Settings → Pages → Source: GitHub Actions**, run the deploy workflow,
-   verify the URL, and record it in the verification log.
-3. Run representative notebooks on Google Colab and, if hardware allows, on a GPU.
-4. Run one **human** capstone pilot through the three checkpoints and mark it
+   `licensing-scope.json`, validator, and notices) after instructor review. It is
+   part of the 71-path candidate above.
+2. Push the release branch (currently one commit ahead of the remote plus this
+   uncommitted tree) and let **Validate repository** run on it, per the commands
+   above.
+3. Enable **Settings → Pages → Source: GitHub Actions**, run the deploy workflow,
+   verify the URL with the procedure above, and record it in the verification log.
+4. Run representative notebooks on Google Colab and, if hardware allows, on a GPU.
+5. Run one **human** capstone pilot through the three checkpoints and mark it
    with the published rubric. The agent-simulated pilot is complete; it is not a
    substitute for a person.
-5. Resolve the Lab 3 transfer comparison in a content review.
-6. Run the new whole-repository validation workflow on GitHub Actions after
+6. Resolve the Lab 3 transfer comparison in a content review.
+7. Run the new whole-repository validation workflow on GitHub Actions after
    merge; local execution and schema validation are complete, but no runner has
    executed it yet.
-7. Repeat P06 on real photographs and P12 with a larger model using constrained
+8. Repeat P06 on real photographs and P12 with a larger model using constrained
    JSON decoding, so the prototype results have a real-data and real-model
    counterpart.
 
-## Files changed during this completion pass
+## Files changed during the 2026-11-08 completion pass
 
 ### New lessons and section pages
 
@@ -429,6 +644,72 @@ API keys.
 
 No previously validated computer-vision, speech, or video experiment was modified.
 No course chapter was deleted. Nothing was committed or pushed.
+
+## Files changed during the 2026-11-09 repair pass
+
+### Created
+
+* `docs/resources/index.md`
+* `docs/technical/repository-inventory.json`
+* `labs/README.md`
+* `labs/ai-agents/README.md`, `labs/chatbots-rag/README.md`,
+  `labs/computer-vision/README.md`, `labs/llm-fine-tuning/README.md`,
+  `labs/model-training/README.md`, `labs/production/README.md`,
+  `labs/speech-audio/README.md`, `labs/video-ai/README.md`
+
+### Changed
+
+* Navigation and syllabus: `docs/course/roadmap.md`,
+  `docs/course/learning-paths.md`, `docs/syllabus/index.md`,
+  `docs/syllabus/level-0-start.md` through `docs/syllabus/level-5-production.md`,
+  `docs/course/assessments/index.md`, `docs/planning/curriculum-coverage.md`,
+  `docs/planning/content-inventory.md`, `docs/planning/repository-architecture.md`,
+  `docs/index.md`, `docs/about/instructor.md`, `README.md`, `mkdocs.yml`,
+  `docs/technical/GITHUB-PAGES.md`, `docs/technical/build-and-deploy.md`,
+  `docs/technical/contributing.md`.
+* Notebook rendering: `notebooks/model-training/m04_training_from_scratch.ipynb`,
+  `m05_data_engineering.ipynb`, `notebooks/llm-fine-tuning/m06_transformers.ipynb`,
+  `m07_sft_small_lm.ipynb`, `m08_lora_qlora.ipynb`,
+  `notebooks/ai-agents/m15_agents.ipynb`, `notebooks/production/m16_production.ipynb`.
+* Video data instructions and code: `docs/lessons/video-ai/governance.md`,
+  `index.md`, `model-card.md`, `vd15-responsible-video-analytics.md`,
+  `labs/lab-1-preprocessing.md`, `projects/video-ai/lab_support.py`,
+  `requirements/video.txt`.
+* Publication and accounting: `.github/workflows/deploy-pages.yml`,
+  `.github/workflows/validate-docs.yml`, `scripts/check_course_inventory.py`,
+  `docs/technical/repository-content-audit.md`,
+  `docs/technical/notebook-coverage-audit.md`,
+  `docs/technical/navigation-and-link-audit.md`,
+  `docs/technical/github-pages-deployment-audit.md`,
+  `docs/technical/student-usability-audit.md`, `docs/technical/final-audit.md`,
+  `docs/technical/release-notes-v0.1.0-rc.1.md`,
+  `docs/technical/release-readiness-audit.md`,
+  `docs/technical/v1-release-candidate-checklist.md`,
+  `docs/technical/licensing-decision-package.md`.
+
+### Deleted
+
+* `labs/ai-agents/.gitkeep`, `labs/chatbots-rag/.gitkeep`,
+  `labs/computer-vision/.gitkeep`, `labs/foundations/.gitkeep`,
+  `labs/llm-fine-tuning/.gitkeep`, `labs/model-training/.gitkeep`,
+  `labs/production/.gitkeep`, `labs/speech-audio/.gitkeep`,
+  `labs/video-ai/.gitkeep`. These were empty placeholders; the directories now
+  contain substantive README pointers or real foundation starter files.
+
+### Preserved without reverting
+
+These pre-existing working-tree changes were present before this pass and were
+not reverted, overwritten, or included in a commit:
+
+* `docs/lessons/chatbots-rag/ca14-evaluation.md`
+* `docs/lessons/chatbots-rag/index.md`
+* `docs/technical/licensing-decision-package.md` (its link/site counts were
+  updated to 296/323; it was not otherwise rewritten)
+* `projects/chatbots-rag/chatbot_core/model_client.py`
+* `tests/test_chatbot_parser_regression.py` (untracked)
+
+All changes in this pass are unstaged. No commit, push, tag, release, or remote
+setting change was made.
 
 ## Related documents
 

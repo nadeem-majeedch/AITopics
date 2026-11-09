@@ -25,6 +25,8 @@ Exit status is 0 when clean and 1 when a content claim is not backed by a file.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+import json
 import re
 import sys
 from pathlib import Path
@@ -368,9 +370,173 @@ def check_notebook(path: Path) -> list[str]:
     return problems
 
 
+def text_stats(path: Path) -> dict[str, object]:
+    """Return the structural measurements used by the inventory and gates."""
+    text = path.read_text(encoding="utf-8")
+    return {
+        "path": path.relative_to(ROOT).as_posix(),
+        "words": len(text.split()),
+        "h2_headings": len(re.findall(r"^##\s+\S+", text, flags=re.MULTILINE)),
+    }
+
+
+def check_text_resource(path: Path, words: int, headings: int, kind: str) -> list[str]:
+    """Reject an outline or placeholder masquerading as a lesson, lab, or test."""
+    stats = text_stats(path)
+    problems: list[str] = []
+    rel = stats["path"]
+    if int(stats["words"]) < words:
+        problems.append(
+            f"{rel}: only {stats['words']} words for a {kind}; expected at least {words}"
+        )
+    if int(stats["h2_headings"]) < headings:
+        problems.append(
+            f"{rel}: only {stats['h2_headings']} level-2 sections for a {kind}; "
+            f"expected at least {headings}"
+        )
+    return problems
+
+
+def notebook_stats(path: Path) -> dict[str, object]:
+    """Return inventory fields for one notebook without trusting its filename."""
+    rel = path.relative_to(ROOT).as_posix()
+    try:
+        notebook = nbformat.read(path, as_version=4)
+    except Exception as exc:
+        return {
+            "path": rel,
+            "valid": False,
+            "substantive": False,
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+
+    markdown = [cell.source for cell in notebook.cells if cell.cell_type == "markdown"]
+    code = [cell for cell in notebook.cells if cell.cell_type == "code"]
+    errors = [
+        output.get("ename", "Error")
+        for cell in code
+        for output in cell.get("outputs", [])
+        if output.get("output_type") == "error"
+    ]
+    executed = all(cell.get("execution_count") is not None for cell in code)
+    text = "\n".join(markdown)
+    headings = re.findall(r"^#{1,6}\s+\S+", text, flags=re.MULTILINE)
+    substantive = (
+        len(markdown) >= 5
+        and len(code) >= 3
+        and len(text) >= 1_500
+        and len(headings) >= 4
+        and executed
+        and not errors
+    )
+    return {
+        "path": rel,
+        "valid": True,
+        "substantive": substantive,
+        "cells": len(notebook.cells),
+        "markdown_cells": len(markdown),
+        "code_cells": len(code),
+        "markdown_words": len(text.split()),
+        "headings": len(headings),
+        "execution_counts_complete": executed,
+        "stored_errors": errors,
+        "full_14_section_standard": rel in STANDARD_NOTEBOOKS,
+    }
+
+
+def build_inventory() -> dict[str, object]:
+    """Build the machine-readable content inventory from the files on disk."""
+    linked: set[Path] = set()
+    link_re = re.compile(r"!?\[[^\]]*\]\(\s*<?([^)>#\s]+)")
+    for page in DOCS.rglob("*.md"):
+        text = page.read_text(encoding="utf-8")
+        for match in link_re.finditer(text):
+            target = match.group(1)
+            if target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            linked.add((page.parent / target).resolve())
+
+    modules: list[dict[str, object]] = []
+    for module in MODULES:
+        module_row: dict[str, object] = {
+            "code": module["code"],
+            "title": module["title"],
+            "lessons": [],
+            "notebooks": [],
+            "labs": [],
+            "assessments": [],
+        }
+        missing = False
+        partial = False
+        for kind in ("lessons", "labs", "assessments"):
+            threshold = (500, 3) if kind == "lessons" else (300, 4)
+            for entry in module[kind]:
+                path = ROOT / entry
+                if not path.is_file():
+                    missing = True
+                    module_row[kind].append({"path": entry, "exists": False})
+                    continue
+                stats = text_stats(path)
+                stats["exists"] = True
+                stats["linked"] = path.resolve() in linked
+                if not stats["linked"] or check_text_resource(path, *threshold, kind):
+                    partial = True
+                module_row[kind].append(stats)
+        for entry in module["notebooks"]:
+            path = ROOT / entry
+            if not path.is_file():
+                missing = True
+                module_row["notebooks"].append({"path": entry, "exists": False})
+                continue
+            stats = notebook_stats(path)
+            stats["exists"] = True
+            if not stats.get("substantive"):
+                partial = True
+            module_row["notebooks"].append(stats)
+        module_row["status"] = "missing" if missing else "partial" if partial else "complete"
+        modules.append(module_row)
+
+    notebooks = [notebook_stats(path) for path in sorted(NOTEBOOKS.rglob("*.ipynb"))]
+    expected_lessons = {entry for module in MODULES for entry in module["lessons"]}
+    expected_labs = {entry for module in MODULES for entry in module["labs"]}
+    expected_assessments = {entry for module in MODULES for entry in module["assessments"]}
+    return {
+        "generated_on": dt.date.today().isoformat(),
+        "definition": {
+            "complete": "all advertised files exist, every text resource passes its structural floor, and every notebook is substantive",
+            "partial": "every advertised file exists, but a text resource or notebook fails a structural check",
+            "missing": "at least one advertised lesson, notebook, lab, or assessment is absent",
+            "lesson_floor": "500 words and 3 level-2 headings",
+            "lab_floor": "300 words and 4 level-2 headings",
+            "assessment_floor": "300 words and 4 level-2 headings",
+        },
+        "summary": {
+            "modules": len(MODULES),
+            "lesson_files": len(expected_lessons),
+            "notebooks": len(notebooks),
+            "labs_and_project_briefs": len(expected_labs),
+            "assessments": len(expected_assessments),
+            "complete_modules": sum(row["status"] == "complete" for row in modules),
+            "partial_modules": sum(row["status"] == "partial" for row in modules),
+            "missing_modules": sum(row["status"] == "missing" for row in modules),
+            "substantive_notebooks": sum(bool(row.get("substantive")) for row in notebooks),
+            "full_14_section_notebooks": sum(
+                bool(row.get("full_14_section_standard")) for row in notebooks
+            ),
+        },
+        "modules": modules,
+        "notebooks": notebooks,
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args(argv)
+    parser.add_argument(
+        "--json",
+        type=Path,
+        help="also write the machine-readable repository inventory to this path",
+    )
+    args = parser.parse_args(argv)
 
     problems: list[str] = []
     expected_lessons: set[str] = set()
@@ -421,6 +587,18 @@ def main(argv: list[str] | None = None) -> int:
     for entry in discovered:
         problems.extend(check_notebook(ROOT / entry))
 
+    # Structural floors catch a lesson, lab, or assessment that exists only as a
+    # title or outline. They are deliberately low: the human review is separate.
+    for kind, entries, floor in (
+        ("lesson", expected_lessons, (500, 3)),
+        ("lab", expected_labs, (300, 4)),
+        ("assessment", expected_assessments, (300, 4)),
+    ):
+        for entry in sorted(entries):
+            path = ROOT / entry
+            if path.is_file():
+                problems.extend(check_text_resource(path, *floor, kind))
+
     # Every notebook that a module promises must be reachable in the site navigation.
     navigation = "\n".join(nav_entries())
     for entry in discovered:
@@ -430,6 +608,22 @@ def main(argv: list[str] | None = None) -> int:
     for entry in discovered:
         if Path(entry).name not in library:
             problems.append(f"notebook is not linked from docs/notebook-library.md: {entry}")
+
+    # A file that exists but is not linked is an orphan for the student. This is
+    # the table-of-contents failure the link checker cannot see by itself.
+    linked: set[Path] = set()
+    link_re = re.compile(r"!?\[[^\]]*\]\(\s*<?([^)>#\s]+)")
+    for page in DOCS.rglob("*.md"):
+        text = page.read_text(encoding="utf-8")
+        for match in link_re.finditer(text):
+            target = match.group(1)
+            if target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            linked.add((page.parent / target).resolve())
+    for entry in sorted(expected_lessons | expected_labs | expected_assessments):
+        path = ROOT / entry
+        if path.is_file() and path.resolve() not in linked:
+            problems.append(f"resource exists but is not linked from any Markdown page: {entry}")
 
     generated = {"outputs", "__pycache__", ".ipynb_checkpoints"}
     for directory in sorted(NOTEBOOKS.rglob("*")):
@@ -443,6 +637,13 @@ def main(argv: list[str] | None = None) -> int:
         for problem in problems:
             print(f"  - {problem}")
         return 1
+
+    if args.json:
+        args.json.parent.mkdir(parents=True, exist_ok=True)
+        args.json.write_text(
+            json.dumps(build_inventory(), indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
 
     standard = sum(entry in STANDARD_NOTEBOOKS for entry in discovered)
     print(

@@ -24,6 +24,8 @@ If not, complete Level 1 and M05 first.
 
 ## M11 - Image classification and computer vision {#m11}
 
+**Published material:** [Computer vision overview](../lessons/computer-vision/index.md).
+
 **Level 3 | 18 hours | GPU recommended | Prerequisite: M04, M05**
 
 ### Learning objectives
@@ -139,6 +141,8 @@ M12 - Object detection, tracking, and transfer learning.
 ---
 
 ## M12 - Object detection, tracking, and transfer learning {#m12}
+
+**Published material:** [Computer vision overview](../lessons/computer-vision/index.md).
 
 **Level 3 | 20 hours | GPU required for training | Prerequisite: M11**
 
@@ -262,6 +266,8 @@ Video understanding and analytics.
 ---
 
 ## M13 - Speech recognition, audio classification, and speech generation {#m13}
+
+**Published material:** [Speech and audio overview](../lessons/speech-audio/index.md).
 
 **Level 3 | 22 hours | GPU recommended | Prerequisite: M03, M05**
 
@@ -388,6 +394,8 @@ M14 - Video understanding and video analytics.
 ---
 
 ## M14 - Video understanding and video analytics {#m14}
+
+**Published material:** [Video AI overview](../lessons/video-ai/index.md).
 
 **Level 3 | 22 hours | GPU recommended | Prerequisite: M12, M13 (M12 minimum)**
 

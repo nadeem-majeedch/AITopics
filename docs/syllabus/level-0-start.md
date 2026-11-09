@@ -26,6 +26,8 @@ programming course.
 
 ## M00 - Course orientation and study plan {#m00}
 
+**Published material:** [Course roadmap](../course/roadmap.md) · [How to study](../course/how-to-study.md).
+
 **Level 0 | 3 hours | CPU-only | Prerequisite: none**
 
 ### Learning objectives
@@ -107,6 +109,8 @@ M01 - Python and AI development environment.
 ---
 
 ## M01 - Python and AI development environment {#m01}
+
+**Published material:** [Module overview and lessons](../lessons/m01-environment/index.md).
 
 **Level 0 | 12 hours | CPU-only (GPU check optional) | Prerequisite: M00 and basic Python**
 

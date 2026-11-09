@@ -25,6 +25,8 @@ If not, complete M03-M06 first. M07 without M06 is guesswork.
 
 ## M06 - Transformers and language models {#m06}
 
+**Published material:** [LLM fine-tuning overview](../lessons/llm-fine-tuning/index.md).
+
 **Level 2 | 18 hours | CPU or GPU | Prerequisite: M03, M05**
 
 ### Learning objectives
@@ -139,6 +141,8 @@ M07 - Small language models and supervised fine-tuning.
 ---
 
 ## M07 - Small language models and supervised fine-tuning {#m07}
+
+**Published material:** [LLM fine-tuning overview](../lessons/llm-fine-tuning/index.md).
 
 **Level 2 | 24 hours | GPU required for core lab | Prerequisite: M06, M05**
 
@@ -265,6 +269,8 @@ M08 - LoRA, QLoRA, quantization, and efficient training.
 
 ## M08 - LoRA, QLoRA, quantization, and efficient training {#m08}
 
+**Published material:** [LLM fine-tuning overview](../lessons/llm-fine-tuning/index.md).
+
 **Level 2 | 18 hours | GPU required | Prerequisite: M07**
 
 ### Learning objectives
@@ -382,6 +388,8 @@ M09 - Chatbots and conversational applications.
 
 ## M09 - Chatbots and conversational applications {#m09}
 
+**Published material:** [Chatbots and RAG overview](../lessons/chatbots-rag/index.md).
+
 **Level 2 | 16 hours | CPU or GPU | Prerequisite: M07 or M08**
 
 ### Learning objectives
@@ -492,6 +500,8 @@ M10 - Embeddings, vector search, and retrieval-augmented generation.
 ---
 
 ## M10 - Embeddings, vector search, and RAG {#m10}
+
+**Published material:** [Chatbots and RAG overview](../lessons/chatbots-rag/index.md).
 
 **Level 2 | 18 hours | CPU-only | Prerequisite: M09 or M07**
 

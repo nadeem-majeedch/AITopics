@@ -3,17 +3,17 @@ name: Deploy documentation
 # Builds the MkDocs site with a strict build and publishes it to GitHub Pages as
 # a project site at https://nadeem-majeedch.github.io/AITopics/.
 #
-# Deployment path: successful Validate repository run on main, or manual
-# dispatch. Pull requests do not deploy. Release branches are validated by
-# validate-docs.yml but do not deploy automatically: merge to main is the
-# publication act. Waiting for validation prevents a docs push from publishing
-# before the repository gate has passed.
+# Deployment path: successful Validate repository run on main or a release
+# branch, or manual dispatch. Pull requests do not deploy. Waiting for validation
+# prevents a docs push from publishing before the repository gate has passed.
+# The current default branch is release/v0.1.0-rc.1; main is included for the
+# post-release branch and for repositories whose default branch is main.
 
 on:
   workflow_run:
     workflows: ["Validate repository"]
     types: [completed]
-    branches: [main]
+    branches: [main, "release/**"]
   workflow_dispatch:
 
 # Least privilege: the build job only reads the repository. The deploy job adds

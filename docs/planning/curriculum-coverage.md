@@ -13,19 +13,19 @@ limitation says otherwise.
 
 | Module | Lessons | Notebook | Labs | Assessment | Status |
 | --- | --- | --- | --- | --- | --- |
-| M04 | 5 | `notebooks/model-training/m04_training_from_scratch.ipynb` | 2 | 1 | Published, executed |
-| M05 | 5 | `notebooks/model-training/m05_data_engineering.ipynb` | 2 | 1 | Published, executed |
-| M06 | 4 | `notebooks/llm-fine-tuning/m06_transformers.ipynb` | 3 (shared) | 1 | Published, executed |
-| M07 | 3 | `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb` | 3 (shared) | 1 | Published, executed |
-| M08 | 3 | `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb` | 3 (shared) | 1 | Published, executed |
+| M04 | 5 | [m04_training_from_scratch.ipynb](../notebooks/model-training/m04_training_from_scratch.ipynb) | 2 | 1 | Published, executed |
+| M05 | 5 | [m05_data_engineering.ipynb](../notebooks/model-training/m05_data_engineering.ipynb) | 2 | 1 | Published, executed |
+| M06 | 4 | [m06_transformers.ipynb](../notebooks/llm-fine-tuning/m06_transformers.ipynb) | 3 (shared) | 1 | Published, executed |
+| M07 | 3 | [m07_sft_small_lm.ipynb](../notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb) | 3 (shared) | 1 | Published, executed |
+| M08 | 3 | [m08_lora_qlora.ipynb](../notebooks/llm-fine-tuning/m08_lora_qlora.ipynb) | 3 (shared) | 1 | Published, executed |
 | M09 | 16 | [M09 notebook](../notebooks/chatbots-rag/m09_chatbots.ipynb) | 8 projects (shared) | 1 | Published, executed |
 | M10 | 16 (shared) | [M10 notebook](../notebooks/chatbots-rag/m10_rag.ipynb) | 8 projects (shared) | 1 | Published, executed |
 | M11 | 14 | [M11 notebook](../notebooks/computer-vision/m11_image_classification.ipynb) | 8 (shared) | 1 | Published, executed |
 | M12 | 14 (shared) | [M12 notebook](../notebooks/computer-vision/m12_object_detection.ipynb) | 8 (shared) | 1 | Published, executed |
 | M13 | 14 | [M13 notebook](../notebooks/speech-audio/m13_speech_audio.ipynb) | 8 | 1 | Published, executed |
 | M14 | 15 | [M14 notebook](../notebooks/video-ai/m14_video_ai.ipynb) | 8 | 1 | Published, executed |
-| M15 | 5 | `notebooks/ai-agents/m15_agents.ipynb` | 1 | 1 | Published, executed |
-| M16 | 5 | `notebooks/production/m16_production.ipynb` | 1 | 1 | Published, executed |
+| M15 | 5 | [m15_agents.ipynb](../notebooks/ai-agents/m15_agents.ipynb) | 1 | 1 | Published, executed |
+| M16 | 5 | [m16_production.ipynb](../notebooks/production/m16_production.ipynb) | 1 | 1 | Published, executed |
 | M17 | 3 | reuses M04-M16 notebooks | 1 | 1 | Published; capstone is project work, not a new notebook |
 
 Total for M04-M08 and M15-M17: **33 lessons, 7 executed notebooks, 8 lab briefs,
@@ -40,11 +40,11 @@ Section: [`docs/lessons/model-training/`](../lessons/model-training/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `mt01-training-loop.md` | the training loop, batches, epochs, and logging |
-| `mt02-loss-and-optimizer.md` | loss functions, gradients, SGD/Adam, learning rate |
-| `mt03-augmentation-and-regularization.md` | augmentation, weight decay, dropout, early stopping |
-| `mt04-evaluation-and-error-analysis.md` | metrics, confusion, slices, error inspection |
-| `mt05-checkpoints-and-compute.md` | checkpoints, resumption, mixed precision, cost |
+| [mt01-training-loop.md](../lessons/model-training/mt01-training-loop.md) | the training loop, batches, epochs, and logging |
+| [mt02-loss-and-optimizer.md](../lessons/model-training/mt02-loss-and-optimizer.md) | loss functions, gradients, SGD/Adam, learning rate |
+| [mt03-augmentation-and-regularization.md](../lessons/model-training/mt03-augmentation-and-regularization.md) | augmentation, weight decay, dropout, early stopping |
+| [mt04-evaluation-and-error-analysis.md](../lessons/model-training/mt04-evaluation-and-error-analysis.md) | metrics, confusion, slices, error inspection |
+| [mt05-checkpoints-and-compute.md](../lessons/model-training/mt05-checkpoints-and-compute.md) | checkpoints, resumption, mixed precision, cost |
 
 Notebook evidence: 300 synthetic images split 210/45/45. Random split leaks 91
 near-duplicate images; the grouped split leaks 0. Random-split accuracy 0.867 versus
@@ -62,11 +62,11 @@ Section: [`docs/lessons/model-training/`](../lessons/model-training/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `mt06-dataset-audit.md` | inventory, missingness, duplicates, class balance |
-| `mt07-cleaning-and-labels.md` | normalisation, label taxonomy, adjudication |
-| `mt08-leakage-and-splits.md` | grouped, temporal, and near-duplicate leakage |
-| `mt09-label-noise.md` | noise models, agreement, kappa, cleaning limits |
-| `mt10-dataset-cards.md` | provenance, licence, intended use, limitations |
+| [mt06-dataset-audit.md](../lessons/model-training/mt06-dataset-audit.md) | inventory, missingness, duplicates, class balance |
+| [mt07-cleaning-and-labels.md](../lessons/model-training/mt07-cleaning-and-labels.md) | normalisation, label taxonomy, adjudication |
+| [mt08-leakage-and-splits.md](../lessons/model-training/mt08-leakage-and-splits.md) | grouped, temporal, and near-duplicate leakage |
+| [mt09-label-noise.md](../lessons/model-training/mt09-label-noise.md) | noise models, agreement, kappa, cleaning limits |
+| [mt10-dataset-cards.md](../lessons/model-training/mt10-dataset-cards.md) | provenance, licence, intended use, limitations |
 
 Notebook evidence: 650 messy rows cleaned to 600; 10 blank labels and 49 duplicate
 rows removed. Vocabulary 533. Random split 0.983 versus grouped 0.984 with
@@ -84,10 +84,10 @@ Section: [`docs/lessons/llm-fine-tuning/`](../lessons/llm-fine-tuning/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `lf01-tokens-and-embeddings.md` | tokenisation, vocabulary, embeddings |
-| `lf02-attention.md` | queries, keys, values, causal masking |
-| `lf03-transformer-block.md` | residual stream, layer norm, MLP, stacking |
-| `lf04-tiny-lm-training.md` | training a character-level transformer |
+| [lf01-tokens-and-embeddings.md](../lessons/llm-fine-tuning/lf01-tokens-and-embeddings.md) | tokenisation, vocabulary, embeddings |
+| [lf02-attention.md](../lessons/llm-fine-tuning/lf02-attention.md) | queries, keys, values, causal masking |
+| [lf03-transformer-block.md](../lessons/llm-fine-tuning/lf03-transformer-block.md) | residual stream, layer norm, MLP, stacking |
+| [lf04-tiny-lm-training.md](../lessons/llm-fine-tuning/lf04-tiny-lm-training.md) | training a character-level transformer |
 
 Notebook evidence: 23 cells, 239,040 parameters, 400 steps in 22.8 s on CPU (24.8 s in an earlier run). Loss
 3.454 to 0.433; validation perplexity 1.54. The model is deliberately tiny; the
@@ -97,9 +97,9 @@ lesson is the mechanism and the measurement, not the benchmark.
 
 | Lesson | Topic |
 | --- | --- |
-| `lf05-sft-data-and-templates.md` | instruction format, chat templates, split by template |
-| `lf06-sft-loss-and-masking.md` | label shifting, prompt masking, padded batches |
-| `lf07-evaluating-assistants.md` | exact match, token F1, forgetting, held-out templates |
+| [lf05-sft-data-and-templates.md](../lessons/llm-fine-tuning/lf05-sft-data-and-templates.md) | instruction format, chat templates, split by template |
+| [lf06-sft-loss-and-masking.md](../lessons/llm-fine-tuning/lf06-sft-loss-and-masking.md) | label shifting, prompt masking, padded batches |
+| [lf07-evaluating-assistants.md](../lessons/llm-fine-tuning/lf07-evaluating-assistants.md) | exact match, token F1, forgetting, held-out templates |
 
 Notebook evidence: answer loss 1.039 to 0.315. Exact match 0.688 to 0.905; first-12
 tokens 0.411 to 0.818; word F1 0.087 to 0.258. Forgetting check 0.885 to 1.072,
@@ -110,9 +110,9 @@ topic; this is documented because it makes the evaluation harder, not easier.
 
 | Lesson | Topic |
 | --- | --- |
-| `lf08-lora.md` | low-rank adapters, rank, alpha, merge |
-| `lf09-quantization-and-qlora.md` | int8/int4, error, QLoRA trade-offs |
-| `lf10-merging-and-serving.md` | merge, export, serving contracts |
+| [lf08-lora.md](../lessons/llm-fine-tuning/lf08-lora.md) | low-rank adapters, rank, alpha, merge |
+| [lf09-quantization-and-qlora.md](../lessons/llm-fine-tuning/lf09-quantization-and-qlora.md) | int8/int4, error, QLoRA trade-offs |
+| [lf10-merging-and-serving.md](../lessons/llm-fine-tuning/lf10-merging-and-serving.md) | merge, export, serving contracts |
 
 Notebook evidence: LoRA 8,448 parameters (3.34% of the model), loss 0.601 versus
 0.315 full fine-tuning, accuracy 0.816 versus 0.905. Merge delta 6.7e-6. int8
@@ -150,11 +150,11 @@ Section: [`docs/lessons/ai-agents/`](../lessons/ai-agents/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `ag01-agent-loop.md` | observe, decide, act; the decision protocol |
-| `ag02-tool-schemas.md` | strict schemas, side effects, least privilege |
-| `ag03-memory-and-state.md` | bounded window, provenance, trust, purge |
-| `ag04-budgets-and-approvals.md` | stop reasons and human gates |
-| `ag05-injection-and-evaluation.md` | indirect injection and task scoring |
+| [ag01-agent-loop.md](../lessons/ai-agents/ag01-agent-loop.md) | observe, decide, act; the decision protocol |
+| [ag02-tool-schemas.md](../lessons/ai-agents/ag02-tool-schemas.md) | strict schemas, side effects, least privilege |
+| [ag03-memory-and-state.md](../lessons/ai-agents/ag03-memory-and-state.md) | bounded window, provenance, trust, purge |
+| [ag04-budgets-and-approvals.md](../lessons/ai-agents/ag04-budgets-and-approvals.md) | stop reasons and human gates |
+| [ag05-injection-and-evaluation.md](../lessons/ai-agents/ag05-injection-and-evaluation.md) | indirect injection and task scoring |
 
 Notebook evidence: a two-tool task stops `final` after 3 steps and 2 calls; a
 repeating model stops with `repeated_action`; a denied write returns
@@ -173,11 +173,11 @@ Section: [`docs/lessons/production/`](../lessons/production/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `pr01-metrics-and-intervals.md` | Wilson intervals, bootstrap, paired comparisons |
-| `pr02-calibration.md` | ECE, Brier, temperature scaling |
-| `pr03-drift.md` | PSI, feature versus concept drift, decisions |
-| `pr04-guardrails-and-cards.md` | adversarial recall/FPR, model cards, claims audit |
-| `pr05-artifacts-and-serving.md` | manifests, digests, p50/p95 latency |
+| [pr01-metrics-and-intervals.md](../lessons/production/pr01-metrics-and-intervals.md) | Wilson intervals, bootstrap, paired comparisons |
+| [pr02-calibration.md](../lessons/production/pr02-calibration.md) | ECE, Brier, temperature scaling |
+| [pr03-drift.md](../lessons/production/pr03-drift.md) | PSI, feature versus concept drift, decisions |
+| [pr04-guardrails-and-cards.md](../lessons/production/pr04-guardrails-and-cards.md) | adversarial recall/FPR, model cards, claims audit |
+| [pr05-artifacts-and-serving.md](../lessons/production/pr05-artifacts-and-serving.md) | manifests, digests, p50/p95 latency |
 
 Notebook evidence: AUC 0.778; accuracy 0.790 (293/371), Wilson [0.745, 0.828]; MAE
 0.329 [0.308, 0.350]; ECE 0.067 raw and 0.075 after temperature 1.10, a measured
@@ -194,9 +194,9 @@ Section: [`docs/lessons/capstone/`](../lessons/capstone/index.md)
 
 | Lesson | Topic |
 | --- | --- |
-| `cp01-scoping-and-data.md` | decision, metric, data contract, risk register |
-| `cp02-build-and-evidence.md` | end-to-end path, controlled comparisons, experiment log |
-| `cp03-evaluation-and-packaging.md` | frozen test, threat review, packaging, release |
+| [cp01-scoping-and-data.md](../lessons/capstone/cp01-scoping-and-data.md) | decision, metric, data contract, risk register |
+| [cp02-build-and-evidence.md](../lessons/capstone/cp02-build-and-evidence.md) | end-to-end path, controlled comparisons, experiment log |
+| [cp03-evaluation-and-packaging.md](../lessons/capstone/cp03-evaluation-and-packaging.md) | frozen test, threat review, packaging, release |
 
 The capstone does not add a notebook. It requires reusing the notebooks and
 packages from M04-M16 in one project, with the twelve specifications in

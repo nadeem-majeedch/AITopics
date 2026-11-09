@@ -1,14 +1,14 @@
 name: Validate repository
 
-# Pull-request and main-branch gate for code, notebooks, generated-data
-# manifests, projects, licensing, and documentation. It runs the strict site
-# build but uploads nothing and requests no Pages permissions, so a fork PR or a
-# direct push cannot publish or touch the live site.
+# Pull-request and branch gate for code, notebooks, generated-data manifests,
+# projects, licensing, and documentation. It runs the strict site build but
+# uploads nothing and requests no Pages permissions, so a fork PR or a direct
+# push cannot publish or touch the live site.
 #
 # Deployment stays separate in deploy-pages.yml and waits for this workflow to
-# succeed on main. This workflow is the mandatory CPU-only baseline: no GPU, no
-# Hugging Face model download, no paid API, and no dataset generation. The
-# generated manifests are checked only when data/ exists.
+# succeed on main or a release branch. This workflow is the mandatory CPU-only
+# baseline: no GPU, no Hugging Face model download, no paid API, and no dataset
+# generation. The generated manifests are checked only when data/ exists.
 
 on:
   pull_request:

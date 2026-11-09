@@ -23,9 +23,9 @@ Lahore, Pakistan.
     [Speech and Audio](lessons/speech-audio/index.md) (M13), and
     [Video AI](lessons/video-ai/index.md) (M14) remain available as well.
 
-    All seven new notebooks and the thirteen foundation notebooks were executed on
-    Windows 11 CPU. Google Colab and GPU execution are still pending and are
-    documented as limitations. Check the [lessons index](lessons/index.md) for
+    All **26 notebooks** (thirteen foundation and thirteen section notebooks) were
+    executed on Windows 11 CPU. Google Colab and GPU execution are still pending and
+    are documented as limitations. Check the [lessons index](lessons/index.md) for
     per-section execution status.
 
 ## What this course teaches, and why
@@ -196,12 +196,12 @@ flowchart LR
 
 | Level | Modules | What changes | Hours |
 | --- | --- | --- | --- |
-| 0 - Orientation | M00-M01 | You can build and prove a reproducible environment | 15 |
-| 1 - Foundations | M02-M05 | You train and evaluate models from first principles | 64 |
-| 2 - Language AI | M06-M10 | You adapt language models and build cited RAG systems | 94 |
-| 3 - Vision, speech, video | M11-M14 | You work with images, audio, and video under privacy constraints | 82 |
-| 4 - AI agents | M15 | You build tool-using systems with permissions and evaluation | 24 |
-| 5 - Production and capstone | M16-M17 | You harden, deploy, document, and defend a complete system | 60 |
+| 0 - Orientation | [M00-M01](syllabus/level-0-start.md) | You can build and prove a reproducible environment | 15 |
+| 1 - Foundations | [M02-M05](syllabus/level-1-foundations.md) | You train and evaluate models from first principles | 64 |
+| 2 - Language AI | [M06-M10](syllabus/level-2-language.md) | You adapt language models and build cited RAG systems | 94 |
+| 3 - Vision, speech, video | [M11-M14](syllabus/level-3-vision-video.md) | You work with images, audio, and video under privacy constraints | 82 |
+| 4 - AI agents | [M15](syllabus/level-4-agents.md) | You build tool-using systems with permissions and evaluation | 24 |
+| 5 - Production and capstone | [M16-M17](syllabus/level-5-production.md) | You harden, deploy, document, and defend a complete system | 60 |
 
 The full sequence, dependencies, and 13-, 16-, 26-, and 42-week schedules are in
 the [course roadmap](course/roadmap.md#study-schedules).
@@ -494,6 +494,10 @@ storage problems.
 
 ## Datasets and pretrained models
 
+The [Datasets and Resources](resources/index.md) page lists every course dataset,
+generator, hardware tier, and licence rule. The summary here is only a starting
+point.
+
 - **M01 needs no download.** It uses the small digits dataset bundled with
   scikit-learn.
 - **F01-F13 use four synthetic tables.** They are generated locally under
@@ -590,7 +594,7 @@ AITopics uses a multi-licence structure approved by the instructor on
 
 Commercial reuse of original educational content is allowed under CC BY 4.0
 with attribution. Read
-[LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md)
+[LICENSES/README.md](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/LICENSES/README.md)
 for the scope and attribution wording, and see the
 [licensing and attribution register](technical/licensing-and-attribution.md) for
 the evidence, third-party exclusions, and unresolved SSDLite weight terms.
@@ -607,7 +611,7 @@ the evidence, third-party exclusions, and unresolved SSDLite weight terms.
 | M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven new notebooks executed on Windows 11 CPU |
 | Model-training and LLM notebooks on GPU | Not executed; CPU paths complete, GPU/pretrained paths documented as optional |
 | Documentation build | Verified locally with `mkdocs build --strict` |
-| Documentation site deployment | Workflows configured; first Pages deployment not yet run |
+| Documentation site deployment | Workflows configured; Pages API and public URL return 404; no deployment run (2026-11-09) |
 | License files | Implemented and verified locally on 2026-11-07 (MIT, CC BY 4.0, CC0 1.0) |
 
 Maintainers and contributors should read the

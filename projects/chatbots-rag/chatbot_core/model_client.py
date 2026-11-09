@@ -192,6 +192,19 @@ class FakeModelClient:
         if following < len(sentences[best_index]):
             chosen.append((best_index, following))
 
+        # The selected sentences must carry enough of the question unless the
+        # chunk's own title or section names every asked term. The latter keeps
+        # heading-led answers ("module assessment weights") usable when the body
+        # lists the values without repeating the heading; the former stops a
+        # related page from answering a different fact merely because its heading
+        # matched the topic.
+        answer_words = content_words(
+            " ".join(sentences[index][position] for index, position in chosen)
+        )
+        heading_words = content_words(evidence[best_index][0])
+        if len(asked & answer_words) < self.min_overlap and not asked <= heading_words:
+            return {"answer": ABSTAIN_TEXT, "citations": [], "confident": False}
+
         citations = sorted({index for index, _ in chosen})
         return {
             "answer": " ".join(sentences[index][position] for index, position in chosen),

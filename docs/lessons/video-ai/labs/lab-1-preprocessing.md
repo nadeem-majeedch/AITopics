@@ -26,7 +26,7 @@ By the end of this lab you can:
 
 - Modules VD01-VD03 read.
 - `python -c "import cv2, numpy; print(cv2.__version__, numpy.__version__)"` works.
-- Data generated: `python scripts/make_video_data.py` from the repository root. It writes seven
+- Data generated: `python projects/video-ai/scripts/make_video_data.py` from the repository root. It writes seven
   clips, their manifests, annotations, and a dataset card into `projects/video-ai/data/video/`.
   The directory is git-ignored and regenerates in about two seconds.
 
@@ -152,7 +152,7 @@ Full marks require that your prediction table was written *before* the run. A su
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| `VideoError: file not found` | data not generated | `python scripts/make_video_data.py` |
+| `VideoError: file not found` | data not generated | `python projects/video-ai/scripts/make_video_data.py` |
 | `cannot open with any installed decoder` | file truncated or wrong codec build | regenerate; check `cv2.getBuildInformation()` for FFMPEG: YES |
 | Extraction count is 60, not 12 | interval too small for the frame rate | check `round(fps*interval)`, it is 1 |
 | Contract sheet tiles are all identical | interval shorter than the scene's motion, or a frozen clip | try `--interval 1.0` |

@@ -25,7 +25,7 @@ This page is not legal advice. It records what has and has not been verified.
 | Public licence map | `LICENSES/README.md`, scope and attribution wording | **Complete** |
 | Synthetic-data provenance | `LICENSES/SYNTHETIC-DATA.md`, nine generators and P06 record | **Complete** |
 | Machine-readable scopes | `licensing-scope.json`, four scopes and five third-party exclusions | **Complete** |
-| Repository-wide coverage | `scripts/check_licensing.py`, all 560 release files classified | **Passing locally** |
+| Repository-wide coverage | `scripts/check_licensing.py`, all 572 release files classified | **Passing locally** |
 | Regression tests | `tests/test_licensing.py`, 11 tests including coverage gaps | **Passing locally** |
 | CI gate | `.github/workflows/validate-docs.yml`, no Pages permissions; PR, `main` push, and manual dispatch | **Configured; not run on GitHub** |
 | Documentation build | Strict MkDocs build and built-site prefix check | **Passing locally** |
@@ -67,7 +67,7 @@ requests targeting `main`, pushes to `main`, and manual dispatch, and covers:
 
 | Required check | Workflow step | Local status |
 | --- | --- | --- |
-| Unit tests | `python -m unittest discover -s tests -v` | **253 tests, OK** |
+| Unit tests | `python -m unittest discover -s tests -v` | **269 tests, OK** |
 | Licensing validator | `python scripts/check_licensing.py` | **PASS, 8 checks** |
 | P06 manifest fixture | `python -m unittest tests.test_vision_manifests -v` | **Passing** |
 | Vision dataset manifests | `python scripts/check_vision_manifests.py` | **3 datasets PASS; 57 duplicate warnings** |

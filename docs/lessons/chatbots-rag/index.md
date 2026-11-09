@@ -142,6 +142,7 @@ authoring machine (Windows 11, Python 3.12.10, CPU only):
 | Check | Result |
 | --- | --- |
 | Offline unit tests (`tests/test_chatbot_rag.py`) | 24 tests, all passing |
+| Parser regression tests (`tests/test_chatbot_parser_regression.py`) | 16 tests, all passing |
 | Project selftests | 7 of 7 run and report pass (see each project page) |
 | Corpus | 13 documents, 41 chunks, generated deterministically |
 | Dev question set (14 questions) | Measured metrics in [Module 14](ca14-evaluation.md) |

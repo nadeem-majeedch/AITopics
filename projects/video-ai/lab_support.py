@@ -136,7 +136,7 @@ def train_tiny_detector(*, stride: int = 2, epochs: int = 30, seed: int = 0,
 
     samples = training_frames(stride=stride)
     if not samples:
-        raise RuntimeError("no training frames found; run scripts/make_video_data.py")
+        raise RuntimeError("no training frames found; run python projects/video-ai/scripts/make_video_data.py")
     if log:
         print(f"  training TinyDetector on {len(samples)} frames ({key})")
     model, history = detect.train_detector(samples, epochs=epochs, seed=seed, width=width,
@@ -187,7 +187,7 @@ def train_traffic_ssdlite(*, epochs: int = 5, stride: int = 2, lr: float = 3e-4,
         raise RuntimeError(f"pretrained weights unavailable: {detector.load_error}")
     samples = training_frames(stride=stride)
     if not samples:
-        raise RuntimeError("no training frames found; run scripts/make_video_data.py")
+        raise RuntimeError("no training frames found; run python projects/video-ai/scripts/make_video_data.py")
     if log:
         print(f"  fine-tuning SSDLite on {len(samples)} frames, {epochs} epochs ({key})")
     detector, history = detect.finetune_traffic_detector(samples, epochs=epochs, lr=lr,

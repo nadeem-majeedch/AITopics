@@ -42,24 +42,24 @@ By the end of the full program, a successful student can:
 
 | Code | Module | Level | Hours | Hardware |
 | --- | --- | --- | --- | --- |
-| M00 | Course orientation and study plan | 0 | 3 | CPU |
-| M01 | Python and AI development environment | 0 | 12 | CPU; GPU check optional |
-| M02 | Machine learning foundations | 1 | 16 | CPU |
-| M03 | Deep learning foundations | 1 | 16 | CPU or GPU |
-| M04 | Training models from scratch | 1 | 18 | GPU recommended |
-| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU |
-| M06 | Transformers and language models | 2 | 18 | CPU for tiny models; GPU recommended |
-| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required for core lab |
-| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required |
-| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU |
-| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU |
-| M11 | Image classification and computer vision | 3 | 18 | GPU recommended |
-| M12 | Object detection, tracking, and transfer learning | 3 | 20 | GPU required for training |
-| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | GPU recommended |
-| M14 | Video understanding and video analytics | 3 | 22 | GPU recommended |
-| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU or API |
-| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU |
-| M17 | Integrated capstone | 5 | 40 | Depends on project |
+| M00 | [Course orientation and study plan](../syllabus/level-0-start.md#m00) | 0 | 3 | CPU |
+| M01 | [Python and AI development environment](../lessons/m01-environment/index.md) | 0 | 12 | CPU; GPU check optional |
+| M02 | [Machine learning foundations](../lessons/f03-numpy-pandas/index.md) | 1 | 16 | CPU |
+| M03 | [Deep learning foundations](../lessons/f11-neural-networks/index.md) | 1 | 16 | CPU or GPU |
+| M04 | [Training models from scratch](../lessons/model-training/index.md) | 1 | 18 | GPU recommended |
+| M05 | [Dataset preparation, labeling, cleaning, augmentation](../lessons/model-training/index.md) | 1 | 14 | CPU |
+| M06 | [Transformers and language models](../lessons/llm-fine-tuning/index.md) | 2 | 18 | CPU for tiny models; GPU recommended |
+| M07 | [Small language models and supervised fine-tuning](../lessons/llm-fine-tuning/index.md) | 2 | 24 | GPU required for core lab |
+| M08 | [LoRA, QLoRA, quantization, efficient training](../lessons/llm-fine-tuning/index.md) | 2 | 18 | GPU required |
+| M09 | [Chatbots and conversational applications](../lessons/chatbots-rag/index.md) | 2 | 16 | CPU or GPU |
+| M10 | [Embeddings, vector search, and RAG](../lessons/chatbots-rag/index.md) | 2 | 18 | CPU |
+| M11 | [Image classification and computer vision](../lessons/computer-vision/index.md) | 3 | 18 | GPU recommended |
+| M12 | [Object detection, tracking, and transfer learning](../lessons/computer-vision/index.md) | 3 | 20 | GPU required for training |
+| M13 | [Speech recognition, audio classification, speech generation](../lessons/speech-audio/index.md) | 3 | 22 | GPU recommended |
+| M14 | [Video understanding and video analytics](../lessons/video-ai/index.md) | 3 | 22 | GPU recommended |
+| M15 | [AI agents, tool calling, memory, workflows](../lessons/ai-agents/index.md) | 4 | 24 | CPU or API |
+| M16 | [Evaluation, security, responsible AI, deployment](../lessons/production/index.md) | 5 | 20 | CPU |
+| M17 | [Integrated capstone](../lessons/capstone/index.md) | 5 | 40 | Depends on project |
 | | **Total** | | **339** | |
 
 ```mermaid

@@ -1,5 +1,11 @@
 # Content inventory
 
+> **Maintainer document.** This page records what exists for maintainers. Some
+> tables use code-formatted paths because the referenced file is a planned
+> helper or a generated artifact, not a student link. For student navigation,
+> use the [course roadmap](../course/roadmap.md), [learning paths](../course/learning-paths.md),
+> and [lessons index](../lessons/index.md).
+
 This inventory records what existed before the architecture work, what must be
 preserved, and what remains to be created. It is a working checklist for
 maintainers.
@@ -13,7 +19,7 @@ maintainers.
 | Notebooks | 26 valid, executed notebooks; all linked in the [Notebook Library](../notebook-library.md) |
 | Labs and project briefs | 52 unique files across foundation labs, section labs, and chatbot projects |
 | Assessments | 21 unique assessment files; M00 has no assessment |
-| Documentation build | 290 Markdown pages; `mkdocs build --strict` passes with the notebook plugin |
+| Documentation build | 296 Markdown pages; `mkdocs build --strict` passes with the notebook plugin |
 | GitHub Pages | Not deployed; repository Pages API returns 404 |
 
 The historical tables below are retained as a record of the original empty-workspace
@@ -25,7 +31,7 @@ audit. Where they conflict with this section, this section is current.
 | --- | --- |
 | Local files in `E:\AITopics` | None at audit time |
 | Git repository | Not initialized locally |
-| Remote repository | `https://github.com/nadeem-majeedch/AITopics` returned HTTP 404 |
+| Remote repository | Public at `https://github.com/nadeem-majeedch/AITopics`; default branch `release/v0.1.0-rc.1`; checked 2026-11-09 |
 | GitHub account | Public account exists; repository not publicly accessible |
 | GitHub Pages | Not found |
 | Documentation framework | Not found |
@@ -294,9 +300,9 @@ including one assessment per unit and a shared synthetic dataset card.
 | Foundation and section notebooks executed only on Windows 11 CPU | Cross-environment and GPU reproducibility are unverified | Execute representative units on Colab and, where available, a GPU; record the comparison |
 | M07/M08 pretrained Hugging Face path not executed | The optional real-model path needs a GPU and a download | Keep the CPU-sized local path mandatory; document the pretrained path as optional |
 | Capstone has no sample submission | The three checkpoint gates are specified but untested against a real student package | Run a pilot submission and record the result |
-| CI has not run on GitHub | The workflow now covers docs, licensing validation, 253 unit tests, manifest fixtures, projects, generated-data checks, and all 26 notebooks locally, but no Actions runner has executed it | Merge and run the workflow; record the first green run [release audit](../technical/release-readiness-audit.md) |
+| CI has not run on GitHub | The workflow now covers docs, licensing validation, 269 unit tests, manifest fixtures, projects, generated-data checks, and all 26 notebooks locally, but no Actions runner has executed it | Merge and run the workflow; record the first green run [release audit](../technical/release-readiness-audit.md) |
 | No pilot | Time estimates and labs are untested | Run Phase 8 |
-| GitHub Pages not enabled | No public site; the deploy workflow cannot publish until the repository setting exists | Set Settings → Pages → Source: GitHub Actions, then run the deploy workflow |
+| GitHub Pages API 404; no public site | The deploy workflow cannot publish until the repository Pages setting exists and a deployment runs | Set Settings → Pages → Source: GitHub Actions, then run the deploy workflow |
 | Dataset licenses unverified | Legal risk | Verify each dataset card |
 | Privacy review pending for video/audio | Potential harm | Complete in Phase 4 |
 

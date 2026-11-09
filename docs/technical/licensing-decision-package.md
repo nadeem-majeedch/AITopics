@@ -13,7 +13,7 @@ still required before publication.
 This page records the decision and its implementation. It is not legal advice.
 The evidence register is [Licensing and attribution register](licensing-and-attribution.md);
 the student-facing map is
-[`LICENSES/README.md`](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md).
+[`LICENSES/README.md`](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/LICENSES/README.md).
 
 ## 1. Instructor approval
 
@@ -132,12 +132,12 @@ Local validation on 2026-11-07:
 | --- | --- |
 | `python scripts/check_licensing.py` | **PASS**, 8 checks, 0 failures |
 | Licensing unit tests | **11 tests, OK** |
-| Full Python suite | **253 tests, OK** |
+| Full Python suite | **269 tests, OK** |
 | Notebook JSON validation | **26 notebooks valid** |
 | Course project specifications | **12 projects, 12 complete specs, 8 assessment banks** |
-| Markdown links and anchors | **295 Markdown files, 0 failures** |
-| Strict MkDocs build | **322 pages, 0 warnings** |
-| Built-site prefix check | **322 pages, `/AITopics` prefix, 0 problems** |
+| Markdown links and anchors | **296 Markdown files, 0 failures** |
+| Strict MkDocs build | **323 pages, 0 warnings** |
+| Built-site prefix check | **323 pages, `/AITopics` prefix, 0 problems** |
 | Workflow and Dependabot schemas | **Valid** — rechecked with `check-jsonschema` 0.39.0 |
 | `pip check` | **Clean** |
 

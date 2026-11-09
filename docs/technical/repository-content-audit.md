@@ -1,95 +1,176 @@
 # Repository content audit
 
-Audit date: **2026-11-08**. Branch: `release/v0.1.0-rc.1`. Base commit:
-`5fdf5de`. This audit checks files on disk, not claims in the README or the
-curriculum map.
+Audit date: **2026-11-09**. Branch: `release/v0.1.0-rc.1`. Audited commit:
+`c6410ac` (one commit ahead of `origin/release/v0.1.0-rc.1` at `5fdf5de`).
+This audit checks files on disk and their links, not claims in the README, the
+curriculum map, or earlier audit reports.
 
 ## Verdict
 
-**The local course content is complete enough for deployment review.** Every
-advertised module has lesson files, a notebook or a documented capstone
-substitute, practical work, and an assessment. No advertised notebook directory
-is empty, and every notebook is linked from both the MkDocs navigation and the
-Notebook Library.
-
-This is not a claim that the public course is live. GitHub Pages remains
-unpublished, and no human student pilot has been completed.
+**READY WITH DOCUMENTED LIMITATIONS at the repository-content level.** Every
+advertised module has a lesson path, practical work, and an assessment; every
+advertised notebook exists, is valid, has been executed, and is reachable. The
+limitations are evidentiary, not missing-content claims: the public GitHub Pages
+site is still 404, no validation or deployment workflow has run on GitHub, no GPU
+or Colab execution exists, no human student pilot exists, and 20 notebooks do not
+follow the newer named 14-section template.
 
 ## Verified inventory
 
-Measured by `python scripts/check_course_inventory.py`:
+Counts below are unique file paths, not rows in a table. Some computer-vision
+lessons are shared by M11 and M12, and some lab briefs are shared by more than one
+module, so the gate's row counts are larger than the unique counts.
 
-| Item | Verified count |
-| --- | ---: |
-| Modules M00-M17 | 18 |
-| Module lesson files | 105 |
-| Executable notebooks | 26 |
-| Labs and project briefs | 52 |
-| Assessments | 21 |
-| Notebooks meeting the full 14-section standard | 6 |
+| Artifact | Expected | Existing | Structurally complete | Partial | Missing |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Lesson files | 105 | 105 | 105 | 0 | 0 |
+| Notebooks | 26 | 26 | 26 valid and executed | 0 | 0 |
+| Labs and project briefs | 52 | 52 | 52 | 0 | 0 |
+| Assessments | 21 | 21 | 21 | 0 | 0 |
+| Modules | 18 | 18 | 18 | 0 | 0 |
 
-The 26 notebooks comprise 13 foundation notebooks and 13 section notebooks.
-The six new applied notebooks are M09-M14:
+The notebook "complete" count means valid JSON, executable code, complete
+execution counts, no stored errors, and a substantive Markdown/code mix. It does
+not mean that all 26 meet the exact named 14-section template; only **6** do.
 
-- `notebooks/chatbots-rag/m09_chatbots.ipynb`
-- `notebooks/chatbots-rag/m10_rag.ipynb`
-- `notebooks/computer-vision/m11_image_classification.ipynb`
-- `notebooks/computer-vision/m12_object_detection.ipynb`
-- `notebooks/speech-audio/m13_speech_audio.ipynb`
-- `notebooks/video-ai/m14_video_ai.ipynb`
+| Item | Verified count | Evidence |
+| --- | ---: | --- |
+| Modules inspected | 18 (M00-M17) | `scripts/check_course_inventory.py` |
+| Unique module lesson files | 105 | 108 module rows after shared lessons are de-duplicated |
+| Complete / partial / missing modules | 18 / 0 / 0 | Structural definition below |
+| Executable notebooks | 26 | 13 foundation + 13 section notebooks |
+| Valid and executed notebooks | 26 | JSON, stored outputs, and fresh CPU run |
+| Notebooks meeting the exact 14-section named standard | 6 | M09-M14 only |
+| Unique lab and project briefs | 52 | 76 module rows after shared briefs are de-duplicated |
+| Unique assessments | 21 | 26 module rows after shared assessments are de-duplicated |
+| Capstone project specifications | 12 | `scripts/check_course_projects.py` |
+| Assessment banks with solutions | 8 | `scripts/check_course_projects.py` |
+| Source Markdown pages | 296 | `scripts/check_docs_links.py` |
+| Built site pages | 323 | `scripts/check_docs_links.py --site site` |
 
-## What changed in this pass
+**Expected versus available:** lessons **105 / 105**, notebooks **26 / 26**,
+labs and project briefs **52 / 52**, assessments **21 / 21**; missing **0** in
+each category. The complete/partial/missing split is **18 / 0 / 0** modules under
+the structural definition below.
 
-- Added the six missing applied notebooks and executed them top-to-bottom.
-- Added `docs/notebook-library.md` with a direct link to every notebook.
-- Added all 26 notebooks to `mkdocs.yml`, mounted through `mkdocs-jupyter`.
-- Added `scripts/check_course_inventory.py` as a gate for module lessons,
-  notebooks, labs, assessments, executed outputs, and the 14-section standard.
-- Removed the remaining `.gitkeep` placeholders from notebook directories.
-- Added direct notebook links to section indexes, foundation notebook guides,
-  the lessons index, the curriculum-coverage map, and the content inventory.
-- Fixed the deterministic chatbot/RAG regression described in the
-  [Final audit](final-audit.md) and the [Release-readiness audit](release-readiness-audit.md).
+The machine-readable companion is
+[`repository-inventory.json`](repository-inventory.json). It records every
+module, lesson, notebook, lab, assessment, word count, heading count, link state,
+and notebook execution field. Regenerate it with:
 
-## Content evidence
+```bash
+python scripts/check_course_inventory.py --json docs/technical/repository-inventory.json
+```
 
-The six new notebooks were executed with a fresh CPU kernel. Their measured
-anchors are recorded in the notebook outputs and in the
-[Notebook coverage audit](notebook-coverage-audit.md):
+### What "complete" means here
 
-- M09: cited FAQ retrieval, bounded history, injection quarantine, and redaction.
-- M10: grounded registration answer with a real citation, fabricated citation
-  rejection, and configured abstention.
-- M11: 0.867 test accuracy against a 0.40 majority baseline on synthetic shapes.
-- M12: mAP@0.5 0.169, precision 0.073, recall 0.429; explicitly reported as a
-  teaching baseline, not a production detector.
-- M13: clean and distorted audio evaluation, speaker EER, and CTC mechanics.
-- M14: simulated traffic counting with MOTA and tracker throughput.
+A module is **complete** when every advertised file exists, every lesson has at
+least 500 words and 3 level-2 headings, every lab and assessment has at least 300
+words and 4 level-2 headings, every advertised resource is linked from at least
+one Markdown page, and every notebook passes the notebook gate. **Partial** means
+a file exists but fails one of those floors. **Missing** means an advertised path
+does not exist.
 
-## Limitations
+This is a structural gate, not a claim that every lesson has been reviewed by a
+teacher or tested with a student. All 18 modules pass the structural gate. That
+does not erase the content limitations listed below.
 
-- The 20 pre-existing notebooks retain their original instructional structure.
-  Only M09-M14 contain the full 14-section standard enforced by the inventory
-  checker.
-- All execution evidence is local Windows 11 CPU. GPU branches and Google Colab
-  were not executed.
-- The applied datasets are synthetic. Their metrics demonstrate pipelines and
-  evaluation logic, not real-world model quality.
-- GitHub Pages has not been deployed, so public navigation is not verified.
-- No human student completed the course or the capstone during this audit.
+## Notebook findings
+
+All 26 notebooks are valid `nbformat` JSON, contain Markdown and executable code,
+have complete execution counts, and store no error outputs. The fresh execution
+after the Markdown repair completed **26 notebooks, 223 code cells, 152.6 s**.
+
+Seven section notebooks had a real rendering defect: every Markdown paragraph had
+been prefixed with `# `, so prose rendered as a first-level heading. The affected
+files were:
+
+- `notebooks/model-training/m04_training_from_scratch.ipynb`
+- `notebooks/model-training/m05_data_engineering.ipynb`
+- `notebooks/llm-fine-tuning/m06_transformers.ipynb`
+- `notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb`
+- `notebooks/llm-fine-tuning/m08_lora_qlora.ipynb`
+- `notebooks/ai-agents/m15_agents.ipynb`
+- `notebooks/production/m16_production.ipynb`
+
+Only Markdown source was changed. Code cells, outputs, and execution counts were
+verified unchanged. M09-M14 already used the full named-section structure. The
+other seven section notebooks and the 13 foundation notebooks remain substantive
+but do not use all fourteen named sections; this is recorded in the
+[Notebook coverage audit](notebook-coverage-audit.md).
+
+## Directory findings
+
+- **No notebook directory is empty.** All 26 `.ipynb` files are in place under
+  `notebooks/`.
+- **The top-level `labs/` directories no longer pretend to contain starter
+  files.** Each applied area now has a `README.md` pointing to its real lab brief
+  under `docs/lessons/` and its runnable code under `projects/`. The obsolete
+  `.gitkeep` files were removed.
+- **Generated data is not committed.** `data/` and `projects/*/data/` are
+  regenerable and git-ignored. The committed foundation and training fixtures have
+  manifests and CC0-1.0 provenance.
+- **The video data command was wrong.** The generator is
+  `projects/video-ai/scripts/make_video_data.py`, but seven lesson references told
+  students to run `scripts/make_video_data.py` from the repository root. The
+  references now use the real path; `projects/video-ai/lab_support.py` and
+  `requirements/video.txt` were corrected too.
+
+## Navigation and content repairs in this pass
+
+- Linked the module names in `docs/course/roadmap.md`,
+  `docs/course/learning-paths.md`, and `docs/syllabus/index.md` to the published
+  module entry points.
+- Added "Published material" links under every Mxx section in the six syllabus
+  level pages.
+- Turned the notebook paths and lesson names in
+  `docs/planning/curriculum-coverage.md` into working relative links.
+- Linked the course areas in the assessment coverage map and added a student-facing
+  [Datasets and Resources](../resources/index.md) page to the site navigation.
+- Added `labs/README.md` and eight area READMEs so a student who opens a top-level
+  lab directory is sent to the actual brief instead of a dead end.
+- Added a resource-reachability check and structural floors to
+  `scripts/check_course_inventory.py`; it now also emits the machine-readable
+  inventory.
+- Corrected stale counts: 26 notebooks, 296 Markdown pages, 323 built pages, and
+  572 release files.
 
 ## Gates run
 
-| Gate | Result |
-| --- | --- |
-| Course inventory | PASS: 18 modules, 105 lesson files, 26 notebooks, 52 labs, 21 assessments |
-| Notebook JSON and stored outputs | PASS: 26 notebooks valid, executed, no stored errors |
-| Full notebook execution | PASS: 26 notebooks, 223 code cells, 176.1 s |
-| Source Markdown links and anchors | PASS |
-| Strict MkDocs build | PASS |
-| Built-site links and `/AITopics` prefix | PASS |
-| Licensing validator | PASS |
+All commands were run from the repository root in the existing virtual
+environment on Windows 11, Python 3.12.10, CPU only.
 
-Exact commands and final counts are repeated in the
-[Navigation and link audit](navigation-and-link-audit.md) and the
-[Final audit](final-audit.md).
+| Gate | Command | Result |
+| --- | --- | --- |
+| Course inventory | `python scripts/check_course_inventory.py` | **PASS**: 18 modules, 105 unique lesson files, 26 notebooks, 52 unique labs/project briefs, 21 unique assessments |
+| Notebook JSON and stored outputs | `python scripts/check_notebooks.py --validate` | **PASS**: 26 valid, executed, no stored errors |
+| Notebook execution | `python scripts/check_notebooks.py --execute --timeout 300` | **PASS**: 26 notebooks, 223 cells, 152.6 s |
+| Unit suite | `python -m unittest discover -s tests -v` | **PASS**: 269 tests, OK |
+| Project specifications | `python scripts/check_course_projects.py` | **PASS**: 12 projects, 12 complete specifications, 8 assessment banks |
+| Source links and anchors | `python scripts/check_docs_links.py` | **PASS**: 296 Markdown files, 0 broken |
+| Strict site build | `python -m mkdocs build --strict -d site` | **PASS**: 0 warnings, 323 built pages |
+| Built-site prefix and links | `python scripts/check_docs_links.py --site site` | **PASS**: 323 pages, absolute URLs use `/AITopics` |
+| Licensing | `python scripts/check_licensing.py` | **PASS**: 8 checks, 572 release files classified |
+| Whitespace | `git diff --check` | **PASS** |
+
+## Remaining limitations
+
+- **Public delivery is unverified.** The GitHub Pages API and public URL both
+  return HTTP 404. The local build is not a deployment.
+- **No GitHub Actions validation or deployment has run.** The two observed runs
+  are Dependabot updates.
+- **Twenty notebooks are below the newer named-section standard.** They are
+  substantive and executed, but the exact 14-section template is enforced only
+  for M09-M14.
+- **No GPU or Colab execution.** The executable and stored evidence is local CPU.
+- **No human student pilot.** Static journey checks are not a classroom study.
+- **Synthetic data limits the claims.** High scores on generated fixtures show a
+  pipeline works; they do not establish real-world accuracy.
+- **No commit or push was made during this audit.** The public tree remains at
+  `5fdf5de` until the release owner pushes the local work.
+
+For page-level evidence, see the
+[Navigation and link audit](navigation-and-link-audit.md),
+[GitHub Pages deployment audit](github-pages-deployment-audit.md), and
+[Student usability audit](student-usability-audit.md). The overall release status
+is recorded in the [Final audit](final-audit.md).

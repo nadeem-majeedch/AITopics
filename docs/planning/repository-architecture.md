@@ -13,7 +13,7 @@ remote repository referenced in the task.
 | --- | --- |
 | Local working directory `E:\AITopics` | Empty at audit time; no files to preserve |
 | Git repository | Not initialized locally |
-| Remote `github.com/nadeem-majeedch/AITopics` | Returned HTTP 404; the account exists but the repository is not publicly visible |
+| Remote `github.com/nadeem-majeedch/AITopics` | Public; default branch `release/v0.1.0-rc.1`; verified 2026-11-09 (an earlier audit saw a 404 before publication) |
 | GitHub Pages | Not configured; no deployment files found |
 | Documentation framework | None found |
 | Notebooks, tests, workflows | None found |

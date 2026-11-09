@@ -10,6 +10,7 @@ Department of Data Science (PUCIT), University of the Punjab, Lahore, Pakistan.
 [Foundation sequence](docs/lessons/index.md#foundation-sequence) ·
 [Course site](docs/index.md) ·
 [Learning paths](docs/course/learning-paths.md) ·
+[Datasets and Resources](docs/resources/index.md) ·
 [Capstone projects](docs/course/projects.md)
 
 > **Course status: all eighteen modules have published learning material.**
@@ -27,6 +28,12 @@ Department of Data Science (PUCIT), University of the Punjab, Lahore, Pakistan.
 > [Notebook Library](docs/notebook-library.md). See
 > [Lessons](docs/lessons/index.md) and the
 > [curriculum coverage map](docs/planning/curriculum-coverage.md).
+
+> **Release status: READY WITH DOCUMENTED LIMITATIONS.** The local repository
+> builds cleanly and all 26 notebooks execute on CPU, but GitHub Pages is not yet
+> deployed (the Pages API and public URL return 404) and no human student pilot
+> has been completed. See the [final audit](docs/technical/final-audit.md) for the
+> exact evidence and remaining limitations.
 
 > **New: Computer Vision section.** A complete Level 3 slice ships with 14
 > modules, 8 runnable labs, a face-safety module with measured demographic gaps,
@@ -467,7 +474,7 @@ proposal.
 | `scripts/` | Setup, download, evaluation, and maintenance automation | Foundation data generator available |
 | `tests/` | Unit and regression tests for shared course packages | Available |
 | `requirements/` | Split dependency sets (docs, base, notebooks, CPU, GPU, LLM, agents, dev) | Partially available |
-| `.github/workflows/` | Documentation validation and GitHub Pages deployment | Deployment workflows added; first deployment pending |
+| `.github/workflows/` | Documentation validation and GitHub Pages deployment | Workflows configured; Pages API and public site return 404; no validation or deployment run (2026-11-09) |
 
 The full target tree, content ownership rules, and data policy are in the
 [repository architecture](docs/planning/repository-architecture.md).
@@ -482,7 +489,7 @@ The full target tree, content ownership rules, and data policy are in the
 | F02 (M01) lesson, notebook, lab, assessment | Published; notebook verified on Windows 11 |
 | M04-M08 and M15-M17 lessons, notebooks, labs, assessments | Published; seven notebooks executed on Windows 11 CPU |
 | M09-M14 guided notebooks | Published and executed on Windows 11 CPU: chatbots, RAG, image classification, object detection, speech/audio, video analytics |
-| Conversational AI section (M09-M10 vertical slice) | Published; 24 offline unit tests passing; M09 and M10 notebooks executed; Streamlit and real-model paths documented but not executed here |
+| Conversational AI section (M09-M10 vertical slice) | Published; 24 chatbot/RAG tests plus 16 parser regression tests passing; M09 and M10 notebooks executed; Streamlit and real-model paths documented but not executed here |
 | Computer Vision section (M11-M12 vertical slice) | Published; 50 offline unit tests passing; M11 and M12 notebooks executed; all 8 labs and the face program executed on Windows 11 CPU; GPU and real ImageNet weights not executed here |
 | Speech and Audio section (M13 vertical slice) | Published; 55 offline unit tests passing; M13 notebook executed; all 8 lab selftests exit 0 on Windows 11 CPU |
 | Video AI section (M14 vertical slice) | Published; 38 offline unit tests passing; M14 notebook executed; 7 of 8 lab selftests exit 0 on Windows 11 CPU (the detector-download lab was not run) |

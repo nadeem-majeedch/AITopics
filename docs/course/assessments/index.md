@@ -66,12 +66,12 @@ for your own tracking only.
 
 | Course area | Quiz chapter | Conceptual | Code reading | Debugging | Scenario | Lab assessment | Evaluation | Revision |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F01-F05 data and splits | 1 | 1-5 | 1, 3 | 1, 4 | 2 | 1 | 1 | 1-6 |
-| F06-F10 classical ML | 2 | 6-10 | 4 | 2, 3 | 1 | 1 | 1, 2 | 7-12 |
-| F11-F13 neural networks | 3 | 11-13 | 2 | - | 3 | - | 4 | 13-17 |
-| Conversational AI and RAG | 4 | 14-16 | 6 | 6 | 4 | 2 | 6 | 18-22 |
-| Vision, speech, video | 5 | 17-18 | 5, 7 | 5, 7 | 5 | 3, 4, 5 | 2, 3 | 23-27 |
-| Evaluation, security, production | 6 | 19-20 | - | - | 6-8 | 6 | 2, 4, 5, 7 | 28-30 |
+| [F01-F05 data and splits](../../lessons/f01-python-ai/index.md) | 1 | 1-5 | 1, 3 | 1, 4 | 2 | 1 | 1 | 1-6 |
+| [F06-F10 classical ML](../../lessons/f06-eda/index.md) | 2 | 6-10 | 4 | 2, 3 | 1 | 1 | 1, 2 | 7-12 |
+| [F11-F13 neural networks](../../lessons/f11-neural-networks/index.md) | 3 | 11-13 | 2 | - | 3 | - | 4 | 13-17 |
+| [Conversational AI and RAG](../../lessons/chatbots-rag/index.md) | 4 | 14-16 | 6 | 6 | 4 | 2 | 6 | 18-22 |
+| [Vision, speech, video](../../lessons/computer-vision/index.md) | 5 | 17-18 | 5, 7 | 5, 7 | 5 | 3, 4, 5 | 2, 3 | 23-27 |
+| [Evaluation, security, production](../../lessons/production/index.md) | 6 | 19-20 | - | - | 6-8 | 6 | 2, 4, 5, 7 | 28-30 |
 
 ## Advanced assignments
 

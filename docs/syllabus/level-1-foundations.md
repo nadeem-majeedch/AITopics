@@ -24,6 +24,8 @@ evidence before skipping modules.
 
 ## M02 - Machine learning foundations {#m02}
 
+**Published material:** [F03-F10 lesson sequence](../lessons/f03-numpy-pandas/index.md).
+
 !!! success "Published as the F03-F10 sequence"
     This module is delivered by [F03](../lessons/f03-numpy-pandas/index.md)
     through [F10](../lessons/f10-metrics-validation/index.md). Those units use
@@ -156,6 +158,8 @@ M03 - Deep learning foundations.
 
 ## M03 - Deep learning foundations {#m03}
 
+**Published material:** [F11-F13 lesson sequence](../lessons/f11-neural-networks/index.md).
+
 !!! success "Published as the F11-F13 sequence"
     This module is delivered by [F11](../lessons/f11-neural-networks/index.md)
     through [F13](../lessons/f13-reproducibility/index.md). Those units use small
@@ -275,6 +279,8 @@ M04 - Training models from scratch.
 
 ## M04 - Training models from scratch {#m04}
 
+**Published material:** [Model training overview](../lessons/model-training/index.md).
+
 **Level 1 | 18 hours | GPU recommended | Prerequisite: M03**
 
 ### Learning objectives
@@ -382,6 +388,8 @@ M05 - Dataset preparation, labeling, cleaning, and augmentation.
 ---
 
 ## M05 - Dataset preparation, labeling, cleaning, and augmentation {#m05}
+
+**Published material:** [Model training overview](../lessons/model-training/index.md) - start with the dataset-audit modules and Lab 2.
 
 **Level 1 | 14 hours | CPU-only | Prerequisite: M02-M04 (M03 minimum)**
 

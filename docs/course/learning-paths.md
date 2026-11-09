@@ -19,12 +19,12 @@ before specializing.
 
 | Order | Module | Hours |
 | --- | --- | --- |
-| 1 | M00 Course orientation | 3 |
-| 2 | M01 Python and AI environment | 12 |
-| 3 | M02 Machine learning foundations | 16 |
-| 4 | M03 Deep learning foundations | 16 |
-| 5 | M04 Training models from scratch | 18 |
-| 6 | M05 Dataset preparation and labeling | 14 |
+| 1 | [M00 Course orientation](../syllabus/level-0-start.md#m00) | 3 |
+| 2 | [M01 Python and AI environment](../lessons/m01-environment/index.md) | 12 |
+| 3 | [M02 Machine learning foundations](../lessons/f03-numpy-pandas/index.md) | 16 |
+| 4 | [M03 Deep learning foundations](../lessons/f11-neural-networks/index.md) | 16 |
+| 5 | [M04 Training models from scratch](../lessons/model-training/index.md) | 18 |
+| 6 | [M05 Dataset preparation and labeling](../lessons/model-training/index.md) | 14 |
 | | **Total** | **79** |
 
 **You will be able to:** train and evaluate classical and deep models, diagnose
@@ -46,16 +46,16 @@ recommended but not mandatory if you understand training loops.
 
 | Order | Module | Hours |
 | --- | --- | --- |
-| 1 | M00-M01 Orientation and environment | 15 |
-| 2 | M02-M03 ML and DL foundations | 32 |
-| 3 | M05 Dataset preparation | 14 |
-| 4 | M06 Transformers and language models | 18 |
-| 5 | M07 Small language models and SFT | 24 |
-| 6 | M08 LoRA, QLoRA, quantization | 18 |
-| 7 | M09 Chatbots and conversational applications | 16 |
-| 8 | M10 Embeddings, vector search, RAG | 18 |
-| 9 | M16 Evaluation, security, deployment | 20 |
-| 10 | M17 Capstone (language option) | 40 |
+| 1 | [M00-M01 Orientation and environment](../lessons/m01-environment/index.md) | 15 |
+| 2 | [M02-M03 ML and DL foundations](../lessons/f03-numpy-pandas/index.md) | 32 |
+| 3 | [M05 Dataset preparation](../lessons/model-training/index.md) | 14 |
+| 4 | [M06 Transformers and language models](../lessons/llm-fine-tuning/index.md) | 18 |
+| 5 | [M07 Small language models and SFT](../lessons/llm-fine-tuning/index.md) | 24 |
+| 6 | [M08 LoRA, QLoRA, quantization](../lessons/llm-fine-tuning/index.md) | 18 |
+| 7 | [M09 Chatbots and conversational applications](../lessons/chatbots-rag/index.md) | 16 |
+| 8 | [M10 Embeddings, vector search, RAG](../lessons/chatbots-rag/index.md) | 18 |
+| 9 | [M16 Evaluation, security, deployment](../lessons/production/index.md) | 20 |
+| 10 | [M17 Capstone (language option)](../lessons/capstone/index.md) | 40 |
 | | **Total** | **215** |
 
 **You will be able to:** prepare instruction data, fine-tune a small model with
@@ -78,12 +78,12 @@ robotics, agriculture, and traffic analysis.
 
 | Order | Module | Hours |
 | --- | --- | --- |
-| 1 | M00-M05 Foundations | 79 |
-| 2 | M11 Image classification | 18 |
-| 3 | M12 Object detection and tracking | 20 |
-| 4 | M14 Video understanding and analytics | 22 |
-| 5 | M16 Evaluation, security, deployment | 20 |
-| 6 | M17 Capstone (vision/video option) | 40 |
+| 1 | [M00-M05 Foundations](../lessons/f03-numpy-pandas/index.md) | 79 |
+| 2 | [M11 Image classification](../lessons/computer-vision/index.md) | 18 |
+| 3 | [M12 Object detection and tracking](../lessons/computer-vision/index.md) | 20 |
+| 4 | [M14 Video understanding and analytics](../lessons/video-ai/index.md) | 22 |
+| 5 | [M16 Evaluation, security, deployment](../lessons/production/index.md) | 20 |
+| 6 | [M17 Capstone (vision/video option)](../lessons/capstone/index.md) | 40 |
 | | **Total** | **199** |
 
 **You will be able to:** fine-tune image classifiers, train and evaluate
@@ -109,10 +109,10 @@ generation systems.
 
 | Order | Module | Hours |
 | --- | --- | --- |
-| 1 | M00-M05 Foundations | 79 |
-| 2 | M13 Speech and audio AI | 22 |
-| 3 | M16 Evaluation, security, deployment | 20 |
-| 4 | M17 Capstone (speech option) | 40 |
+| 1 | [M00-M05 Foundations](../lessons/f03-numpy-pandas/index.md) | 79 |
+| 2 | [M13 Speech and audio AI](../lessons/speech-audio/index.md) | 22 |
+| 3 | [M16 Evaluation, security, deployment](../lessons/production/index.md) | 20 |
+| 4 | [M17 Capstone (speech option)](../lessons/capstone/index.md) | 40 |
 | | **Total** | **161** |
 
 **You will be able to:** preprocess audio, fine-tune or adapt an ASR model,
@@ -134,14 +134,14 @@ retrieval-backed assistants with controlled autonomy.
 
 | Order | Module | Hours |
 | --- | --- | --- |
-| 1 | M00-M03 Orientation, environment, ML/DL | 47 |
-| 2 | M05 Dataset preparation | 14 |
-| 3 | M06 Transformers and language models | 18 |
-| 4 | M09 Chatbots and conversational applications | 16 |
-| 5 | M10 Embeddings, vector search, RAG | 18 |
-| 6 | M15 AI agents, tools, memory, workflows | 24 |
-| 7 | M16 Evaluation, security, deployment | 20 |
-| 8 | M17 Capstone (agent option) | 40 |
+| 1 | [M00-M03 Orientation, environment, ML/DL](../lessons/f03-numpy-pandas/index.md) | 47 |
+| 2 | [M05 Dataset preparation](../lessons/model-training/index.md) | 14 |
+| 3 | [M06 Transformers and language models](../lessons/llm-fine-tuning/index.md) | 18 |
+| 4 | [M09 Chatbots and conversational applications](../lessons/chatbots-rag/index.md) | 16 |
+| 5 | [M10 Embeddings, vector search, RAG](../lessons/chatbots-rag/index.md) | 18 |
+| 6 | [M15 AI agents, tools, memory, workflows](../lessons/ai-agents/index.md) | 24 |
+| 7 | [M16 Evaluation, security, deployment](../lessons/production/index.md) | 20 |
+| 8 | [M17 Capstone (agent option)](../lessons/capstone/index.md) | 40 |
 | | **Total** | **197** |
 
 **You will be able to:** design tool schemas, implement a bounded agent loop,
@@ -161,7 +161,7 @@ capstone.
 
 | Level | Modules | Hours |
 | --- | --- | --- |
-| 0-5 | M00-M17 | 339 |
+| 0-5 | [M00-M17](../lessons/index.md) | 339 |
 
 **You will be able to:** work across language, vision, speech, video, and agents,
 and make defensible engineering decisions about evaluation, cost, security, and

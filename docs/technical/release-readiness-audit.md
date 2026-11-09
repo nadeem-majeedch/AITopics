@@ -1,6 +1,6 @@
 # Release-readiness audit
 
-Audit date: **2026-11-08**. Scope: the complete repository at the working tree
+Audit date: **2026-11-09**. Scope: the complete repository at the working tree
 that contains the 18-module curriculum, 26 notebooks, 12 capstone specifications,
 eight assessment banks, the P06 deduplication study, and the documentation site.
 
@@ -11,8 +11,8 @@ deployment was verified.
 
 ## Verdict
 
-**VALIDATION PASSED WITH DOCUMENTED LIMITATIONS (local). Ready for deployment
-review, not yet a verified public release.**
+**READY WITH DOCUMENTED LIMITATIONS.** The local repository is ready for the
+release owner to push and deploy, but it is not yet a verified public release.
 
 The curriculum and automated checks are complete, the chatbot/RAG regression is
 repaired, and the licensing architecture is **implemented and verified locally**.
@@ -23,24 +23,28 @@ These are not evidence that the lessons are wrong. Once those gates are exercise
 and the deployment is verified, the public-release verdict can be reconsidered
 while the documented environment and upstream-weight limitations remain.
 
-## 2026-11-08 validation update
+## 2026-11-09 validation update
 
 - Added and executed six applied notebooks: M09-M14. The library now has 26
-  notebooks and 223 code cells; the full execution check took 176.1 s.
+  notebooks and 223 code cells; the full execution check took 152.6 s.
 - Repaired a chatbot/RAG parser regression. The two initially failing tests were
   `test_rag_missing_document_abstains` and
   `test_rag_irrelevant_retrieval_is_not_used_as_evidence`. The parser correctly
   excluded the user-turn JSON instruction, but the support rule still accepted a
   single incidental word. Support now matches the evidence header plus body and
   requires two content words (with a one-word-question exception).
-- Re-ran the complete suite: **253 tests, OK**.
+- Added **16 dedicated parser regression tests** in
+  `tests/test_chatbot_parser_regression.py`. They cover instruction separation,
+  weak lexical overlap, title/section/body support, abstention, one-word
+  questions, JSON/citation contracts, and malformed output.
+- Re-ran the complete suite: **269 tests, OK**.
 - Re-ran notebook validation and execution: **26 valid, 26 executed, 223 cells,
   0 failures**.
 - Re-ran the course inventory: **18 modules, 105 lesson files, 26 notebooks, 52
   labs/project briefs, 21 assessments**; M09-M14 satisfy the 14-section standard.
-- Re-ran links and the site: **295 Markdown files, 322 built pages, 0 warnings,
+- Re-ran links and the site: **296 Markdown files, 323 built pages, 0 warnings,
   0 broken links**.
-- Licensing: **PASS, 8 checks, 560 release files classified**.
+- Licensing: **PASS, 8 checks, 572 release files classified**.
 - Whitespace: `git diff --check` and `git diff --cached --check` clean.
 - GitHub Pages remains **HTTP 404**. The Actions API shows **2 Dependabot runs**
   and **no validation or deployment run**.
@@ -60,11 +64,11 @@ See the [Repository content audit](repository-content-audit.md),
 | Documentation links | `scripts/check_docs_links.py` checks relative links, heading anchors, and navigation entries | Working |
 | Strict documentation build | `mkdocs build --strict` | Working, zero warnings |
 | Built-site prefix | `scripts/check_docs_links.py --site site` checks the `/AITopics` project prefix | Working |
-| Unit tests | `unittest` suite covering foundations, vision, audio, video, chatbots, agents, LLM fine-tuning, and course projects | 253 tests |
+| Unit tests | `unittest` suite covering foundations, vision, audio, video, chatbots, agents, LLM fine-tuning, and course projects | 269 tests |
 | Project specifications | `scripts/check_course_projects.py` checks 12 specs, rubrics, and eight assessment banks | Working |
 | P06 manifest | `scripts/make_vision_data.py --check` verifies the generated set | Working when `data/` exists |
 | Notebook execution | All 26 notebooks had been executed on Windows 11 CPU and stored without errors | Historical evidence in the notebooks |
-| Deployment | `.github/workflows/deploy-pages.yml` builds, uploads, and deploys after successful validation on `main`, or manual dispatch | Present, never run on GitHub |
+| Deployment | `.github/workflows/deploy-pages.yml` builds, uploads, and deploys after successful validation on `main` or `release/**`, or manual dispatch | Present, never run on GitHub |
 | Documentation CI | `.github/workflows/validate-docs.yml` ran links, strict build, and prefix check on documentation-only pull requests | Present, documentation only |
 
 The P06 work is complete and was not repeated: the 57 same-split duplicate
@@ -94,8 +98,8 @@ the release decision rather than repeating every historical measurement.
 The existing documentation workflow was extended rather than duplicated. Its
 display name is **Validate repository**, the file remains
 `.github/workflows/validate-docs.yml`, and it runs on pull requests targeting
-`main`, pushes to `main`, and manual dispatch. Pages deployment waits for a
-successful validation run on `main`.
+`main` or `release/**`, pushes to `main` or `release/**`, and manual dispatch.
+Pages deployment waits for a successful validation run on either trigger branch.
 
 ### Python, notebooks, and data job
 
@@ -105,7 +109,7 @@ successful validation run on `main`.
 | Environment | Python 3.12, pip cache keyed to `requirements/*.txt` | The supported interpreter is used |
 | Install | `python -m pip install -r requirements/ci.txt` | One reproducible CPU-only union of the foundation, vision, audio, and video sets |
 | Dependency consistency | `python -m pip check` | No installed package has a broken requirement |
-| Unit tests | `python -m unittest discover -s tests -v` | The full 253-test suite runs, not only the foundation subset |
+| Unit tests | `python -m unittest discover -s tests -v` | The full 269-test suite runs, not only the foundation subset |
 | Projects | `python scripts/check_course_projects.py` | Twelve project briefs and eight answer-keyed assessment banks are complete |
 | Manifest fixture | `python -m unittest tests.test_vision_manifests -v` | Nine tests exercise PASS, FAIL, SKIPPED, missing manifest, corrupt file, invalid label, duplicate warning, and source leakage without the real corpus |
 | Manifests | `python scripts/check_vision_manifests.py` | Every present dataset emits PASS or FAIL; a fresh checkout with no `data/` emits SKIPPED, never PASS |
@@ -129,8 +133,9 @@ site for root-absolute URLs that would break under `/AITopics/`.
 
 Validation has `contents: read` only, uploads no artifact, requests no Pages
 permission, and cannot publish. Deployment is separate and now waits for a
-successful **Validate repository** run on `main` (or explicit manual dispatch),
-checking out that run's `head_sha` before building the Pages artifact.
+successful **Validate repository** run on `main` or `release/**` (or explicit
+manual dispatch), checking out that run's `head_sha` before building the Pages
+artifact.
 
 ### Local versus GitHub Actions
 
@@ -148,20 +153,20 @@ results.
 
 | Check | Exact result |
 | --- | --- |
-| Unit tests | **253 tests, OK** |
+| Unit tests | **269 tests, OK** |
 | Licensing validator | **PASS: 8 checks, 0 failures** |
 | Licensing tests | **11 tests, OK** (missing file, missing exception, conflicting SPDX, unresolved weights, synthetic attribution, mixed configuration, tampered text, unclassified file, non-content placeholder, overlapping scopes, full repository) |
 | Manifest gate tests | **9 tests, OK** (synthetic fixture; no P06 download) |
 | Notebook JSON and stored outputs | **26 notebooks valid, 0 errors, 0 unexecuted cells** |
-| Notebook execution | **26 notebooks, 223 code cells, 176.1 s locally, 0 failures** |
+| Notebook execution | **26 notebooks, 223 code cells, 152.6 s locally, 0 failures** |
 | P06 original manifest | **960 images, 0 problems, 57 same-split duplicate warnings, no source overlap** |
 | P06 deduplicated manifest | **902 images, 0 problems, 0 warnings, no source overlap** |
 | P06 balanced manifest | **240 images, 0 problems, 0 warnings, no source overlap** |
 | All present vision manifests | **3 datasets, 0 failed, 57 accepted duplicate-content warnings** |
 | Project specifications | **12 projects, 12 complete specs, 8 assessment banks with solutions** |
-| Markdown links and anchors | **295 Markdown files, 0 broken links or anchors** |
+| Markdown links and anchors | **296 Markdown files, 0 broken links or anchors** |
 | Strict MkDocs build | **0 warnings** |
-| Built site | **322 pages, 0 prefix or broken-asset problems, `/AITopics` prefix** |
+| Built site | **323 pages, 0 prefix or broken-asset problems, `/AITopics` prefix** |
 | Workflow schemas | **2 workflows and the Dependabot config valid** |
 | Dependency consistency | **`pip check` clean; CI requirement resolution has no conflict** |
 

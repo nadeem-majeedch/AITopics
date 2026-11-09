@@ -1,72 +1,95 @@
 # Student usability audit
 
-Audit date: **2026-11-08**. Scope: whether a student can find the course, choose
-a path, open a lesson, run the matching notebook, and complete the practical
-work and assessment without guessing a URL.
+Audit date: **2026-11-09**. Scope: whether a student can start at the course
+home, choose a learning path, open a lesson, reach the matching notebook, complete
+the lab, and find the assessment or capstone instructions without guessing a URL.
 
 ## Verdict
 
-**The built course is navigable and usable for review. It is not yet verified as
-a public student experience.** All required paths resolve in the local site, but
-GitHub Pages is not live and no human student pilot was completed.
+**PASS for the local built site; UNVERIFIED for public use.** All eight recorded
+journeys resolve in the built output. GitHub Pages is 404, no human student pilot
+was completed, and no browser interaction, mobile layout, or search-relevance
+study was performed.
 
-## Paths exercised
+## Journeys exercised
 
-| Student task | Result |
+These are static journey checks against the generated HTML: the page exists, the
+expected link is in the page, and the target file exists. The table reports what
+was actually checked.
+
+| # | Student journey | Result |
+| ---: | --- | --- |
+| 1 | Beginner: home → F01 → notebook guide → lab → assessment | **PASS** |
+| 2 | Beginner: open the corresponding F01 notebook page | **PASS**; `notebooks/foundations/f01_python_ai.ipynb` is rendered and downloadable |
+| 3 | Complete a lab and find its assessment | **PASS** for F01 and the applied sections; 21 unique assessments exist |
+| 4 | Basic-Python learner follows the ML path | **PASS**; F03 page → notebook → lab/assessment, with links to F04-F10 |
+| 5 | LLM fine-tuning path | **PASS**; M06 page → notebook → Lab 1 → assessment |
+| 6 | Computer-vision path | **PASS**; M11 page → notebook → Lab 1 → assessment |
+| 7 | AI-agent path | **PASS**; M15 page → notebook → Lab 1 → assessment |
+| 8 | Capstone specifications and submission | **PASS**; capstone index → lab, and project index → P01 / submission package |
+
+Additional checks:
+
+| Check | Result |
 | --- | --- |
-| Start at the course home | Pass in the built site |
-| Choose a beginner, intermediate, or advanced path | Pass: the syllabus paths are present and linked |
-| Open a module lesson | Pass: all 18 modules have lesson files |
-| Open the matching notebook | Pass: 26 of 26 notebooks are directly linked |
-| Find a lab or project brief | Pass: 52 briefs are present |
-| Find an assessment | Pass: 21 assessments are present |
-| Move between notebooks | Pass: previous/next links resolve after the M15/M16 fix |
-| Search the site | Available in the MkDocs Material theme |
-| Open the notebook source | Pass: `include_source: true` copies the `.ipynb` beside the rendered page |
+| Home → Datasets and Resources | **PASS** |
+| Home → Course roadmap → study schedules anchor | **PASS** |
+| Home → Notebook Library → all 26 notebooks | **PASS** |
+| Applied lab brief reachable from its section index | **PASS** |
+| `labs/` top-level README points to the real brief | **PASS** (repository view, not the MkDocs site) |
+| Source links, anchors, and nav targets | **PASS: 296 files, 0 broken** |
+| Built-site links and `/AITopics/` prefix | **PASS: 323 pages** |
+| Strict MkDocs build | **PASS: 0 warnings** |
 
-The canonical entry points are the repository README, the course home, the
-[Notebook Library](../notebook-library.md), and the lessons index. The library is
-the shortest route when a student knows the topic but not the module number.
+The static target check included these exact transitions:
 
-## Recommended first session
+- `site/index.html` → `site/lessons/f01-python-ai/index.html`
+- F01 → `lessons/f01-python-ai/notebook/`, `lab/`, `assessment/`
+- F03 → `notebook/`, `assessment/`
+- M06 → `notebooks/llm-fine-tuning/m06_transformers/` and
+  `lessons/llm-fine-tuning/labs/lab-1-tiny-lm/`
+- M11 → `notebooks/computer-vision/m11_image_classification/` and its Lab 1
+- M15 → `notebooks/ai-agents/m15_agents/` and its Lab 1
+- Capstone index → `lessons/capstone/labs/lab-1-capstone-package/`
+- Project index → `course/projects/p01-tabular-prediction/` and
+  `course/projects/submission-package/`
 
-1. Read the course home and choose a path.
-2. Open F01 and follow its notebook guide.
-3. Run `notebooks/foundations/f01_python_ai.ipynb` on a CPU.
-4. Complete the F01 lab and knowledge check.
-5. Continue through F03-F13 before starting an applied module.
+## Student-facing improvements in this pass
 
-For an applied learner, M09-M10 (chatbots/RAG), M11-M12 (vision), M13 (speech),
-and M14 (video) each have a runnable notebook, a section index, labs, and an
-assessment.
-
-## Evidence that the paths work
-
-- `python scripts/check_docs_links.py` reports 295 Markdown files with no broken
-  links, anchors, or navigation entries.
-- `python -m mkdocs build --strict -d site` completes with zero warnings and
-  produces 322 pages.
-- `python scripts/check_docs_links.py --site site` reports no broken built-site
-  links and no absolute URLs outside `/AITopics/`.
-- `python scripts/check_course_inventory.py` confirms 18 modules, 105 lesson
-  files, 26 notebooks, 52 labs/project briefs, and 21 assessments.
+- Every module name in the roadmap, learning paths, and syllabus overview is now a
+  link, not plain text.
+- Every Mxx section in the syllabus level pages has a **Published material** link.
+- The assessment coverage map links its course areas.
+- The new [Datasets and Resources](../resources/index.md) page answers the
+  recurring questions: what data, where is it, what licence, what hardware, and
+  what must I download?
+- Empty top-level lab directories now contain README pointers to the actual brief
+  and runnable code. A student is no longer left looking at an empty folder.
+- The video-data command now names the real generator path.
 
 ## Usability limitations
 
-- No human student pilot, think-aloud session, or classroom use was completed.
-  The agent-simulated capstone is not a substitute for a student.
-- The public Pages URL returns 404, so navigation has not been checked on the
-  deployed origin or on a phone.
-- Search relevance, reading level, time estimates, and mobile layout were not
-  measured with students.
-- GPU and Colab paths are documented but not executed. A student without a local
-  CPU environment may need the Colab instructions, which are unverified.
-- The 20 legacy notebooks have less uniform section structure than M09-M14.
-- Synthetic exercises can produce high scores that do not predict real-world
-  performance; the notebooks now state this explicitly.
+- **No human pilot, think-aloud session, or classroom use.** The static journeys
+  are not a substitute for watching a beginner struggle with the material.
+- **No public-origin test.** The deployed URL is 404. The `/AITopics/` prefix has
+  been exercised only in the local built output.
+- **No search-quality or mobile evaluation.** MkDocs Material provides search and
+  responsive layout, but relevance, keyboard navigation, and phone rendering were
+  not measured.
+- **No GPU or Colab run.** A student without a local CPU environment may need the
+  Colab instructions, which remain unverified.
+- **Twenty notebooks do not use the newer named-section structure.** Students can
+  still use them, but the reading experience is less uniform.
+- **Some lessons are long.** Time estimates and reading load have not been
+  validated with students.
+- **Synthetic exercises can score highly** without predicting real-world
+  performance; the notebooks state this, but a student may still over-read a
+  perfect fixture score.
 
 ## Release use
 
-This audit supports deployment review, not a claim that the course is already
-student-ready in public. After deployment, repeat the path checks on the live
-`/AITopics/` origin and run a small human pilot before making that claim.
+This audit supports a **READY WITH DOCUMENTED LIMITATIONS** release decision. It
+does not support **READY FOR STUDENT USE**: the public site must be deployed and
+the major paths checked on the public origin first, followed by a small human
+pilot. See the [GitHub Pages deployment audit](github-pages-deployment-audit.md)
+and the [Final audit](final-audit.md).

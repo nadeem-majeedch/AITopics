@@ -1,0 +1,2415 @@
+{
+  "generated_on": "2026-11-09",
+  "definition": {
+    "complete": "all advertised files exist, every text resource passes its structural floor, and every notebook is substantive",
+    "partial": "every advertised file exists, but a text resource or notebook fails a structural check",
+    "missing": "at least one advertised lesson, notebook, lab, or assessment is absent",
+    "lesson_floor": "500 words and 3 level-2 headings",
+    "lab_floor": "300 words and 4 level-2 headings",
+    "assessment_floor": "300 words and 4 level-2 headings"
+  },
+  "summary": {
+    "modules": 18,
+    "lesson_files": 105,
+    "notebooks": 26,
+    "labs_and_project_briefs": 52,
+    "assessments": 21,
+    "complete_modules": 18,
+    "partial_modules": 0,
+    "missing_modules": 0,
+    "substantive_notebooks": 26,
+    "full_14_section_notebooks": 6
+  },
+  "modules": [
+    {
+      "code": "M00",
+      "title": "Course orientation and study plan",
+      "lessons": [
+        {
+          "path": "docs/syllabus/level-0-start.md",
+          "words": 1468,
+          "h2_headings": 4,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [],
+      "labs": [],
+      "assessments": [],
+      "status": "complete"
+    },
+    {
+      "code": "M01",
+      "title": "Python and AI development environment",
+      "lessons": [
+        {
+          "path": "docs/lessons/m01-environment/index.md",
+          "words": 2168,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/foundations/m01_environment_check.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 22,
+          "markdown_cells": 11,
+          "code_cells": 11,
+          "markdown_words": 965,
+          "headings": 12,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/m01-environment/lab.md",
+          "words": 1317,
+          "h2_headings": 18,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/m01-environment/assessment.md",
+          "words": 1336,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M02",
+      "title": "Machine learning foundations",
+      "lessons": [
+        {
+          "path": "docs/lessons/f03-numpy-pandas/index.md",
+          "words": 2894,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f04-data-cleaning/index.md",
+          "words": 2983,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f05-splits/index.md",
+          "words": 2805,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f06-eda/index.md",
+          "words": 2728,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f07-supervised-unsupervised/index.md",
+          "words": 2588,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f08-regression-classification/index.md",
+          "words": 2953,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f09-tree-ensembles/index.md",
+          "words": 2825,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f10-metrics-validation/index.md",
+          "words": 3149,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/foundations/f03_numpy_pandas.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 19,
+          "markdown_cells": 10,
+          "code_cells": 9,
+          "markdown_words": 473,
+          "headings": 10,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f04_data_cleaning.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 13,
+          "markdown_cells": 7,
+          "code_cells": 6,
+          "markdown_words": 429,
+          "headings": 7,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f05_splits.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 17,
+          "markdown_cells": 9,
+          "code_cells": 8,
+          "markdown_words": 460,
+          "headings": 9,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f06_eda.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 12,
+          "markdown_cells": 6,
+          "code_cells": 6,
+          "markdown_words": 294,
+          "headings": 6,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f07_supervised_unsupervised.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 8,
+          "code_cells": 7,
+          "markdown_words": 431,
+          "headings": 8,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f08_regression_classification.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 13,
+          "markdown_cells": 7,
+          "code_cells": 6,
+          "markdown_words": 375,
+          "headings": 7,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f09_tree_ensembles.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 8,
+          "code_cells": 7,
+          "markdown_words": 375,
+          "headings": 8,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f10_metrics_validation.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 8,
+          "code_cells": 7,
+          "markdown_words": 383,
+          "headings": 8,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/f03-numpy-pandas/lab.md",
+          "words": 1678,
+          "h2_headings": 17,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f04-data-cleaning/lab.md",
+          "words": 1931,
+          "h2_headings": 18,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f05-splits/lab.md",
+          "words": 2169,
+          "h2_headings": 18,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f06-eda/lab.md",
+          "words": 1874,
+          "h2_headings": 19,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f07-supervised-unsupervised/lab.md",
+          "words": 1815,
+          "h2_headings": 19,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f08-regression-classification/lab.md",
+          "words": 2124,
+          "h2_headings": 27,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f09-tree-ensembles/lab.md",
+          "words": 1894,
+          "h2_headings": 19,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f10-metrics-validation/lab.md",
+          "words": 1789,
+          "h2_headings": 18,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/f03-numpy-pandas/assessment.md",
+          "words": 1551,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f04-data-cleaning/assessment.md",
+          "words": 1747,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f05-splits/assessment.md",
+          "words": 1657,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f06-eda/assessment.md",
+          "words": 1513,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f07-supervised-unsupervised/assessment.md",
+          "words": 1545,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f08-regression-classification/assessment.md",
+          "words": 1621,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f09-tree-ensembles/assessment.md",
+          "words": 1676,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f10-metrics-validation/assessment.md",
+          "words": 1600,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M03",
+      "title": "Deep learning foundations",
+      "lessons": [
+        {
+          "path": "docs/lessons/f11-neural-networks/index.md",
+          "words": 2853,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f12-backpropagation/index.md",
+          "words": 2600,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f13-reproducibility/index.md",
+          "words": 2677,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/foundations/f11_neural_networks.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 8,
+          "code_cells": 7,
+          "markdown_words": 401,
+          "headings": 8,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f12_backpropagation.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 7,
+          "code_cells": 8,
+          "markdown_words": 421,
+          "headings": 7,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        },
+        {
+          "path": "notebooks/foundations/f13_reproducibility.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 15,
+          "markdown_cells": 8,
+          "code_cells": 7,
+          "markdown_words": 433,
+          "headings": 8,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/f11-neural-networks/lab.md",
+          "words": 1608,
+          "h2_headings": 16,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f12-backpropagation/lab.md",
+          "words": 1648,
+          "h2_headings": 17,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f13-reproducibility/lab.md",
+          "words": 1633,
+          "h2_headings": 17,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/f11-neural-networks/assessment.md",
+          "words": 1450,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f12-backpropagation/assessment.md",
+          "words": 1322,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/f13-reproducibility/assessment.md",
+          "words": 1472,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M04",
+      "title": "Training models from scratch",
+      "lessons": [
+        {
+          "path": "docs/lessons/model-training/mt01-training-loop.md",
+          "words": 1182,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt02-loss-and-optimizer.md",
+          "words": 1097,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt03-augmentation-and-regularization.md",
+          "words": 1039,
+          "h2_headings": 13,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt04-evaluation-and-error-analysis.md",
+          "words": 1041,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt05-checkpoints-and-compute.md",
+          "words": 959,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/model-training/m04_training_from_scratch.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 20,
+          "markdown_cells": 9,
+          "code_cells": 11,
+          "markdown_words": 793,
+          "headings": 9,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/model-training/labs/lab-1-training-ablation.md",
+          "words": 416,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/labs/lab-2-dataset-audit.md",
+          "words": 437,
+          "h2_headings": 6,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/model-training/assessment.md",
+          "words": 512,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M05",
+      "title": "Dataset preparation, labelling, cleaning, augmentation",
+      "lessons": [
+        {
+          "path": "docs/lessons/model-training/mt06-dataset-audit.md",
+          "words": 1044,
+          "h2_headings": 13,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt07-cleaning-and-labels.md",
+          "words": 1007,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt08-leakage-and-splits.md",
+          "words": 972,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt09-label-noise.md",
+          "words": 924,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/mt10-dataset-cards.md",
+          "words": 862,
+          "h2_headings": 14,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/model-training/m05_data_engineering.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 21,
+          "markdown_cells": 11,
+          "code_cells": 10,
+          "markdown_words": 987,
+          "headings": 11,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/model-training/labs/lab-1-training-ablation.md",
+          "words": 416,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/model-training/labs/lab-2-dataset-audit.md",
+          "words": 437,
+          "h2_headings": 6,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/model-training/assessment.md",
+          "words": 512,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M06",
+      "title": "Transformers and language models",
+      "lessons": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf01-tokens-and-embeddings.md",
+          "words": 920,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf02-attention.md",
+          "words": 910,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf03-transformer-block.md",
+          "words": 865,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf04-tiny-lm-training.md",
+          "words": 912,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/llm-fine-tuning/m06_transformers.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 23,
+          "markdown_cells": 12,
+          "code_cells": 11,
+          "markdown_words": 1045,
+          "headings": 11,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-1-tiny-lm.md",
+          "words": 354,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-2-sft-and-lora.md",
+          "words": 447,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-3-efficiency-report.md",
+          "words": 362,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/assessment.md",
+          "words": 467,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M07",
+      "title": "Small language models and supervised fine-tuning",
+      "lessons": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf05-sft-data-and-templates.md",
+          "words": 896,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf06-sft-loss-and-masking.md",
+          "words": 971,
+          "h2_headings": 13,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf07-evaluating-assistants.md",
+          "words": 913,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 21,
+          "markdown_cells": 11,
+          "code_cells": 10,
+          "markdown_words": 930,
+          "headings": 11,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-1-tiny-lm.md",
+          "words": 354,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-2-sft-and-lora.md",
+          "words": 447,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-3-efficiency-report.md",
+          "words": 362,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/assessment.md",
+          "words": 467,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M08",
+      "title": "LoRA, QLoRA, quantization, efficient training",
+      "lessons": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf08-lora.md",
+          "words": 873,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf09-quantization-and-qlora.md",
+          "words": 875,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/lf10-merging-and-serving.md",
+          "words": 774,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/llm-fine-tuning/m08_lora_qlora.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 17,
+          "markdown_cells": 9,
+          "code_cells": 8,
+          "markdown_words": 858,
+          "headings": 9,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-1-tiny-lm.md",
+          "words": 354,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-2-sft-and-lora.md",
+          "words": 447,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/llm-fine-tuning/labs/lab-3-efficiency-report.md",
+          "words": 362,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/llm-fine-tuning/assessment.md",
+          "words": 467,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M09",
+      "title": "Chatbots and conversational applications",
+      "lessons": [
+        {
+          "path": "docs/lessons/chatbots-rag/ca01-what-is-a-chatbot.md",
+          "words": 1243,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca02-chatbot-types.md",
+          "words": 1237,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca03-calling-a-model.md",
+          "words": 1039,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca04-history-and-context.md",
+          "words": 1116,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca05-prompts-and-structured-output.md",
+          "words": 1255,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca06-streamlit-interface.md",
+          "words": 960,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca07-local-models.md",
+          "words": 1175,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca08-hosted-api.md",
+          "words": 1061,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/chatbots-rag/m09_chatbots.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 17,
+          "markdown_cells": 10,
+          "code_cells": 7,
+          "markdown_words": 1583,
+          "headings": 23,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/chatbots-rag/projects/a-faq-bot.md",
+          "words": 870,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/b-llm-chatbot.md",
+          "words": 795,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/c-streamlit-app.md",
+          "words": 743,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/d-local-model.md",
+          "words": 746,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/e-course-docs-bot.md",
+          "words": 706,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/f-cited-assistant.md",
+          "words": 806,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/g-evaluation.md",
+          "words": 798,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/h-domain-assistant.md",
+          "words": 777,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/chatbots-rag/assessment.md",
+          "words": 1448,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M10",
+      "title": "Embeddings, vector search, and retrieval-augmented generation",
+      "lessons": [
+        {
+          "path": "docs/lessons/chatbots-rag/ca09-embeddings.md",
+          "words": 914,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca10-chunking.md",
+          "words": 1084,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca11-vector-search.md",
+          "words": 1036,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca12-rag.md",
+          "words": 1009,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca13-citations-and-abstention.md",
+          "words": 987,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca14-evaluation.md",
+          "words": 1463,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca15-fine-tuned-models.md",
+          "words": 951,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/ca16-privacy-and-deployment.md",
+          "words": 1054,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/chatbots-rag/m10_rag.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 17,
+          "markdown_cells": 10,
+          "code_cells": 7,
+          "markdown_words": 1412,
+          "headings": 23,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/chatbots-rag/projects/a-faq-bot.md",
+          "words": 870,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/b-llm-chatbot.md",
+          "words": 795,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/c-streamlit-app.md",
+          "words": 743,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/d-local-model.md",
+          "words": 746,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/e-course-docs-bot.md",
+          "words": 706,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/f-cited-assistant.md",
+          "words": 806,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/g-evaluation.md",
+          "words": 798,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/chatbots-rag/projects/h-domain-assistant.md",
+          "words": 777,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/chatbots-rag/assessment.md",
+          "words": 1448,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M11",
+      "title": "Image classification and computer vision",
+      "lessons": [
+        {
+          "path": "docs/lessons/computer-vision/cv01-digital-images.md",
+          "words": 1156,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv02-datasets-and-annotation-formats.md",
+          "words": 1393,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv03-preprocessing-and-augmentation.md",
+          "words": 951,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv04-convolutional-networks.md",
+          "words": 1244,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv05-classification-from-scratch.md",
+          "words": 957,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv06-transfer-learning.md",
+          "words": 956,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv07-fine-tuning.md",
+          "words": 933,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv08-training-detectors.md",
+          "words": 1080,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv09-boxes-iou-map.md",
+          "words": 1168,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv10-segmentation.md",
+          "words": 1099,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/computer-vision/m11_image_classification.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 20,
+          "markdown_cells": 10,
+          "code_cells": 10,
+          "markdown_words": 1366,
+          "headings": 22,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/computer-vision/labs/lab1-licensed-dataset-classifier.md",
+          "words": 833,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab2-cnn-learning-curves.md",
+          "words": 756,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab3-scratch-vs-transfer.md",
+          "words": 732,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab4-finetune-everyday-objects.md",
+          "words": 776,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab5-annotate-and-train-detector.md",
+          "words": 920,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab6-detector-thresholds.md",
+          "words": 902,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab7-similarity-app.md",
+          "words": 769,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab8-deployment-comparison.md",
+          "words": 793,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/computer-vision/assessment.md",
+          "words": 873,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M12",
+      "title": "Object detection, tracking, transfer learning",
+      "lessons": [
+        {
+          "path": "docs/lessons/computer-vision/cv08-training-detectors.md",
+          "words": 1080,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv09-boxes-iou-map.md",
+          "words": 1168,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv10-segmentation.md",
+          "words": 1099,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv11-face-detection-vs-recognition.md",
+          "words": 1490,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv12-embeddings-and-similarity.md",
+          "words": 959,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv13-optimization-and-inference.md",
+          "words": 1031,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/cv14-evaluation-robustness-deployment.md",
+          "words": 1143,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/computer-vision/m12_object_detection.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 17,
+          "markdown_cells": 8,
+          "code_cells": 9,
+          "markdown_words": 1368,
+          "headings": 20,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/computer-vision/labs/lab1-licensed-dataset-classifier.md",
+          "words": 833,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab2-cnn-learning-curves.md",
+          "words": 756,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab3-scratch-vs-transfer.md",
+          "words": 732,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab4-finetune-everyday-objects.md",
+          "words": 776,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab5-annotate-and-train-detector.md",
+          "words": 920,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab6-detector-thresholds.md",
+          "words": 902,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab7-similarity-app.md",
+          "words": 769,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/computer-vision/labs/lab8-deployment-comparison.md",
+          "words": 793,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/computer-vision/assessment.md",
+          "words": 873,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M13",
+      "title": "Speech recognition, audio classification, speech generation",
+      "lessons": [
+        {
+          "path": "docs/lessons/speech-audio/sa01-audio-fundamentals.md",
+          "words": 1530,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa02-loading-and-preprocessing.md",
+          "words": 1289,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa03-waveform-spectrogram-mel.md",
+          "words": 1165,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa04-segmentation-and-datasets.md",
+          "words": 1281,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa05-classical-classification.md",
+          "words": 1173,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa06-neural-audio-classifier.md",
+          "words": 1438,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa07-asr-and-stt.md",
+          "words": 1289,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa08-wer-and-transcription-evaluation.md",
+          "words": 1334,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa09-adapting-pretrained-asr.md",
+          "words": 1459,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa10-tts-and-speech-generation.md",
+          "words": 1327,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa11-speaker-embeddings-and-diarization.md",
+          "words": 1352,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa12-audio-event-detection.md",
+          "words": 1262,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa13-voice-chatbot.md",
+          "words": 1492,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/sa14-optimization-and-deployment.md",
+          "words": 1869,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/speech-audio/m13_speech_audio.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 22,
+          "markdown_cells": 11,
+          "code_cells": 11,
+          "markdown_words": 1648,
+          "headings": 23,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-a-environmental-sound-classifier.md",
+          "words": 889,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-b-waveform-vs-spectrogram.md",
+          "words": 696,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-c-transcribe-clip.md",
+          "words": 693,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-d-wer-evaluation.md",
+          "words": 894,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-e-adaptation.md",
+          "words": 918,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-f-stt-interface.md",
+          "words": 657,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-g-voice-chatbot.md",
+          "words": 870,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/speech-audio/labs/lab-h-model-comparison.md",
+          "words": 933,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/speech-audio/assessment.md",
+          "words": 960,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M14",
+      "title": "Video understanding and video analytics",
+      "lessons": [
+        {
+          "path": "docs/lessons/video-ai/vd01-digital-video.md",
+          "words": 1578,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd02-reading-and-writing.md",
+          "words": 1346,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd03-frame-extraction-and-datasets.md",
+          "words": 1559,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd04-labelling-and-annotation-formats.md",
+          "words": 1506,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd05-image-vs-temporal-models.md",
+          "words": 1635,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd06-detection-on-frames.md",
+          "words": 1534,
+          "h2_headings": 10,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd07-tracking-and-track-ids.md",
+          "words": 1622,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd08-counting-and-traffic-flow.md",
+          "words": 1598,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd09-vehicle-classification-and-adaptation.md",
+          "words": 1495,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd10-clothing-and-appearance.md",
+          "words": 1321,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd11-action-recognition.md",
+          "words": 1376,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd12-video-classification-and-events.md",
+          "words": 1328,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd13-fine-tuning.md",
+          "words": 1406,
+          "h2_headings": 6,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd14-evaluation-and-deployment.md",
+          "words": 1461,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/vd15-responsible-video-analytics.md",
+          "words": 1573,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/video-ai/m14_video_ai.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 19,
+          "markdown_cells": 9,
+          "code_cells": 10,
+          "markdown_words": 1607,
+          "headings": 21,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": true,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/video-ai/labs/lab-1-preprocessing.md",
+          "words": 1291,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-2-object-detection.md",
+          "words": 1054,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-3-tracking-and-counting.md",
+          "words": 1257,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-4-domain-adaptation.md",
+          "words": 1220,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-5-garment-attributes.md",
+          "words": 1137,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-6-action-recognition.md",
+          "words": 1107,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-7-integrated-analytics.md",
+          "words": 1220,
+          "h2_headings": 9,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/video-ai/labs/lab-8-performance.md",
+          "words": 1281,
+          "h2_headings": 8,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/video-ai/assessment.md",
+          "words": 1052,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M15",
+      "title": "AI agents, tool calling, memory, workflows",
+      "lessons": [
+        {
+          "path": "docs/lessons/ai-agents/ag01-agent-loop.md",
+          "words": 812,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/ai-agents/ag02-tool-schemas.md",
+          "words": 842,
+          "h2_headings": 12,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/ai-agents/ag03-memory-and-state.md",
+          "words": 769,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/ai-agents/ag04-budgets-and-approvals.md",
+          "words": 796,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/ai-agents/ag05-injection-and-evaluation.md",
+          "words": 754,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/ai-agents/m15_agents.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 26,
+          "markdown_cells": 15,
+          "code_cells": 11,
+          "markdown_words": 1619,
+          "headings": 17,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/ai-agents/labs/lab-1-support-agent.md",
+          "words": 401,
+          "h2_headings": 6,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/ai-agents/assessment.md",
+          "words": 347,
+          "h2_headings": 5,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M16",
+      "title": "Evaluation, security, responsible AI, deployment",
+      "lessons": [
+        {
+          "path": "docs/lessons/production/pr01-metrics-and-intervals.md",
+          "words": 829,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/production/pr02-calibration.md",
+          "words": 879,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/production/pr03-drift.md",
+          "words": 867,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/production/pr04-guardrails-and-cards.md",
+          "words": 831,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/production/pr05-artifacts-and-serving.md",
+          "words": 760,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [
+        {
+          "path": "notebooks/production/m16_production.ipynb",
+          "valid": true,
+          "substantive": true,
+          "cells": 24,
+          "markdown_cells": 14,
+          "code_cells": 10,
+          "markdown_words": 1436,
+          "headings": 17,
+          "execution_counts_complete": true,
+          "stored_errors": [],
+          "full_14_section_standard": false,
+          "exists": true
+        }
+      ],
+      "labs": [
+        {
+          "path": "docs/lessons/production/labs/lab-1-evaluation-and-serving.md",
+          "words": 419,
+          "h2_headings": 5,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/production/assessment.md",
+          "words": 370,
+          "h2_headings": 5,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "code": "M17",
+      "title": "Integrated capstone",
+      "lessons": [
+        {
+          "path": "docs/lessons/capstone/cp01-scoping-and-data.md",
+          "words": 835,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/capstone/cp02-build-and-evidence.md",
+          "words": 745,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        },
+        {
+          "path": "docs/lessons/capstone/cp03-evaluation-and-packaging.md",
+          "words": 793,
+          "h2_headings": 11,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "notebooks": [],
+      "labs": [
+        {
+          "path": "docs/lessons/capstone/labs/lab-1-capstone-package.md",
+          "words": 561,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "assessments": [
+        {
+          "path": "docs/lessons/capstone/assessment.md",
+          "words": 499,
+          "h2_headings": 7,
+          "exists": true,
+          "linked": true
+        }
+      ],
+      "status": "complete"
+    }
+  ],
+  "notebooks": [
+    {
+      "path": "notebooks/ai-agents/m15_agents.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 26,
+      "markdown_cells": 15,
+      "code_cells": 11,
+      "markdown_words": 1619,
+      "headings": 17,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/chatbots-rag/m09_chatbots.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 17,
+      "markdown_cells": 10,
+      "code_cells": 7,
+      "markdown_words": 1583,
+      "headings": 23,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    },
+    {
+      "path": "notebooks/chatbots-rag/m10_rag.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 17,
+      "markdown_cells": 10,
+      "code_cells": 7,
+      "markdown_words": 1412,
+      "headings": 23,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    },
+    {
+      "path": "notebooks/computer-vision/m11_image_classification.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 20,
+      "markdown_cells": 10,
+      "code_cells": 10,
+      "markdown_words": 1366,
+      "headings": 22,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    },
+    {
+      "path": "notebooks/computer-vision/m12_object_detection.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 17,
+      "markdown_cells": 8,
+      "code_cells": 9,
+      "markdown_words": 1368,
+      "headings": 20,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    },
+    {
+      "path": "notebooks/foundations/f01_python_ai.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 19,
+      "markdown_cells": 10,
+      "code_cells": 9,
+      "markdown_words": 519,
+      "headings": 10,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f03_numpy_pandas.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 19,
+      "markdown_cells": 10,
+      "code_cells": 9,
+      "markdown_words": 473,
+      "headings": 10,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f04_data_cleaning.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 13,
+      "markdown_cells": 7,
+      "code_cells": 6,
+      "markdown_words": 429,
+      "headings": 7,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f05_splits.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 17,
+      "markdown_cells": 9,
+      "code_cells": 8,
+      "markdown_words": 460,
+      "headings": 9,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f06_eda.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 12,
+      "markdown_cells": 6,
+      "code_cells": 6,
+      "markdown_words": 294,
+      "headings": 6,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f07_supervised_unsupervised.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 8,
+      "code_cells": 7,
+      "markdown_words": 431,
+      "headings": 8,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f08_regression_classification.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 13,
+      "markdown_cells": 7,
+      "code_cells": 6,
+      "markdown_words": 375,
+      "headings": 7,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f09_tree_ensembles.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 8,
+      "code_cells": 7,
+      "markdown_words": 375,
+      "headings": 8,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f10_metrics_validation.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 8,
+      "code_cells": 7,
+      "markdown_words": 383,
+      "headings": 8,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f11_neural_networks.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 8,
+      "code_cells": 7,
+      "markdown_words": 401,
+      "headings": 8,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f12_backpropagation.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 7,
+      "code_cells": 8,
+      "markdown_words": 421,
+      "headings": 7,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/f13_reproducibility.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 15,
+      "markdown_cells": 8,
+      "code_cells": 7,
+      "markdown_words": 433,
+      "headings": 8,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/foundations/m01_environment_check.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 22,
+      "markdown_cells": 11,
+      "code_cells": 11,
+      "markdown_words": 965,
+      "headings": 12,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/llm-fine-tuning/m06_transformers.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 23,
+      "markdown_cells": 12,
+      "code_cells": 11,
+      "markdown_words": 1045,
+      "headings": 11,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/llm-fine-tuning/m07_sft_small_lm.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 21,
+      "markdown_cells": 11,
+      "code_cells": 10,
+      "markdown_words": 930,
+      "headings": 11,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/llm-fine-tuning/m08_lora_qlora.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 17,
+      "markdown_cells": 9,
+      "code_cells": 8,
+      "markdown_words": 858,
+      "headings": 9,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/model-training/m04_training_from_scratch.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 20,
+      "markdown_cells": 9,
+      "code_cells": 11,
+      "markdown_words": 793,
+      "headings": 9,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/model-training/m05_data_engineering.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 21,
+      "markdown_cells": 11,
+      "code_cells": 10,
+      "markdown_words": 987,
+      "headings": 11,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/production/m16_production.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 24,
+      "markdown_cells": 14,
+      "code_cells": 10,
+      "markdown_words": 1436,
+      "headings": 17,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": false
+    },
+    {
+      "path": "notebooks/speech-audio/m13_speech_audio.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 22,
+      "markdown_cells": 11,
+      "code_cells": 11,
+      "markdown_words": 1648,
+      "headings": 23,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    },
+    {
+      "path": "notebooks/video-ai/m14_video_ai.ipynb",
+      "valid": true,
+      "substantive": true,
+      "cells": 19,
+      "markdown_cells": 9,
+      "code_cells": 10,
+      "markdown_words": 1607,
+      "headings": 21,
+      "execution_counts_complete": true,
+      "stored_errors": [],
+      "full_14_section_standard": true
+    }
+  ]
+}

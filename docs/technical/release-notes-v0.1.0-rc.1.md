@@ -1,14 +1,16 @@
 # Draft release notes — v0.1.0-rc.1
 
 **Status: release-candidate draft, not a published release.** Local validation
-passed with documented limitations on 2026-11-08. The tag has not been created,
+passed with documented limitations on 2026-11-09. The tag has not been created,
 the repository has not been pushed for this candidate, GitHub Actions has not run
 the validation or deployment workflow, GitHub Pages has not been published, and no
 human student pilot has been completed. Do not describe this draft as a verified
 public release.
 
-**Candidate version:** `v0.1.0-rc.1`  
-**Prepared:** 2026-11-08  
+**Candidate version:** `v0.1.0-rc.1`
+
+**Prepared:** 2026-11-08; revalidated 2026-11-09
+
 **Release gate:** [v1 release-candidate checklist](v1-release-candidate-checklist.md)
 
 ## Course overview
@@ -64,8 +66,8 @@ Commercial reuse of original educational content is permitted under CC BY 4.0
 with attribution, a link to the licence, and an indication of changes. The
 licence does not grant rights to third-party material.
 
-See [`LICENSES/README.md`](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/README.md),
-[`licensing-scope.json`](https://github.com/nadeem-majeedch/AITopics/blob/main/licensing-scope.json),
+See [`LICENSES/README.md`](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/LICENSES/README.md),
+[`licensing-scope.json`](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/licensing-scope.json),
 and the [third-party inventory](third-party-inventory.md) for the exact scope and
 exclusions. This summary is not legal advice.
 
@@ -88,14 +90,18 @@ wheel set is an exact reproduction of CI.
 
 - Every notebook is stored with its outputs and was executed top to bottom on a
   Windows 11 CPU environment during the local audit.
-- The final local audit executed 26 notebooks and 223 code cells in 176.1
+- The final local audit executed 26 notebooks and 223 code cells in 152.6
   seconds with zero failures. This is a local result, not a GitHub Actions
   result.
 - The deterministic chatbot/RAG parser was repaired on 2026-11-08: instruction
-  text is no longer treated as part of the question, and support now requires
-  meaningful evidence overlap. All 253 unit tests pass.
+  text is no longer treated as part of the question, support now requires
+  meaningful evidence overlap, and a related page cannot answer a different
+  fact solely because its heading matched the topic. Sixteen dedicated parser
+  regression tests were added. All 269 unit tests pass; the 14-question dev set
+  scores 1.0 on answer accuracy and abstention, while the held-out 12-question
+  test set remains at 0.75 answer accuracy with three documented misses.
 - Generated data is git-ignored; the deterministic generators and seeds are
-  recorded in [`LICENSES/SYNTHETIC-DATA.md`](https://github.com/nadeem-majeedch/AITopics/blob/main/LICENSES/SYNTHETIC-DATA.md).
+  recorded in [`LICENSES/SYNTHETIC-DATA.md`](https://github.com/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/LICENSES/SYNTHETIC-DATA.md).
 - Synthetic data is generated locally rather than downloaded. No dataset,
   checkpoint, or pretrained weight is bundled in the release tree.
 - The course records commands, seeds, environment details, and measured hardware
@@ -142,16 +148,16 @@ wheel set is an exact reproduction of CI.
 
 | Check | Status |
 | --- | --- |
-| Local Python suite | 253 tests passed |
-| Licensing validator | PASS, 8 checks, 560 release files classified |
+| Local Python suite | 269 tests passed |
+| Licensing validator | PASS, 8 checks, 572 release files classified |
 | Notebook validation | 26 notebooks valid |
-| Notebook execution | 26 notebooks, 223 code cells, 176.1 s, 0 failures |
+| Notebook execution | 26 notebooks, 223 code cells, 152.6 s, 0 failures |
 | P06 fixture | 9 tests passed |
 | Course inventory | 18 modules, 105 lesson files, 26 notebooks, 52 labs/project briefs, 21 assessments |
 | Course projects | 12 projects, 12 complete specifications, 8 assessment banks |
-| Markdown links and anchors | 295 Markdown files resolve |
-| Strict MkDocs build | 322 pages, 0 warnings |
-| Built-site `/AITopics` prefix | 322 pages, no prefix or broken-link problems |
+| Markdown links and anchors | 296 Markdown files resolve |
+| Strict MkDocs build | 323 pages, 0 warnings |
+| Built-site `/AITopics` prefix | 323 pages, no prefix or broken-link problems |
 | Workflow schemas | Valid with `check-jsonschema` 0.39.0 |
 | GitHub Actions | **Not run; 2 Dependabot runs only** |
 | GitHub Pages | **HTTP 404; not published or verified live** |

@@ -11,17 +11,18 @@ course.
 | Configuration | `mkdocs.yml` at repository root |
 | Content root | `docs/` |
 | Build output | `site/` (gitignored) |
-| GitHub Pages | Configured for publication; **no deployment run yet** |
+| GitHub Pages | Workflows configured; public URL returns **HTTP 404** and no deployment run has succeeded (verified 2026-11-09) |
 | `site_url` | `https://nadeem-majeedch.github.io/AITopics/` (project-site prefix) |
-| Deployment workflow | `.github/workflows/deploy-pages.yml` (after successful validation on `main`, manual dispatch) |
-| Validation workflow | `.github/workflows/validate-docs.yml` (pull requests, `main` pushes, and manual dispatch; docs, licensing validation, Python tests, notebooks, and manifests) |
+| Deployment workflow | `.github/workflows/deploy-pages.yml` (after successful validation on `main` or `release/**`, manual dispatch) |
+| Validation workflow | `.github/workflows/validate-docs.yml` (pull requests and pushes to `main` or `release/**`, plus manual dispatch; docs, licensing validation, Python tests, notebooks, and manifests) |
 | Publication guide | [GitHub Pages publication](GITHUB-PAGES.md) |
 | Build verification | See [Verification log](#verification-log) |
 
-The architecture phase intentionally did not enable deployment or modify remote
-settings. The publication workflow and configuration have since been added; the
-repository's Pages settings must still be switched to **GitHub Actions** by a
-maintainer, and the first deployment has not been run. See
+The publication workflows and configuration are present, but the repository's
+Pages settings still need **Source: GitHub Actions** selected by a maintainer, and
+no validation or deployment workflow has run. The GitHub API reports the default
+branch as `release/v0.1.0-rc.1`, `has_pages: true`, a 404 for the Pages API, and
+a 404 for the public URL (checked 2026-11-09). See
 [GitHub Pages publication](GITHUB-PAGES.md) for the settings, the verification
 steps, and the exact behaviour of both workflows.
 
@@ -110,17 +111,20 @@ has real content.
 - Colab links use this pattern:
 
 ```text
-https://colab.research.google.com/github/nadeem-majeedch/AITopics/blob/main/notebooks/<area>/<notebook>.ipynb
+https://colab.research.google.com/github/nadeem-majeedch/AITopics/blob/release/v0.1.0-rc.1/notebooks/<area>/<notebook>.ipynb
 ```
 
-This assumes the default branch is `main`. Confirm the branch before publishing.
+This uses the current default branch. Confirm the branch before publishing; a
+branch name containing `/` can be ambiguous in third-party URL parsers, so test
+the link after a branch change.
 
 ## Branch assumptions
 
-`mkdocs.yml` sets `edit_uri: edit/main/docs/`, and the Colab link pattern uses
-`main`. If the repository's default branch is not `main`, update both before
-publishing. The architecture phase could not verify the branch because the remote
-repository was not accessible.
+The repository default branch is `release/v0.1.0-rc.1` (verified through the
+GitHub API on 2026-11-09). `mkdocs.yml` sets
+`edit_uri: edit/release/v0.1.0-rc.1/docs/`; both workflows trigger on `main` and
+`release/**`. When the release is merged to `main`, update `edit_uri`, this Colab
+example, and the branch references in the publication guide.
 
 ## GitHub Pages deployment
 
@@ -145,8 +149,8 @@ Deployment is defined in the repository, not in this page:
 
 | File | Purpose |
 | --- | --- |
-| `.github/workflows/deploy-pages.yml` | Strict build, link/anchor/prefix checks, upload the Pages artifact, deploy |
-| `.github/workflows/validate-docs.yml` | Whole-repository gate: strict docs build plus CPU dependency install, `pip check`, licensing validation, 253 unit tests, manifest fixture tests, project and generated-data checks, and all 26 notebooks; no Pages permissions |
+| `.github/workflows/deploy-pages.yml` | Strict build, link/anchor/prefix checks, upload the Pages artifact, deploy after validation on `main` or `release/**` |
+| `.github/workflows/validate-docs.yml` | Whole-repository gate: strict docs build plus CPU dependency install, `pip check`, licensing validation, 269 unit tests, manifest fixture tests, project and generated-data checks, and all 26 notebooks; no Pages permissions |
 | `.github/dependabot.yml` | Monthly updates for `mkdocs`, `mkdocs-material`, and the Actions used |
 
 `site_url` is already set to the project-site URL:

@@ -29,7 +29,7 @@ design - retention, aggregation, on-device processing, or not collecting at all.
 
 | Question | This section | Your project |
 | --- | --- | --- |
-| Source | `scripts/make_video_data.py`, deterministic, seed 0 | |
+| Source | `projects/video-ai/scripts/make_video_data.py`, deterministic, seed 0 | |
 | Content | 7 clips x 60 frames, 640x360, 10 fps, 4 vehicle classes | |
 | Personal data | none | |
 | Licence | CC0-1.0 | |

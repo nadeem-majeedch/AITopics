@@ -11,7 +11,10 @@ site_url: https://nadeem-majeedch.github.io/AITopics/
 
 repo_url: https://github.com/nadeem-majeedch/AITopics
 repo_name: nadeem-majeedch/AITopics
-edit_uri: edit/main/docs/
+# The repository's current default branch is release/v0.1.0-rc.1. Change this
+# to edit/main/docs/ when the release is merged to main. A nonexistent edit path
+# produces a 404, not a broken site build, so verify it after a branch change.
+edit_uri: edit/release/v0.1.0-rc.1/docs/
 
 copyright: >-
   Copyright (c) 2026 Muhammad Nadeem Majeed. Course licensing is described in
@@ -385,6 +388,7 @@ nav:
       - Labs:
           - 1 - Capstone package: lessons/capstone/labs/lab-1-capstone-package.md
       - Assessment: lessons/capstone/assessment.md
+  - Datasets and Resources: resources/index.md
   - Syllabus:
       - Overview: syllabus/index.md
       - Level 0 - Orientation and environment: syllabus/level-0-start.md

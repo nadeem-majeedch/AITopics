@@ -25,6 +25,8 @@ If not, complete the relevant path modules and M05 first.
 
 ## M16 - Evaluation, security, responsible AI, and deployment {#m16}
 
+**Published material:** [Production overview](../lessons/production/index.md).
+
 **Level 5 | 20 hours | CPU-only | Prerequisite: at least one applied path module**
 
 ### Learning objectives
@@ -151,6 +153,8 @@ M17 - Integrated capstone.
 ---
 
 ## M17 - Integrated capstone {#m17}
+
+**Published material:** [Capstone overview](../lessons/capstone/index.md) and [capstone projects](../course/projects/index.md).
 
 **Level 5 | 40 hours | Hardware depends on project | Prerequisites: path modules and M16**
 

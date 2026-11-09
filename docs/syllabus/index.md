@@ -35,24 +35,24 @@ plans are structured and maps the course to the 16 learning areas it covers.
 
 | Code | Module | Level | Hours | Hardware | Primary artifact |
 | --- | --- | --- | --- | --- | --- |
-| M00 | Course orientation and study plan | 0 | 3 | CPU-only | Personal study plan |
-| M01 | Python and AI development environment | 0 | 12 | CPU-only | Environment report |
-| M02 | Machine learning foundations | 1 | 16 | CPU-only | Tabular model and report |
-| M03 | Deep learning foundations | 1 | 16 | CPU or GPU | Ablation study |
-| M04 | Training models from scratch | 1 | 18 | GPU recommended | Trained CNN and experiment log |
-| M05 | Dataset preparation, labeling, cleaning, augmentation | 1 | 14 | CPU-only | Dataset card and labeling guide |
-| M06 | Transformers and language models | 2 | 18 | CPU or GPU | Tiny language model |
-| M07 | Small language models and supervised fine-tuning | 2 | 24 | GPU required | Fine-tuned adapter and evaluation |
-| M08 | LoRA, QLoRA, quantization, efficient training | 2 | 18 | GPU required | Efficiency trade-off report |
-| M09 | Chatbots and conversational applications | 2 | 16 | CPU or GPU | Chatbot with guardrails |
-| M10 | Embeddings, vector search, and RAG | 2 | 18 | CPU-only | Cited RAG system |
-| M11 | Image classification and computer vision | 3 | 18 | GPU recommended | Domain image classifier |
-| M12 | Object detection, tracking, transfer learning | 3 | 20 | GPU required | Detection and tracking demo |
-| M13 | Speech recognition, audio classification, speech generation | 3 | 22 | GPU recommended | ASR/audio system with WER |
-| M14 | Video understanding and video analytics | 3 | 22 | GPU recommended | Privacy-preserving analytics prototype |
-| M15 | AI agents, tool calling, memory, workflows | 4 | 24 | CPU or API | Evaluated tool-using agent |
-| M16 | Evaluation, security, responsible AI, deployment | 5 | 20 | CPU-only | Deployed, tested system |
-| M17 | Integrated capstone | 5 | 40 | Depends | Full capstone package |
+| M00 | [Course orientation and study plan](level-0-start.md#m00) | 0 | 3 | CPU-only | Personal study plan |
+| M01 | [Python and AI development environment](../lessons/m01-environment/index.md) | 0 | 12 | CPU-only | Environment report |
+| M02 | [Machine learning foundations](../lessons/f03-numpy-pandas/index.md) | 1 | 16 | CPU-only | Tabular model and report |
+| M03 | [Deep learning foundations](../lessons/f11-neural-networks/index.md) | 1 | 16 | CPU or GPU | Ablation study |
+| M04 | [Training models from scratch](../lessons/model-training/index.md) | 1 | 18 | GPU recommended | Trained CNN and experiment log |
+| M05 | [Dataset preparation, labeling, cleaning, augmentation](../lessons/model-training/index.md) | 1 | 14 | CPU-only | Dataset card and labeling guide |
+| M06 | [Transformers and language models](../lessons/llm-fine-tuning/index.md) | 2 | 18 | CPU or GPU | Tiny language model |
+| M07 | [Small language models and supervised fine-tuning](../lessons/llm-fine-tuning/index.md) | 2 | 24 | GPU required | Fine-tuned adapter and evaluation |
+| M08 | [LoRA, QLoRA, quantization, efficient training](../lessons/llm-fine-tuning/index.md) | 2 | 18 | GPU required | Efficiency trade-off report |
+| M09 | [Chatbots and conversational applications](../lessons/chatbots-rag/index.md) | 2 | 16 | CPU or GPU | Chatbot with guardrails |
+| M10 | [Embeddings, vector search, and RAG](../lessons/chatbots-rag/index.md) | 2 | 18 | CPU-only | Cited RAG system |
+| M11 | [Image classification and computer vision](../lessons/computer-vision/index.md) | 3 | 18 | GPU recommended | Domain image classifier |
+| M12 | [Object detection, tracking, transfer learning](../lessons/computer-vision/index.md) | 3 | 20 | GPU required | Detection and tracking demo |
+| M13 | [Speech recognition, audio classification, speech generation](../lessons/speech-audio/index.md) | 3 | 22 | GPU recommended | ASR/audio system with WER |
+| M14 | [Video understanding and video analytics](../lessons/video-ai/index.md) | 3 | 22 | GPU recommended | Privacy-preserving analytics prototype |
+| M15 | [AI agents, tool calling, memory, workflows](../lessons/ai-agents/index.md) | 4 | 24 | CPU or API | Evaluated tool-using agent |
+| M16 | [Evaluation, security, responsible AI, deployment](../lessons/production/index.md) | 5 | 20 | CPU-only | Deployed, tested system |
+| M17 | [Integrated capstone](../lessons/capstone/index.md) | 5 | 40 | Depends | Full capstone package |
 | | **Total** | | **339** | | |
 
 ## Coverage of the 16 learning areas
@@ -137,8 +137,8 @@ communication. The capstone has its own weighted rubric. See
 At the time of this release, every module from M01 to M17 is **published**:
 F01-F13 deliver M01-M03, M04-M08 and M15-M17 are five sections, and M09-M14 are
 four applied slices. M00 orientation is delivered through the roadmap, learning
-paths, study guide, and its plan. All twenty notebooks published by these
-sections (thirteen foundation and seven new) have been executed on Windows 11
+paths, study guide, and its plan. All **26 notebooks** published by these
+sections (thirteen foundation and thirteen section notebooks) have been executed on Windows 11
 CPU. Google Colab verification is pending, and no notebook has been executed on a
 GPU; CPU-only and optional-GPU paths are stated per lesson. No module is marked
 fully verified on every supported environment.
