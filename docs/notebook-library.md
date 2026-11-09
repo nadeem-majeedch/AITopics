@@ -2,8 +2,9 @@
 
 Every guided notebook in the course is listed here. Each page renders the notebook
 with its saved outputs, so you can read it without installing anything. To run a
-notebook, download the `.ipynb` file from the page or open it from a clone of the
-repository.
+notebook, open its page and choose **Download notebook (.ipynb)** at the top: that
+button returns the original file, which you can open in Jupyter, VS Code, or Google
+Colab. You can also open the notebook from a clone of the repository.
 
 All 26 notebooks were executed top-to-bottom on Windows 11, Python 3.12.10, CPU
 only, on 2026-11-08. GPU and Google Colab execution are still pending unless a

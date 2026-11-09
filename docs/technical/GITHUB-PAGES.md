@@ -161,18 +161,24 @@ All four codes must be `200`, the canonical link must contain
 return 404. Only then is the site published; record the run id and the commit SHA
 it deployed in the [verification log](build-and-deploy.md#verification-log).
 
-Notebook pages embed their executed `.ipynb` as a download (`mkdocs-jupyter`
-`include_source: true`). No notebook SHA-256 manifest is committed, so verify a
-download against the repository copy instead:
+Every notebook page shows a **Download notebook (.ipynb)** button. It links to the
+`include_source: true` copy that `mkdocs-jupyter` places beside the rendered page, so
+the download is the original file, not a re-rendered artifact. No notebook SHA-256
+manifest is committed, so verify a download against the committed blob rather than
+the working tree — on Windows the checkout has CRLF endings and the hashes differ
+even when the notebook is identical:
 
 ```bash
 curl -sS -o tmp/m16_download.ipynb \
   https://nadeem-majeedch.github.io/AITopics/notebooks/production/m16_production/m16_production.ipynb
-sha256sum tmp/m16_download.ipynb notebooks/production/m16_production.ipynb
+git show HEAD:notebooks/production/m16_production.ipynb | sha256sum   # expected
+sha256sum tmp/m16_download.ipynb                                     # actual
 ```
 
-(The Windows equivalent is `certutil -hashfile <file> SHA256`.) The two hashes must
-match; if they do not, the deployed commit is not the reviewed commit.
+The two hashes must match; if they do not, the deployed commit is not the reviewed
+commit. (On Windows, `certutil -hashfile <file> SHA256` works for the downloaded
+file, but compare it with the `git show` output above, not with a CRLF working-tree
+copy.)
 
 ### 9. Test the site in a clean browser session
 

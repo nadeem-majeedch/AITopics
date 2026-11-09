@@ -469,6 +469,10 @@ plugins:
         notebooks: notebooks
       include_source: true
 
+# Adds the "Download notebook (.ipynb)" button to every rendered notebook page.
+hooks:
+  - scripts/mkdocs_notebook_downloads.py
+
 # Keep the build honest: fail on broken internal links and missing navigation
 # targets. External link checking is a separate Phase 8 task.
 strict: true

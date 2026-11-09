@@ -54,8 +54,9 @@ report (M01).
 
 ## Notebook workflow
 
-1. **Never edit the course notebook in place.** Copy it to your own work
-   directory or fork the repository.
+1. **Never edit the course notebook in place.** Open the notebook's page, choose
+   **Download notebook (.ipynb)**, and save the file to your own work directory
+   (or fork the repository and work from your fork).
 2. **Run all cells from a clean kernel** before submitting or sharing.
 3. **Record the environment:** Python version, package versions, hardware, and
    random seeds in the first cell.

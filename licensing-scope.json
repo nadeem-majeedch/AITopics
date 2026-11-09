@@ -52,6 +52,9 @@
       "status": "approved",
       "include": [
         "README.md",
+        "POST_PUBLICATION_AUDIT.md",
+        "MODULE_NOTEBOOK_MATRIX.md",
+        "NOTEBOOK_GAP_ANALYSIS.md",
         "docs/**",
         "labs/**",
         "notebooks/**",

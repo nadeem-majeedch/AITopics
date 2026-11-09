@@ -34,7 +34,8 @@ environmental and evidentiary:
   `release/v0.1.0-rc.1` push remain unverified;
 * notebook pages offer a downloadable `.ipynb`, but the repository commits no
   notebook SHA-256 manifest, so a download is verified by hashing it against the
-  repository copy (see [GitHub Pages publication](GITHUB-PAGES.md#release-publication-procedure-nine-steps)).
+  committed blob (`git show HEAD:<path>`) rather than a CRLF working copy (see
+  [GitHub Pages publication](GITHUB-PAGES.md#release-publication-procedure-nine-steps)).
 
 This is not a claim that students can already reach a public site. It is a claim
 that the repository is ready for the push and deployment review that precedes
@@ -523,9 +524,11 @@ result in the [verification log](build-and-deploy.md#verification-log):
 3. **Content level.** The canonical link carries the `/AITopics/` prefix, the
    stylesheet loads, and `gh api repos/nadeem-majeedch/AITopics/pages --jq
    .status` no longer reports a missing site.
-4. **Notebook download.** Fetch the M16 `.ipynb` copy from the site and compare
-   its SHA-256 with `notebooks/production/m16_production.ipynb`; no manifest is
-   committed, so this hash comparison is the check.
+4. **Notebook download.** The M16 page's **Download notebook (.ipynb)** button
+   must return the file. Compare its SHA-256 with
+   `git show HEAD:notebooks/production/m16_production.ipynb`, not with the working
+   tree: on Windows the checkout is CRLF and a working-tree comparison reports a
+   false mismatch. No manifest is committed, so this hash comparison is the check.
 5. **Clean browser.** In a private window with an empty cache, check styling,
    search, a deep project page, the M16 notebook page and its download, the
    site's own 404 page, the **Edit this page** link pointing at
