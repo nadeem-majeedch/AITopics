@@ -464,7 +464,8 @@ class LicensingChecker:
         return sorted(
             path.relative_to(self.root).as_posix()
             for path in self.root.rglob("*")
-            if path.is_file() and not any(part in skip_dirs for part in path.parts)
+            if path.is_file()
+            and not any(part in skip_dirs for part in path.relative_to(self.root).parts)
         )
 
     def check_scope_coverage(self, files: Iterable[str] | None = None) -> Result:
@@ -515,9 +516,10 @@ class LicensingChecker:
         for path in self.root.rglob("*"):
             if not path.is_file() or path.suffix.lower() not in suffixes:
                 continue
-            if any(part in skip_dirs for part in path.parts):
+            relative_path = path.relative_to(self.root)
+            if any(part in skip_dirs for part in relative_path.parts):
                 continue
-            relative = path.relative_to(self.root).as_posix()
+            relative = relative_path.as_posix()
             try:
                 text = _read(path)
             except OSError:

@@ -120,6 +120,61 @@ class LicensingValidatorTests(unittest.TestCase):
             self.assertEqual(result.status, "FAIL")
             self.assertIn("GPL-3.0", result.detail)
 
+    def test_conflicting_spdx_identifier_below_tmp_directory(self) -> None:
+        """The skip list must only inspect paths relative to the root.
+
+        On Linux the fixtures above live under ``/tmp``; matching absolute path
+        components made every file look skipped, so the conflict went unseen.
+        """
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "tmp" / "site"
+            (root / "scripts").mkdir(parents=True)
+            _touch_required_licences(root)
+            _write_manifest(root, _manifest())
+            (root / "scripts/example.py").write_text(
+                "# SPDX-License-Identifier: " + "GPL-3.0\n", encoding="utf-8"
+            )
+            result = LicensingChecker(root).check_spdx()
+            self.assertEqual(result.status, "FAIL")
+            self.assertIn("GPL-3.0", result.detail)
+
+    def test_known_but_scope_conflicting_spdx_identifier(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "scripts").mkdir()
+            _touch_required_licences(root)
+            _write_manifest(root, _manifest())
+            (root / "scripts/example.py").write_text(
+                "# SPDX-License-Identifier: " + "CC0-1.0\n", encoding="utf-8"
+            )
+            result = LicensingChecker(root).check_spdx()
+            self.assertEqual(result.status, "FAIL")
+            self.assertIn("declares CC0-1.0, expected MIT", result.detail)
+
+    def test_spdx_identifier_matching_its_scope_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "tmp" / "site"
+            (root / "scripts").mkdir(parents=True)
+            _touch_required_licences(root)
+            _write_manifest(root, _manifest())
+            (root / "scripts/example.py").write_text(
+                "# SPDX-License-Identifier: MIT\n", encoding="utf-8"
+            )
+            result = LicensingChecker(root).check_spdx()
+            self.assertEqual(result.status, "PASS")
+
+    def test_release_files_below_tmp_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "tmp" / "site"
+            (root / "scripts").mkdir(parents=True)
+            _touch_required_licences(root)
+            _write_manifest(root, _manifest())
+            (root / "scripts/example.py").write_text(
+                "print('example')\n", encoding="utf-8"
+            )
+            files = LicensingChecker(root)._release_files()
+            self.assertIn("scripts/example.py", files)
+
     def test_unresolved_model_weight_licence(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
